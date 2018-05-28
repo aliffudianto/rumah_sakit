@@ -12,7 +12,7 @@ class Pegawai extends CI_Controller {
 	{
 		$this->load->model('Function_model');
 		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
-		$this->load->view('home_pasien',$data);
+		$this->load->view('home_pegawai',$data);
 	}
 
 	public function create()
@@ -27,7 +27,7 @@ class Pegawai extends CI_Controller {
 			if ($this->form_validation->run() ==FALSE) {
 				$this->load->view('tambah_pegawai_view');
 			}else{
-				$this->Function_model->masukkanDataPasien();
+				$this->Function_model->insertDataPasien();
 				$this->load->view('tambah_pegawai_sukses');
 			}	
 	}
