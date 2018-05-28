@@ -3516,8 +3516,8 @@ iframe {
 							<label for="">Role</label>
 				<select name="level" class="form-control">
 				     <option value="">---</option>
-				    <option value="admin">Pegawai</option>
-				    <option value="user">Pasien</option>
+				    <option value="pegawai">Pegawai</option>
+				    <option value="pasien">Pasien</option>
 					</div>
 
 					<div class="text-center p-t-136">
