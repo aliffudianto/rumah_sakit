@@ -219,13 +219,13 @@ body{
         Dashboard <span class="badge">12</span>
       </a>
        
-      <a href="<?php echo site_url()?>/pegawai/profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
+       <a href="<?php echo site_url()?>/pegawai/profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
 
       <a href="<?php echo site_url()?>/pegawai/halamanPasien" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge">12</span></a>
       
       <a href="<?php echo site_url()?>/pegawai/dataPasien" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
       
-      <a href="<?php echo site_url()?>/pegawai/tambahKamar" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge">25</span></a>
+      <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge">25</span></a>
     </div>
 </div>
 
@@ -239,8 +239,8 @@ body{
 						<th>Ketersediaan</th>
 						<th>Harga Kamar</th>
 						<th>Id Pasien</th>
-						
-						<th colspan="3" class="text-center">Aksi</th>
+					<!-- 	
+						<th colspan="3" class="text-center">Aksi</th> -->
 
 	
 					</tr>
@@ -254,13 +254,7 @@ body{
 							<td><?php echo $key->nama_kamar ?></td>
 							<td><?php echo $key->ketersediaan ?></td>
 							<td><?php echo $key->harga ?></td>
-							<td><?php echo $key->id_pasien ?></td>
-
-
-							<td><a href="<?php echo site_url('') ?>/Pegawai/update/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td>
-							<td><a href="<?php echo site_url('') ?>/Pegawai/delete/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
-							<td><a href="<?php echo site_url('') ?>/DataObat/dataObatPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pendidikan</button></td>
-							
+							<td><?php echo $key->id_pasien ?></td>	
 						</tr>
 				<?php } ?>
 		

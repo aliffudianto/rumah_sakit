@@ -34,7 +34,7 @@ class Pegawai extends CI_Controller {
 		$this->load->view('pegawai/home_kamar',$data);
 	}
 
-	public function create()
+	public function createPasien()
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
@@ -51,7 +51,7 @@ class Pegawai extends CI_Controller {
 			}	
 	}
 
-	public function update($id_pasien){
+	public function updatePasien($id_pasien){
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 
@@ -61,16 +61,27 @@ class Pegawai extends CI_Controller {
 		$this->form_validation->set_rules('no_hp', 'Nomor Hp', 'trim|required');
 
 		$this->load->model('Function_model');
-		$data['pasien']=$this->Function_model->selectionOfPasien($id_pasien);
+		$data['pasien']=$this->Function_model->seleksiPasien($id_pasien);
 
 		if ($this->form_validation->run() == FALSE) {
-			
+			echo "Berhasil Update";
 		} else {
-			
+			echo "Gagal Update";		
 		}
 	}
 
+	public function deletePasien($id_pasien)
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('Function_model');
 
+		$this->Function_model->hapusPasien($id_pasien);
+		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
+
+		$this->load->view('pegawai/home_pasien',$data);
+
+	}
 }
 
 /* End of file Pegawai.php */
