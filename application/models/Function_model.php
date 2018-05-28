@@ -11,16 +11,18 @@ class Function_model extends CI_Model {
 
 	public function tampilDataDetailsPasien()
 	{
-		$query()= $this->db->query('select * from pasien');
+		$query= $this->db->query('select * from pasien');
 		return $query->result_array();
 	}
 
 	public function insertDataPasien()
 	{
-		$data = array('id_pasien' =>$this->input , );
+		$data = array('id_pasien' =>$this->input->post('id'),
+		 );
 	}
-	public function ()
+	public function seleksiPasien($id)
 	{
+		$this->db->where('id_pasien', $id);
 	}
 
 

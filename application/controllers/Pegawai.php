@@ -10,9 +10,14 @@ class Pegawai extends CI_Controller {
 
 	public function halamanPegawai()
 	{
+		$this->load->view('pegawai/home_pegawai');
+	}
+
+	public function halamanPasien()
+	{
 		$this->load->model('Function_model');
 		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
-		$this->load->view('home_pegawai',$data);
+		$this->load->view('pegawai/home_pasien',$data);
 	}
 
 	public function create()
