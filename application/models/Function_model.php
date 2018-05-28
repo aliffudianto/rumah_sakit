@@ -8,6 +8,13 @@ class Function_model extends CI_Model {
 		parent::__construct();
 		//Do your magic here
 	}
+	public function tampilUser($username)
+	{
+		$this->db->where('username', $username);
+		$query= $this->db->get('user');
+		$this->db->join('*', 'user.username = pegawai.username', 'inner');
+		return $query->result();
+	}
 
 	public function tampilDataDetailsPasien()
 	{
@@ -24,7 +31,14 @@ class Function_model extends CI_Model {
 	{
 		$this->db->where('id_pasien', $id);
 		$query= $this->db->get('pasien');
+		return $query->result();
 	}
+
+	public function hapusPasien($id){
+		$this->db->where('id_pasien',$id);
+		$this->db->delete('pasien');	
+	}
+
 
 
 

@@ -13,9 +13,11 @@ class Pegawai extends CI_Controller {
 		$this->load->view('pegawai/home_pegawai');
 	}
 
-	public function profile()
+	public function profile($username)
 	{
-		$this->load->view('pegawai/profile');
+		$this->load->model('Function_model');
+		$data['admin']=$this->Function_model->tampilUser($username);
+		$this->load->view('pegawai/profile',$data);
 	}
 
 	public function halamanPasien()
