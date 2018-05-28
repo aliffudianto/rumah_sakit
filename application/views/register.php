@@ -3513,7 +3513,11 @@ iframe {
 					</div>
 
 					<div class="text-center p-t-12">
-						
+							<label for="">Role</label>
+				<select name="level" class="form-control">
+				     <option value="">---</option>
+				    <option value="admin">Pegawai</option>
+				    <option value="user">Pasien</option>
 					</div>
 
 					<div class="text-center p-t-136">
