@@ -5,7 +5,7 @@ class Pegawai extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('mainPage');
+		$this->load->view('home');
 	}
 
 	public function halamanPegawai()
@@ -32,9 +32,26 @@ class Pegawai extends CI_Controller {
 			}	
 	}
 
-	public function update(){
-		
+	public function update($id_pasien){
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('no_hp', 'Nomor Hp', 'trim|required');
+
+		$this->load->model('Function_model');
+		$data['pasien']=$this->Function_model->selectionOfPasien($id_pasien);
+
+		if ($this->form_validation->run() == FALSE) {
+			
+		} else {
+			
+		}
 	}
+
+
 }
 
 /* End of file Pegawai.php */
