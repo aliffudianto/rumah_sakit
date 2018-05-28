@@ -39,6 +39,10 @@ class Function_model extends CI_Model {
 		$this->db->delete('pasien');	
 	}
 
+	public function tampilDataKamar(){
+		$query=$this->db->get('kamar');
+		return $query->result();
+	}
 
 
 

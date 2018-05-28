@@ -27,6 +27,13 @@ class Pegawai extends CI_Controller {
 		$this->load->view('pegawai/home_pasien',$data);
 	}
 
+	public function dataKamar()
+	{
+		$this->load->model('Function_model');
+		$data['list_kamar']=$this->Function_model->tampilDataKamar();
+		$this->load->view('pegawai/home_kamar',$data);
+	}
+
 	public function create()
 	{
 		$this->load->helper('url','form');
