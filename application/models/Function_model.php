@@ -23,6 +23,7 @@ class Function_model extends CI_Model {
 	public function seleksiPasien($id)
 	{
 		$this->db->where('id_pasien', $id);
+		$query= $this->db->get('pasien');
 	}
 
 
