@@ -10,7 +10,9 @@ class Pegawai extends CI_Controller {
 
 	public function halamanPegawai()
 	{
-		$this->load->view('pegawai/home_pegawai');
+		$this->load->model('Function_model');
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$this->load->view('pegawai/home_pegawai',$data);
 	}
 
 	public function profile($username)

@@ -16,6 +16,7 @@ class Function_model extends CI_Model {
 		return $query->result();
 	}
 
+
 	public function tampilDataDetailsPasien()
 	{
 		$query= $this->db->query('select * from pasien');
@@ -44,7 +45,10 @@ class Function_model extends CI_Model {
 		return $query->result();
 	}
 
-
+	public function totalPasien(){
+		$query= $this->db->query('select count(*) from pasien as jumlah');
+		return $query->result();
+	}
 
 
 }

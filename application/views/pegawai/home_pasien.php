@@ -246,8 +246,7 @@ body{
 				</thead>
 				<tbody>
 				<?php foreach ($biodata_pasien as $key) {
-				?>
-						
+				?>		
 						<tr>
 							<td><?php echo $key['id_pasien'] ?></td>
 							<td><?php echo $key['nama_pasien'] ?></td>
