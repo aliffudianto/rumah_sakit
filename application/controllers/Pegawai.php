@@ -11,6 +11,7 @@ class Pegawai extends CI_Controller {
 	public function halamanPegawai()
 	{
 		$this->load->model('Function_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$this->load->view('pegawai/home_pegawai',$data);
 	}
@@ -22,10 +23,12 @@ class Pegawai extends CI_Controller {
 		$this->load->view('pegawai/profile',$data);
 	}
 
-	public function halamanPasien()
+	public function halamanPasien($username)
 	{
 		$this->load->model('Function_model');
 		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
 		$this->load->view('pegawai/home_pasien',$data);
 	}
 
@@ -34,6 +37,22 @@ class Pegawai extends CI_Controller {
 		$this->load->model('Function_model');
 		$data['list_kamar']=$this->Function_model->tampilDataKamar();
 		$this->load->view('pegawai/home_kamar',$data);
+	}
+
+	public function viewTransaksi()
+	{	
+		$this->load->model('Function_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$this->load->view('pegawai/data_transaksi',$data);
+	}
+
+	public function dataTransaksi()
+	{	
+		$this->load->model('Function_model');
+		$result['data_transaksi']=$this->Function_model->tampilDataTransaksi();
+		header("Content-Type: application/json");
+        echo json_encode($result);
 	}
 
 	public function createPasien()

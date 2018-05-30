@@ -221,7 +221,7 @@ body{
 
       <a href="<?php echo site_url()?>/pegawai/halamanPasien" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge">12</span></a>
       
-      <a href="<?php echo site_url()?>/pegawai/dataPasien" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
+      <a href="<?php echo site_url()?>/pegawai/viewTransaksi" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
       
       <a href="<?php echo site_url()?>/pegawai/tambahKamar" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge">25</span></a>
     </div>

@@ -1,7 +1,7 @@
 $(function() {
   $.ajax({
     type: "GET",
-    url: "getDetailsObat/"
+    url: "dataTransaksi/"
   }).done(function(countries) {
     countries.unshift({ id: "0", name: "" });
 

@@ -45,9 +45,15 @@ class Function_model extends CI_Model {
 		return $query->result();
 	}
 
-	public function totalPasien(){
-		$query= $this->db->query('select count(*) from pasien as jumlah');
+	public function tampilDataTransaksi(){
+		$query=$this->db->get('transaksi');
 		return $query->result();
+	}
+
+	public function totalPasien(){
+		$query= $this->db->query('select * from pasien');
+		$total= $query->num_rows();
+		return $total;
 	}
 
 
