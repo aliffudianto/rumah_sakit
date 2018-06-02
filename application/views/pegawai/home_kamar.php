@@ -7,8 +7,13 @@
     <title>Profile Admin</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
+      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" />
+
+      <script type="text/javascript" rel="stylesheet" src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
+      <script type="text/javascript" src="<?php echo base_url()?>assets/custom/kamar.js"></script>
 
 <style>
   
@@ -229,39 +234,7 @@ body{
     </div>
 </div>
 
-<!--Latest User-->
-	<div class="table-responsive">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Id Kamar</th>
-						<th>Nama Kamar</th>
-						<th>Ketersediaan</th>
-						<th>Harga Kamar</th>
-						<th>Id Pasien</th>
-					<!-- 	
-						<th colspan="3" class="text-center">Aksi</th> -->
-
-	
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($list_kamar as $key) {
-				?>
-						
-						<tr>
-							<td><?php echo $key->id_kamar ?></td>
-							<td><?php echo $key->nama_kamar ?></td>
-							<td><?php echo $key->ketersediaan ?></td>
-							<td><?php echo $key->harga ?></td>
-							<td><?php echo $key->id_pasien ?></td>	
-						</tr>
-				<?php } ?>
-		
-				</tbody>
-			</table>
-		</div>
-
+<div id="kamar"></div>
 
   <footer id="footer">
     <p>CodeIgniter 2018</p>

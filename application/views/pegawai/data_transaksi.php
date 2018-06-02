@@ -235,8 +235,7 @@ body{
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Pasien<span class="badge">25</span></a>
     </div>
 </div>
-
-
+<div id="jsGrid"></div>
   <footer id="footer">
     <p>CodeIgniter 2018</p>
   </footer>

@@ -34,9 +34,28 @@ class Pegawai extends CI_Controller {
 
 	public function dataKamar()
 	{
+		$this->load->view('pegawai/home_kamar');
+	}
+
+	public function jsKamar()
+	{
 		$this->load->model('Function_model');
-		$data['list_kamar']=$this->Function_model->tampilDataKamar();
-		$this->load->view('pegawai/home_kamar',$data);
+		$result['dataKamar']=$this->Function_model->tampilDataKamar();
+		header("Content-Type: application/json");
+        echo json_encode($result);
+	}
+
+
+
+
+
+
+
+	public function kamarAktif()
+	{
+		$this->load->model('Function_model');
+		$active['dataKamar']=$this->Function_model->tampilDataKamar();
+		$this->load->view('pegawai/kamar_aktif', $active);
 	}
 
 	public function viewTransaksi()
@@ -103,6 +122,28 @@ class Pegawai extends CI_Controller {
 		$this->load->view('pegawai/home_pasien',$data);
 
 	}
+
+	public function tambahKamar(){
+        $this->load->model('Function_model');
+        $this->Pasien_model->addKamar();
+    }
+
+    public function hapusKamar()
+    {
+        $this->load->model('Function_model');
+        $id = $this->input->post('id_kamar'); 
+        $this->Pasien_model->deleteKamar($id);
+    }
+     public function editKamar()
+    {
+       $this->load->model('Function_model');
+       $id=$this->input->post('id_kamar');
+       $this->Pasien_model->updateKamar($id);
+
+
+	
+    }
+	
 }
 
 /* End of file Pegawai.php */

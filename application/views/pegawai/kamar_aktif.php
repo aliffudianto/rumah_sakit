@@ -1,67 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-  
-    <title>Halaman Admin Rumah Sakit</title>
+    <title>Kamar Aktif</title>
 
-    <!-- Bootstrap core CSS -->
-    <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-    <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
-    <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>  
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
+     
+      <link rel="stylesheet" href="<?php echo base_url(); ?> assets/datatables/dataTables.min.css" /> 
+
+      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#kamar_active').DataTable();
+} );
+</script>
 
 <style>
-	
+  
 body{
-	background: #f4f4f4;
+  background: #f4f4f4;
 }
 
 .navbar{
-	min-height: 33px !important;
-	margin-bottom: 0;
-	border-radius: 0;
+  min-height: 33px !important;
+  margin-bottom: 0;
+  border-radius: 0;
 
 }
 .navbar-nav> li>a, .navbar-brand{
-	padding-top: 6px !important;
-	padding-bottom: 0;
-	height: 33px;
+  padding-top: 6px !important;
+  padding-bottom: 0;
+  height: 33px;
 
 }
 
 .main-color-bg{
-	background-color: #095f59;
-	color: #ffffff !important;
+  background-color: #095f59;
+  color: #ffffff !important;
 }
 
 
 /*Header */
 
 #header{
-	background: #333333;
-	color: #ffffff;
-	padding-bottom: 10px;
-	margin-bottom: : 15px;
+  background: #333333;
+  color: #ffffff;
+  padding-bottom: 10px;
+  margin-bottom: : 15px;
 }
 
 #header .create{
-	padding-top: 20px;
+  padding-top: 20px;
 }
 
 .dash-box{
-	text-align: center;
+  text-align: center;
 }
 
 #footer{
-	background: #333333;
-	color: #ffffff;
-	text-align: center;
-	padding: 30px;
-	margin-top: 30px;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
 
 }
 
@@ -140,11 +146,11 @@ body{
 /*Breadcrumb*/
 
 .breadcrumb{
-	background: #cccccc;
-	color: #333333;
+  background: #cccccc;
+  color: #333333;
 }
 .breadcrumb a{
-	color: #333333;
+  color: #333333;
 }
 </style>
 
@@ -206,7 +212,9 @@ body{
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li class="active">Dashboard</li>
+      	<div class="text-center">
+        	<li class="active"><h1>Data Kamar : </h1></li>
+        </div>
       </ol>
     </div>
   </section>
@@ -220,89 +228,45 @@ body{
       <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Dashboard <span class="badge">12</span>
       </a>
+       
+       <a href="<?php echo site_url()?>/pegawai/profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
+
+      <a href="<?php echo site_url()?>/pegawai/halamanPasien" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge">12</span></a>
       
-      <a href="<?php echo site_url()?>/pegawai/profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
-      <a href="<?php echo site_url()?>/pegawai/halamanPasien" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge"></span></a>
-     
-      <a href="<?php echo site_url()?>/pegawai/viewTransaksi" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
+      <a href="<?php echo site_url()?>/pegawai/dataPasien" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
       
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge">25</span></a>
     </div>
+</div>
 
-<!--         <div class="well">
-          <h4>Disk Space Used</h4>
-          <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-    60%
-  </div>
-</div>
-<h4>Bandwidth Used</h4>
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-    40%
-  </div>
-</div>
-        </div> -->
-      </div>
-      <div class="col-md-9">
-          <div class="panel panel-default">
-  <div class="panel-heading" style="background-color:  #095f59;">
-    <h3 class="panel-title"><div class="text-center">Aktivitas Website </div></h3>
-  </div>
-  <div class="panel-body">
-   <div class="col-md-3">
-     <div class="well dash-box">
-      <a href="<?php echo site_url()?>/pegawai/kamarAktif">
-       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
-       <h4>Data Kamar Pasien</h4>
-      </a>
-     </div>
-   </div>
- 
-  </div>
-</div>
 <!--Latest User-->
-<div class="panel panel-default">
-  <div class="panel-heading"style="background-color:  #095f59;>
-    <h3 class="panel-title">Latest Users</h3>
-  </div>
-  <div class="panel-body">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Joined</th>
-      </tr>
+	<div class="table-responsive">
+			<table class="table table-hover" id="kamar_active">
+				<thead>
+					<tr>
+						<th>Id Kamar</th>
+						<th>Nama Kamar</th>
+						<th>Id Pasien</th>
+					<!-- 	
+						<th colspan="3" class="text-center">Aksi</th> -->
 
-    <tr>
-      <td>Madhav Prasad</td>
-      <td>mr.madhavprasad@gmail.com</td>
-      <td>Dec 13,2014</td>
-    </tr>
-    <tr>
-      <td>Nagendra Kushwaha</td>
-      <td>nkushwaha822@gmail.com</td>
-      <td>Feb 15,2014</td>
-    </tr>
-    <tr>
-      <td>Arun Kumar</td>
-      <td>kumarun@yahoo.com</td>
-      <td>Aug 17, 2015</td>
-    </tr>
-    <tr>
-      <td>Nabin Singh</td>
-      <td>singhNavs@outlook.com</td>
-      <td>March 08,2016</td>
-    </tr>
-    </table>
-
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
-</section>
+	
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($dataKamar as $key) {
+				?>
+						
+						<tr>
+							<td><?php echo $key->id_kamar ?></td>
+							<td><?php echo $key->nama_kamar ?></td>
+							<td><?php echo $key->id_pasien ?></td>	
+						</tr>
+				<?php } ?>
+		
+				</tbody>
+			</table>
+		</div>
 
 
   <footer id="footer">
@@ -312,8 +276,7 @@ body{
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
-    <script src="dist/js/bootstrap.min.js"></script>
+</section>
+  
   </body>
 </html>

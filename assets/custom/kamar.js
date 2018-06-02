@@ -1,11 +1,11 @@
 $(function() {
   $.ajax({
     type: "GET",
-    url: "dataTransaksi/"
-  }).done(function() {
-    //countries.unshift({ id: "0", name: "" });
+    url: "jsKamar/"
+  }).done(function(countries) {
+    countries.unshift({ id: "0", name: "" });
 
-    $("#jsGrid").jsGrid({
+    $("#kamar").jsGrid({
       height: "300px",
       width: "100%",
       filtering: true,
@@ -16,60 +16,60 @@ $(function() {
       autoload: true,
       pageSize: 10,
       pageButtonCount: 5,
-      deleteConfirm: "Do you really want to delete client?",
+      deleteConfirm: "Hapus Kamar?",
       controller: {
         loadData: function(filter) {
           return $.ajax({
             type: "GET",
-            url: "getDetailsObat/",
+            url: "jsKamar/",
             data: filter
           });
         },
         insertItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "simpanDataObat/",
+            url: "tambahKamar/",
             data: item
           });
         },
         updateItem: function(item) {
           return $.ajax({
             type: "PUT",
-            url: "/clients/",
+            url: "editKamar/",
             data: item
           });
         },
         deleteItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "editDataObat/",
+            url: "hapusKamar/",
             data: item
           });
         }
       },
       fields: [
         {
-          name: "id_obat",
-          title: "Id Obat",
+          name: "id_kamar",
+          title: "Id Kamar",
           type: "text",
           width: 150
         },
         {
-          name: "nama_obat",
-          title: "Nama Obat",
+          name: "nama_kamar",
+          title: "Nama Kamar",
           type: "text",
           width: 150
         },
         {
           name: "harga",
-          title: "Harga Obat",
+          title: "Harga Kamar",
           type: "number",
           width: 150
         },
         {
-          name: "jumlah_stok",
-          title: "Jumlah Stok",
-          type: "number",
+          name: "ketersediaan",
+          title: "Keterangan",
+          type: "text",
           width: 50
         },
         { type: "control" }

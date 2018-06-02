@@ -42,7 +42,9 @@ class Function_model extends CI_Model {
 
 	public function tampilDataKamar(){
 		$query=$this->db->get('kamar');
-		return $query->result();
+		 if($query->num_rows()>0){
+            return $query->result();
+        }
 	}
 
 	public function tampilDataTransaksi(){
@@ -55,6 +57,25 @@ class Function_model extends CI_Model {
 		$total= $query->num_rows();
 		return $total;
 	}
+
+	public function addKamar()
+    {
+        $data= $this->input->post();
+        $this->db->insert('kamar', $data);
+    }
+
+    public function deleteKamar($id)
+    {
+        $this->db->where('id_kamar', $id);
+        $this->db->delete('kamar');
+    }
+
+    public function updateKamar($id)
+    {
+        $this->db->where('id_kamar', $id);
+        $data= $this->input->post();
+        $this->db->update('kamar',$data);
+    }
 
 
 }
