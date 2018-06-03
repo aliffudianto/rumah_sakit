@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
+	  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
     <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>  
 
@@ -249,6 +249,7 @@ body{
   <div class="panel-heading" style="background-color:  #095f59;">
     <h3 class="panel-title"><div class="text-center">Aktivitas Website </div></h3>
   </div>
+
   <div class="panel-body">
    <div class="col-md-3">
      <div class="well dash-box">
@@ -258,7 +259,17 @@ body{
       </a>
      </div>
    </div>
- 
+  
+   <div class="col-md-3">
+     <div class="well dash-box">
+      <a href="<?php echo site_url()?>/transaksi/biayaKamar">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
+       <h4>Pembayaran Pasien</h4>
+      </a>
+     </div>
+   </div>
+
+
   </div>
 </div>
 <!--Latest User-->

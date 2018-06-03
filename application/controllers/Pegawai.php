@@ -54,7 +54,7 @@ class Pegawai extends CI_Controller {
 	public function kamarAktif()
 	{
 		$this->load->model('Function_model');
-		$active['dataKamar']=$this->Function_model->tampilDataKamar();
+		$active['dataKamar']=$this->Function_model->dataKamarAktif();
 		$this->load->view('pegawai/kamar_aktif', $active);
 	}
 

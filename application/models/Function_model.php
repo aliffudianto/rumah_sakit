@@ -47,6 +47,12 @@ class Function_model extends CI_Model {
         }
 	}
 
+	public function dataKamarAktif(){
+
+		$query=$this->db->query('select * from kamar');
+		return $query->result();
+	}
+
 	public function tampilDataTransaksi(){
 		$query=$this->db->get('transaksi');
 		return $query->result();
