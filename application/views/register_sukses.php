@@ -24,8 +24,9 @@
 			
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Rumah Sakit CodeIgniter</h1>
-				<p>TI2E</p>
+			<h2>Registration Success</h2>
+				<h3>Thank you for verifying your Account
+Please go to login page and start the journey.</h3>
 				<a href="<?php echo site_url();?>/LoginUser"><button type="button" class="btn btn-primary">Login</button></a>
 				</div>
 		</div>
