@@ -26,7 +26,7 @@
 			<div class="container">
 				<h1>Rumah Sakit CodeIgniter</h1>
 				<p>TI2E</p>
-				<a href="<?php echo site_url();?>/Login"><button type="button" class="btn btn-primary">Login</button></a>
+				<a href="<?php echo site_url();?>/LoginUser"><button type="button" class="btn btn-primary">Login</button></a>
 				</div>
 		</div>
 
