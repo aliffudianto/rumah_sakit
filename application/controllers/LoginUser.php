@@ -42,30 +42,30 @@ class LoginUser extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
-		redirect('login','refresh');
+		redirect('home','refresh');
 	}
 
 	public function insertUser()
 	{
 		$this->load->helper('url', 'form');
 		$this->load->library('form_validation');
-		$this->load->model('User');
+		$this->load->model('Model_user');
 		
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
 		
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('tambah_user_view');
+			$this->load->view('register');
 		} else {
 			$this->User->insert();
-			$this->load->view('tambah_user_sukses');	
+			$this->load->view('register_sukses');	
 			
 		}
 	}
 
 	public function register()
 	{
-		$this->load->view('tambah_user_view');
+		$this->load->view('register');
 	}
 }
 
