@@ -67,6 +67,7 @@ class LoginUser extends CI_Controller {
 	{
 		$this->load->view('register');
 	}
+	
 }
 
 /* End of file Login.php */

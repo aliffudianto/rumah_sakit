@@ -3486,10 +3486,12 @@ iframe {
 				</div>
 
 				<form class="login100-form validate-form">
+				
 					<span class="login100-form-title">
 						Login Area
 					</span>
-
+					<?php echo form_open_multipart('loginUser/cekLogin/'); ?>
+						<?php echo validation_errors(); ?>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
@@ -3517,12 +3519,13 @@ iframe {
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
+						<a class="txt2" href="<?php echo site_url('') ?>/LoginUser/register">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
 				</form>
+				<?php echo form_close(); ?></a>
 			</div>
 		</div>
 		<script>
@@ -3588,14 +3591,5 @@ iframe {
 })(jQuery);
 		</script>
 	</div>
-
-		<h1 class="text-center">Hello World</h1>
-
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
- 		<script src="Hello World"></script>
 	</body>
 </html>
