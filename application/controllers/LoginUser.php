@@ -22,7 +22,7 @@ class LoginUser extends CI_Controller {
 
 	public function cekDb($password)
 	{
-		$this->load->model('ModelUser');
+		$this->load->model('Model_user');
 		$username=$this->input->post('username');
 		$result = $this->user->login($username, $password);
 		if ($result) {
