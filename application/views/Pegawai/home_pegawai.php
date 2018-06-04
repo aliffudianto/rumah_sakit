@@ -173,7 +173,7 @@ body{
 
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">Welcome, Madhav</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->

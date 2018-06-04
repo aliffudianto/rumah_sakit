@@ -14,7 +14,12 @@ class LoginUser extends CI_Controller {
 		$this->form_validation->set_rules('username', 'username', 'trim|required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required|callback_cekDb');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home');
+			$authentikasi = $session_data['level'];
+			if($authentikasi=='admin'){
+				redirect('pegawai/halamanPegawai','refresh');
+			}else if($authentikasi=='user'){
+				redirect('pasien/halamanPegawai','refresh');
+			}
 		} else {
 			redirect('pegawai/halamanPegawai','refresh');
 		}
@@ -57,7 +62,7 @@ class LoginUser extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('register');
 		} else {
-			$this->Model_user->insert();
+			$this->Model_user->registerUser();
 			$this->load->view('register_sukses');	
 			
 		}
