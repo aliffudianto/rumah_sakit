@@ -60,6 +60,10 @@ $acl = array(
 	'welcome/index' => array(
 		'public'
 	),
+	'Pegawai'=>array(
+		'admin' => true,
+		'user' =>false,
+	),
 
 );
 

@@ -23,29 +23,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <legend>Nama Pasien:</legend>
+                    <legend>Nama Pasien:</legend
                 </div>
                 <!-- panel preview -->
                 <div class="col-sm-5">
                     <h4>Total Pembayaran Pasien:</h4>
                     <div class="panel panel-default">
                         <div class="panel-body form-horizontal payment-form">
+                        <?php echo form_open_multipart('pegawai/update/'.$this->uri->segment(3));?>
+                        <?php foreach ($total as $key){ ?>
+                            
                             <div class="form-group">
-                            <?php foreach ($total as $key) { ?>
-                                <label for="id_pasien" class="col-sm-3 control-label">Id Pasien</label>
+                                <label for="id_pasien" class="col-sm-3 control-label">Id Pasien </label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $key->id_pasien?>">
+                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $total[0]->id_pasien?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="jumlah" class="col-sm-3 control-label">Jumlah Pembayaran</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?php echo $key->jumlah ?>">
+                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?php echo $total[0]->jumlah?>">
                                 </div>
                             </div> 
                         </div>
-                        <?php } ?>
                 </div> <!-- / panel preview -->
+                        <?php } ?>
                 </div>
                 
                 <div class="col-sm-6">
@@ -55,7 +57,7 @@
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Id Pasien</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien">
+                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $total[0]->id_pasien?>">
                                 </div>
                             </div>
                             <div class="form-group">

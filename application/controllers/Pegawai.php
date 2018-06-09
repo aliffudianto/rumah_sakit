@@ -10,52 +10,78 @@ public function __construct()
 	if($this->session->userdata('logged_in')){
 			$session_data= $this->session->userdata('logged_in');
 			$data['username']=$session_data['username'];
-			$data['level']=$session_data['level'];
-			$current_controller = $this->router->fetch_class();
-			$this->load->library('acl');
-			if(!$this->acl->is_public($current_controller)){
-				if(!$this->acl->is_allowed($current_controller, $data['level'])){
-					redirect('loginUser','refresh');
-				}	
+			$level=$data['level']=$session_data['level'];
+			if($level!='admin'){
+				redirect('pasien','refresh');
 			}
-
 		}else{
 			redirect('loginUser','refresh');
 		}
 }
 
 
-	// public function index()
-	// {
-	// 	$this->load->view('home');
-	// }
+	public function index()
+	{
+		$this->load->view('home');
+	}
 
 	public function halamanPegawai()
 	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
 		//$data['user']=$this->Function_model->tampilUser($username);
 		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
 		$this->load->view('pegawai/home_pegawai',$data);
 	}
 
 	public function profile($username)
 	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		$data['admin']=$this->Function_model->tampilUser($username);
 		$this->load->view('pegawai/profile',$data);
 	}
 
 	public function halamanPasien($username)
 	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
-		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
-		$data['user']=$this->Function_model->tampilUser($username);
+		$this->load->model('Transaksi_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
 		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
+		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
 		$this->load->view('pegawai/home_pasien',$data);
 	}
 
 	public function dataKamar()
 	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		$this->load->view('pegawai/home_kamar');
 	}
 
@@ -82,9 +108,15 @@ public function __construct()
 
 	public function viewTransaksi()
 	{	
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
-		//$data['user']=$this->Function_model->tampilUser($username);
+		$this->load->model('Transaksi_model');
+
 		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		$this->load->view('pegawai/data_transaksi',$data);
 	}
 

@@ -172,7 +172,7 @@ body{
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome, Madhav</a></li>
+            <li class="active"><a href="index.html">Welcome, <?php echo $level ?></a></li>
             <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
@@ -218,15 +218,15 @@ body{
       <div class="col-md-3">
         <div class="list-group">
       <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        Dashboard <span class="badge">12</span>
+        Dashboard <span class="badge"><?php echo $level ?></span>
       </a>
       
-      <a href="<?php echo site_url()?>/pegawai/profile" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge">12</span></a>
-      <a href="<?php echo site_url()?>/pegawai/halamanPasien" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge"></span></a>
+      <a href="<?php echo site_url()?>/pegawai/profile/<?php echo $username ?>" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile<span class="badge"><?php echo $level ?></span></a>
+      <a href="<?php echo site_url()?>/pegawai/halamanPasien/<?php echo $username ?>" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Data Pasien<span class="badge"><?php echo $jumlah ?></span></a>
      
-      <a href="<?php echo site_url()?>/pegawai/viewTransaksi" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge">126</span></a>
+      <a href="<?php echo site_url()?>/pegawai/viewTransaksi" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Data Transaksi<span class="badge"><?php echo $nTransaksi ?></span></a>
       
-      <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge">25</span></a>
+      <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge"><?php echo $nKamar ?></span></a>
     </div>
 
 <!--         <div class="well">
@@ -259,17 +259,24 @@ body{
       </a>
      </div>
    </div>
-  
+    
    <div class="col-md-3">
      <div class="well dash-box">
       <a href="<?php echo site_url()?>/transaksi/biayaKamar">
        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
-       <h4>Pembayaran Pasien</h4>
+       <h4>Pendaftaran Pasien</h4>
       </a>
      </div>
    </div>
 
-
+   <div class="col-md-3">
+     <div class="well dash-box">
+      <a href="<?php echo site_url()?>/transaksi/biayaKamar">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
+       <h4>Pendaftaran Kamar</h4>
+      </a>
+     </div>
+   </div>
   </div>
 </div>
 <!--Latest User-->
@@ -278,35 +285,28 @@ body{
     <h3 class="panel-title">Latest Users</h3>
   </div>
   <div class="panel-body">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Joined</th>
-      </tr>
+    <div class="col-md-5">
+     <div class="well dash-box">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
 
-    <tr>
-      <td>Madhav Prasad</td>
-      <td>mr.madhavprasad@gmail.com</td>
-      <td>Dec 13,2014</td>
-    </tr>
-    <tr>
-      <td>Nagendra Kushwaha</td>
-      <td>nkushwaha822@gmail.com</td>
-      <td>Feb 15,2014</td>
-    </tr>
-    <tr>
-      <td>Arun Kumar</td>
-      <td>kumarun@yahoo.com</td>
-      <td>Aug 17, 2015</td>
-    </tr>
-    <tr>
-      <td>Nabin Singh</td>
-      <td>singhNavs@outlook.com</td>
-      <td>March 08,2016</td>
-    </tr>
-    </table>
+            <div class="form-group">
+              <?php echo form_open_multipart('transaksi/biayaKamar/'.$this->uri->segment(3));?>
+              <label for="id_pasien" class="cols-sm-2 control-label">Id Pasien</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="id_pasien" id="id_pasien"  placeholder="Masukkan Id Pasien"/>
+                </div>
+              </div>
+            </div>
 
+      <!-- <a href="<?php echo site_url()?>/transaksi/biayaKamar"> -->
+       <h4>Pembayaran Pasien</h4>
+      <?php echo form_close(); ?>
+
+      </a>
+     </div>
+   </div>
   </div>
 </div>
 

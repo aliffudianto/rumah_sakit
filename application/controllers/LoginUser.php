@@ -11,18 +11,14 @@ class LoginUser extends CI_Controller {
 	public function cekLogin()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('username', 'username', 'trim|required');
-		$this->form_validation->set_rules('password', 'password', 'trim|required|callback_cekDb');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|callback_cekDb');
 		if ($this->form_validation->run() == FALSE) {
-			$authentikasi = $session_data['level'];
-			if($authentikasi=='admin'){
-				redirect('pegawai/halamanPegawai','refresh');
-			}else if($authentikasi=='user'){
-				redirect('pasien/halamanPegawai','refresh');
-			}
+			$this->load->view('home');
 		} else {
 			redirect('pegawai/halamanPegawai','refresh');
 		}
+		
 	}
 
 	public function cekDb($password)
@@ -47,7 +43,7 @@ class LoginUser extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
-		redirect('home','refresh');
+		redirect('loginUser','refresh');
 	}
 
 	public function insertUser()

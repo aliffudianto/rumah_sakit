@@ -52,11 +52,18 @@ class Function_model extends CI_Model {
 		$query=$this->db->query('select * from kamar');
 		return $query->result();
 	}
+	public function jumlahKamar(){
+		$kamar=$this->db->get('kamar');
+		$jumlah=$kamar->num_rows();
+		return $jumlah;
+	}
 
 	public function tampilDataTransaksi(){
 		$query=$this->db->get('transaksi');
 		return $query->result();
 	}
+
+
 
 	public function totalPasien(){
 		$query= $this->db->query('select * from pasien');

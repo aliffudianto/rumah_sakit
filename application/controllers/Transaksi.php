@@ -14,10 +14,11 @@ class Transaksi extends CI_Controller {
 
 	}
 
-	public function biayaKamar($id)
+	public function biayaKamar($id_transaksi)
 	{		
 		$this->load->model('Transaksi_model');
-		$biaya['total']=$this->Transaksi_model->tampilBiayaKamar($id);
+		//$id=$this->input->post('id_pasien');
+		$biaya['total']=$this->Transaksi_model->tampilBiayaKamar($id_transaksi);
 		$this->load->view('pegawai/pembayaran',$biaya);
 	}
 

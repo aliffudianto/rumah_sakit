@@ -9,11 +9,17 @@ class Transaksi_model extends CI_Model {
 		//Do your magic here
 	}
 
-	public function tampilBiayaKamar($id)
+	public function jumlahTransaksi()
 	{
-		$this->db->where('id_pasien', $id);
-		$kamar=$this->db->get('transaksi');
-		return $kamar->result();		
+		$transaksi=$this->db->get('transaksi');
+		$total= $transaksi->num_rows();
+		return $total;		
+	}
+
+	public function tampilBiayaKamar($id_transaksi)
+	{
+		$query=$this->db->query('select * from transaksi where id_pasien=id_transaksi');
+		return $query->result();		
 	}
 
 	public function transaksiNonTunai($id){
@@ -25,6 +31,8 @@ class Transaksi_model extends CI_Model {
 		$this->db->where('id_transaksi',$id);
 		$this->db->update('transaksi', $data);
 	}
+
+
 
 }
 
