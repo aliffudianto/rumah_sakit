@@ -30,19 +30,18 @@
                     <h4>Total Pembayaran Pasien:</h4>
                     <div class="panel panel-default">
                         <div class="panel-body form-horizontal payment-form">
-                        <?php echo form_open_multipart('pegawai/update/'.$this->uri->segment(3));?>
                         <?php foreach ($total as $key){ ?>
                             
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Id Pasien </label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $total[0]->id_pasien?>">
+                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $key->fk_pasien?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="jumlah" class="col-sm-3 control-label">Jumlah Pembayaran</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?php echo $total[0]->jumlah?>">
+                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?php echo $key->jumlah?>">
                                 </div>
                             </div> 
                         </div>
@@ -52,12 +51,13 @@
                 
                 <div class="col-sm-6">
                     <h4>Pembayaran Non Tunai:</h4>
+                    <?php echo form_open_multipart('transaksi/payment/'.$this->uri->segment(3));?>
                     <div class="panel panel-default">
                         <div class="panel-body form-horizontal payment-form">
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Id Pasien</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $total[0]->id_pasien?>">
+                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $key->fk_pasien?>">
                                 </div>
                             </div>
                             <div class="form-group">

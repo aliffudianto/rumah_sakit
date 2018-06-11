@@ -7,6 +7,16 @@ class Transaksi extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
+		if($this->session->userdata('logged_in')){
+			$session_data= $this->session->userdata('logged_in');
+			$data['username']=$session_data['username'];
+			$level=$data['level']=$session_data['level'];
+			if($level!='admin'){
+				redirect('pasien','refresh');
+			}
+		}else{
+			redirect('loginUser','refresh');
+		}
 	}
 
 	public function index()
@@ -14,12 +24,16 @@ class Transaksi extends CI_Controller {
 
 	}
 
-	public function biayaKamar($id_transaksi)
+	public function biayaKamar($id_pasien)
 	{		
+		//echo $id_pasien;
 		$this->load->model('Transaksi_model');
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
 		//$id=$this->input->post('id_pasien');
-		$biaya['total']=$this->Transaksi_model->tampilBiayaKamar($id_transaksi);
-		$this->load->view('pegawai/pembayaran',$biaya);
+		$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+	$this->load->view('pegawai/pembayaran',$data);
+		
 	}
 
 	public function bayarKamar($id)

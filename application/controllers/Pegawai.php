@@ -133,15 +133,15 @@ public function __construct()
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('no_hp', 'Nomor Hp', 'trim|required');
+		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
+		$this->load->model('Function_model');
 
 			if ($this->form_validation->run() ==FALSE) {
-				$this->load->view('tambah_pegawai_view');
+				$this->load->view('pegawai/daftar_pasien');
 			}else{
 				$this->Function_model->insertDataPasien();
-				$this->load->view('tambah_pegawai_sukses');
+				$this->load->view('pasien_sukses');
 			}	
 	}
 
@@ -150,17 +150,17 @@ public function __construct()
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('no_hp', 'Nomor Hp', 'trim|required');
+		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
 
 		$this->load->model('Function_model');
 		$data['pasien']=$this->Function_model->seleksiPasien($id_pasien);
 
 		if ($this->form_validation->run() == FALSE) {
-			echo "Berhasil Update";
+			$this->load->view('pegawai/update_pasien', $data);
 		} else {
-			echo "Gagal Update";		
+			$this->Function_model->updatePasien($id_pasien);
+			echo "edit sukses";
 		}
 	}
 

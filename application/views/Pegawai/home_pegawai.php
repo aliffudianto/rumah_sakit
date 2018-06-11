@@ -262,23 +262,15 @@ body{
     
    <div class="col-md-3">
      <div class="well dash-box">
-      <a href="<?php echo site_url()?>/transaksi/biayaKamar">
+      <a href="<?php echo site_url()?>/pegawai/createPasien">
        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
        <h4>Pendaftaran Pasien</h4>
       </a>
      </div>
    </div>
-
-   <div class="col-md-3">
-     <div class="well dash-box">
-      <a href="<?php echo site_url()?>/transaksi/biayaKamar">
-       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
-       <h4>Pendaftaran Kamar</h4>
-      </a>
-     </div>
    </div>
-  </div>
-</div>
+   </div>
+
 <!--Latest User-->
 <div class="panel panel-default">
   <div class="panel-heading"style="background-color:  #095f59;>
@@ -289,8 +281,11 @@ body{
      <div class="well dash-box">
        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
 
+           
+            
             <div class="form-group">
-              <?php echo form_open_multipart('transaksi/biayaKamar/'.$this->uri->segment(3));?>
+
+            <?php echo form_open_multipart('transaksi/biayaKamar/'.$this->uri->segment(3));?>
               <label for="id_pasien" class="cols-sm-2 control-label">Id Pasien</label>
               <div class="cols-sm-10">
                 <div class="input-group">
@@ -299,7 +294,6 @@ body{
                 </div>
               </div>
             </div>
-
       <!-- <a href="<?php echo site_url()?>/transaksi/biayaKamar"> -->
        <h4>Pembayaran Pasien</h4>
       <?php echo form_close(); ?>

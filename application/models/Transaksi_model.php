@@ -16,10 +16,12 @@ class Transaksi_model extends CI_Model {
 		return $total;		
 	}
 
-	public function tampilBiayaKamar($id_transaksi)
+	public function tampilBiayaKamar($id_pasien)
 	{
-		$query=$this->db->query('select * from transaksi where id_pasien=id_transaksi');
-		return $query->result();		
+		$this->db->where('fk_pasien', $id_pasien);
+		$query= $this->db->get('transaksi');
+		//$this->db->join('*', 'user.username = pegawai.username', 'inner');
+		return $query->result();	
 	}
 
 	public function transaksiNonTunai($id){

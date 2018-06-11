@@ -25,9 +25,25 @@ class Function_model extends CI_Model {
 
 	public function insertDataPasien()
 	{
-		$data = array('id_pasien' =>$this->input->post('id'),
-		 );
+		$data = array(
+			'username' => $this->input->post('username'),
+			'nama_pasien' => $this->input->post('nama'),
+			'no_hp' => $this->input->post('no'),
+			'alamat' => $this->input->post('alamat'),
+			);
+		$this->db->insert('pasien', $data);
+		
 	}
+	public function updatePasien($id){
+		$data = array(
+			'nama_pasien' => $this->input->post('nama'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('tgl'),
+			);
+		$this->db->where('username',$id);
+		$this->db->update('pasien', $data);
+	}
+
 	public function seleksiPasien($id)
 	{
 		$this->db->where('id_pasien', $id);
