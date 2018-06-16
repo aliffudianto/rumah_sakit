@@ -268,6 +268,16 @@ body{
       </a>
      </div>
    </div>
+
+    <div class="col-md-3">
+     <div class="well dash-box">
+      <a href="<?php echo site_url()?>/pesanKamar/pesanKamar">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
+       <h4>Daftar Kamar</h4>
+      </a>
+     </div>
+   </div>
+
    </div>
    </div>
 

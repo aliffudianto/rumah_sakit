@@ -51,9 +51,10 @@
                 
                 <div class="col-sm-6">
                     <h4>Pembayaran Non Tunai:</h4>
-                    <?php echo form_open_multipart('transaksi/payment/'.$this->uri->segment(3));?>
                     <div class="panel panel-default">
                         <div class="panel-body form-horizontal payment-form">
+                    <?php echo form_open_multipart('transaksi/bayarKamar/'.$this->uri->segment(3));?>
+
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Id Pasien</label>
                                 <div class="col-sm-9">
@@ -71,7 +72,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <hr style="border:1px dashed #dddddd;">
-                            <button type="button" class="btn btn-primary btn-block">Pembayaran Non Tunai</button>
+                            <button type="submit" class="btn btn-primary btn-block">Pembayaran Non Tunai</button>
+                            <?php echo form_close(); ?>
+
                         </div>                
                     </div>
                 </div>

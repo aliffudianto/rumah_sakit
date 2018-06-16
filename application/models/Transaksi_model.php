@@ -7,6 +7,7 @@ class Transaksi_model extends CI_Model {
 	{
 		parent::__construct();
 		//Do your magic here
+
 	}
 
 	public function jumlahTransaksi()
@@ -26,14 +27,27 @@ class Transaksi_model extends CI_Model {
 
 	public function transaksiNonTunai($id){
 		$data = array(
-			'id_transaksi' => $this->input->post('id'),
+			'fk_pasien' => $this->input->post('id_pasien'),
 			'jumlah' => $this->input->post('jumlah'),
 			'tanggal' => $this->input->post('tanggal'),
 			);
-		$this->db->where('id_transaksi',$id);
+		$this->db->where('fk_pasien',$id);
 		$this->db->update('transaksi', $data);
-	}
 
+	}
+	// public function paymentPasien($id)
+	// {
+	// 	$tagihan=$this->input->post('jumlah');
+	// 	$jumlah=$
+	// 	$total = ($tagihan-jumlahTransaksi());
+
+	// 	$object = array(		
+	// 		'jumlah' => $total,
+	// 	);
+	// 	$this->db->where('id_pasien', $id);
+	// 	$this->db->update('transaksi', $object);
+
+	// }
 
 
 }

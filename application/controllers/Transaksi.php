@@ -32,7 +32,7 @@ class Transaksi extends CI_Controller {
 		$this->load->library('form_validation');
 		//$id=$this->input->post('id_pasien');
 		$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
-	$this->load->view('pegawai/pembayaran',$data);
+		$this->load->view('pegawai/pembayaran',$data);
 		
 	}
 
@@ -41,21 +41,40 @@ class Transaksi extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('id_transaksi', 'Id Transaksi', 'trim|required');
-		$this->form_validation->set_rules('biaya', 'Biaya', 'trim|required');
-		$this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required');
+		$this->form_validation->set_rules('jumlah', 'Masukkan Jumlah Nominal', 'trim|required');
 	
-		$this->load->model('Function_model');
-		$data['pasien']=$this->Transaksi_model->transaksiNonTunai($id);
+		$this->load->model('Transaksi_model');
 
+		$uang=$this->input->post('jumlah');
+		$dat[0]=$this->Transaksi_model->tampilBiayaKamar($id);
+
+		$data=$this->Transaksi_model->transaksiNonTunai($id);
+		echo $dat;
 		if ($this->form_validation->run() == FALSE) {
-			echo "Pembayaran Telah Berhasil";
+			echo "Pembayaran gagal";
+			echo $dat[0];
 		} else {
-			echo "Pembayaran Gagal";		
+			echo "Pembayaran Berhasil";		
 		}
 	}
 
 	
+	// public function payment($id)
+	// {
+	// 	$this->load->helper('url','form');
+	// 	$this->load->library('form_validation');
+	// 	$this->form_validation->set_rules('jumlah', 'Masukkan Jumlah Nominal', 'trim|required');
+	// 	$this->load->model('Transaksi_model');
+
+	// 	$data['pasien']=$this->Transaksi_model->paymentPasien($id);
+
+	// 		if ($this->form_validation->run() == FALSE) {
+	// 			echo "pembayaran gagal";
+	// 		} else {
+	// 			echo "pembayaran telah berhasil";
+	// 		}
+	// }
+
 		
 }
 
