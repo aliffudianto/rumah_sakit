@@ -231,12 +231,17 @@ body{
     
   <?php echo form_open_multipart('pegawai/createPasien'); ?>
   <?php echo validation_errors(); ?>
-  <div class="form-group">
+      <div class="form-group">
         <label for="">Username : </label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username">
       </div>
+      
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+      </div>
 
-  <div class="form-group">
+      <div class="form-group">
         <label for="">Nama Pasien</label>
         <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Pasien">
       </div>
@@ -245,12 +250,21 @@ body{
         <label for="">Alamat</label>
         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat">
       </div>
-      
 
       <div class="form-group">
         <label for="">No Hp</label>
         <input type="text" class="form-control" id="no" name="no" placeholder="Masukkan No Hp">
       </div>
+
+      <div class="form-group">
+        <label for="">Foto</label>
+        <input type="file" class="form-control" name="foto" size="20">
+      </div>
+      <div class="form-group">
+        <input type="hidden" class="form-control" name="akses" size="20" value="user">
+      </div>
+      
+      
       <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
       <?php echo form_close(); ?>
   </div>

@@ -271,7 +271,7 @@ body{
 
     <div class="col-md-3">
      <div class="well dash-box">
-      <a href="<?php echo site_url()?>/pesanKamar/pesanKamar">
+      <a href="<?php echo site_url()?>/pesanKamar/addKamar">
        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
        <h4>Daftar Kamar</h4>
       </a>
@@ -295,7 +295,7 @@ body{
             
             <div class="form-group">
 
-            <?php echo form_open_multipart('transaksi/biayaKamar/'.$this->uri->segment(3));?>
+            <?php echo form_open_multipart('transaksi/biayaKamar/');?>
               <label for="id_pasien" class="cols-sm-2 control-label">Id Pasien</label>
               <div class="cols-sm-10">
                 <div class="input-group">

@@ -30,10 +30,23 @@ class Function_model extends CI_Model {
 			'nama_pasien' => $this->input->post('nama'),
 			'no_hp' => $this->input->post('no'),
 			'alamat' => $this->input->post('alamat'),
+			'foto' => $this->upload->data('file_name'),
 			);
 		$this->db->insert('pasien', $data);
 		
 	}
+
+	public function createUser()
+	{
+		$data = array(
+			'username' => $this->input->post('username'),
+			'level' => $this->input->post('akses'),
+			'password' => $this->input->post('password'),
+			);
+		$this->db->insert('user', $data);
+		
+	}
+
 	public function updatePasien($id){
 		$data = array(
 			'nama_pasien' => $this->input->post('nama'),
@@ -52,8 +65,8 @@ class Function_model extends CI_Model {
 	}
 
 	public function hapusPasien($id){
-		$this->db->where('id_pasien',$id);
-		$this->db->delete('pasien');	
+		$this->db->where('username',$id);
+		$this->db->delete('user');	
 	}
 
 	public function tampilDataKamar(){

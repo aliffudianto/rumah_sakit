@@ -26,13 +26,18 @@ class PesanKamar extends CI_Controller {
 		$data['kamar']=$this->Kamar_model->kamarKosong();
 
 		//$this->load->view('pegawai/daftar_kamar',$data);
-
-		if ($this->form_validation->run() == false) {
+		if(!$data['kamar']){
+			echo "<script>alert('Seluruh Kamar Telah Terpakai')</script>";
+			redirect('pegawai/halamanPegawai','refresh');
+		}else {
+			if ($this->form_validation->run() == false) {
 				$this->load->view('pegawai/daftar_kamar',$data);
 			}else{
 				$this->Kamar_model->addKamarPasien();
-				echo "pendaftaran kamar telah berhasil";
-			}	
+				echo "<script>alert('pendaftaran kamar telah berhasil')</script>";
+				redirect('pegawai/halamanPegawai','refresh');
+			}
+		}	
 	}
 
 

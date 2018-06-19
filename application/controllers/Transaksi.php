@@ -24,16 +24,22 @@ class Transaksi extends CI_Controller {
 
 	}
 
-	public function biayaKamar($id_pasien)
+	public function biayaKamar()
 	{		
 		//echo $id_pasien;
 		$this->load->model('Transaksi_model');
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 		//$id=$this->input->post('id_pasien');
+		$id_pasien=$this->input->post('id_pasien');
+
 		$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			if(!$data['total']){
+				echo "<script>alert('pasien tidak valid')</script>";
+				redirect('pegawai/halamanPegawai','refresh');
+			}else{
 		$this->load->view('pegawai/pembayaran',$data);
-		
+	}
 	}
 
 	public function bayarKamar($id)

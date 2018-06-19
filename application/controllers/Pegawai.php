@@ -135,13 +135,30 @@ public function __construct()
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
+		//$this->form_validation->set_rules('foto', 'Foto', 'trim|required');
+
 		$this->load->model('Function_model');
 
 			if ($this->form_validation->run() ==FALSE) {
 				$this->load->view('pegawai/daftar_pasien');
 			}else{
-				$this->Function_model->insertDataPasien();
-				$this->load->view('pasien_sukses');
+				$config['upload_path'] = './assets/uploads/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size'] = '10000';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+				
+				if(! $this->upload->do_upload('foto')){
+					$error = array('error' =>$this->upload->display_errors());
+					$this->load->view('daftar_pasien', $error);
+				}else{
+					$this->Function_model->createUser();
+					$this->Function_model->insertDataPasien();
+					
+
+				}
 			}	
 	}
 
