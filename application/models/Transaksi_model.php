@@ -26,10 +26,12 @@ class Transaksi_model extends CI_Model {
 	}
 
 	public function transaksiNonTunai($id){
+		$total=$this->input->post('total');
+		$jumlah=$this->input->post('jumlah');
+		$sisa=$total-$jumlah;
 		$data = array(
 			'fk_pasien' => $this->input->post('id_pasien'),
-			'jumlah' => $this->input->post('jumlah'),
-			'tanggal' => $this->input->post('tanggal'),
+			'jumlah' => $sisa,
 			);
 		$this->db->where('fk_pasien',$id);
 		$this->db->update('transaksi', $data);

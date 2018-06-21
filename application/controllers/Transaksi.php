@@ -42,7 +42,7 @@ class Transaksi extends CI_Controller {
 	}
 	}
 
-	public function bayarKamar($id)
+	public function bayarKamar()
 	{		
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
@@ -51,19 +51,29 @@ class Transaksi extends CI_Controller {
 	
 		$this->load->model('Transaksi_model');
 
-		$uang=$this->input->post('jumlah');
-		$dat[0]=$this->Transaksi_model->tampilBiayaKamar($id);
-
-		$data=$this->Transaksi_model->transaksiNonTunai($id);
-		echo $dat;
+		//$uang=$this->input->post('jumlah');
+		$id=$this->input->post('id_pasien');
+		$this->Transaksi_model->transaksiNonTunai($id);
+	
 		if ($this->form_validation->run() == FALSE) {
 			echo "Pembayaran gagal";
-			echo $dat[0];
 		} else {
-			echo "Pembayaran Berhasil";		
+			$id_pasien=$this->input->post('id_pasien');
+			$data['jml']=$this->input->post('jumlah');
+			$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			$this->load->view('pegawai/nota_pembayaran',$data);
 		}
 	}
 
+	public function cetakNota(){
+
+		$this->load->library('pdf');
+		$this->load->model('Transaksi_model');
+			$id_pasien=$this->input->post('id_pasien');
+			$data['jml']=$this->input->post('jumlah');
+			$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			$this->load->view('pegawai/nota_pembayaran',$data);
+	}
 	
 	// public function payment($id)
 	// {

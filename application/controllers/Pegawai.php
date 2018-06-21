@@ -82,7 +82,7 @@ public function __construct()
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$data['nKamar']=$this->Function_model->jumlahKamar();
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
-		$this->load->view('pegawai/home_kamar');
+		$this->load->view('pegawai/home_kamar',$data);
 	}
 
 	public function jsKamar()
