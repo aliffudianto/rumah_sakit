@@ -28,7 +28,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="login-form">
 			<h2>login now</h2>
 			<?php echo form_open_multipart('loginUser/cekLogin/'); ?>
-				<span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+				<span><i class="fa fa-user" aria-hidden="true"></i></span>
 				<?php echo validation_errors(); ?>
 				<input type="text" name="username" placeholder="enter your name" required="">
 				<span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
