@@ -7,142 +7,10 @@
     <title>Profile Admin</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
+
       <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-
-<style>
-  
-body{
-  background: #f4f4f4;
-}
-
-.navbar{
-  min-height: 33px !important;
-  margin-bottom: 0;
-  border-radius: 0;
-
-}
-.navbar-nav> li>a, .navbar-brand{
-  padding-top: 6px !important;
-  padding-bottom: 0;
-  height: 33px;
-
-}
-
-.main-color-bg{
-  background-color: #095f59;
-  color: #ffffff !important;
-}
-
-
-/*Header */
-
-#header{
-  background: #333333;
-  color: #ffffff;
-  padding-bottom: 10px;
-  margin-bottom: : 15px;
-}
-
-#header .create{
-  padding-top: 20px;
-}
-
-.dash-box{
-  text-align: center;
-}
-
-#footer{
-  background: #333333;
-  color: #ffffff;
-  text-align: center;
-  padding: 30px;
-  margin-top: 30px;
-
-}
-
-
-
-.navbar-default {
-  background-color: #095f59;
-  border-color: #689a9b;
-}
-.navbar-default .navbar-brand {
-  color: #efee24;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #010800;
-}
-.navbar-default .navbar-text {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #010800;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle {
-  border-color: #689a9b;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #efee24;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #efee24;
-}
-.navbar-default .navbar-link {
-  color: #efee24;
-}
-.navbar-default .navbar-link:hover {
-  color: #010800;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #efee24;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #010800;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #010800;
-    background-color: #689a9b;
-  }
-}
-
-/*Breadcrumb*/
-
-.breadcrumb{
-  background: #cccccc;
-  color: #333333;
-}
-.breadcrumb a{
-  color: #333333;
-}
-</style>
 
 </head>
 
@@ -245,18 +113,14 @@ body{
 <div class="container">
       <div class="row">
       <div class="col-md-5  toppad  pull-left col-md-offset-0 ">
-           <A href="edit.html" >Edit Profile</A>
-
-        <A href="edit.html" >Logout</A>
-       <br>
-        <p class=" text-info">May 05,2014,03:00 pm </p>
+           <A href="" >Edit Profile</A>
       </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9 col-xs-offset-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-0 toppad" >
    
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Sheena Shrestha</h3>
+              <h3 class="panel-title"> <?php echo $user['nama_pegawai']?></h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -277,58 +141,34 @@ body{
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>
-                    <?php foreach ($admin as $key) { ?>
+                      <tr>
+                        <td>Id Pegawai :</td>
+                        <td><?php echo $user['id_pegawai']?></td>
+                      </tr>
+
                       <tr>
                         <td>Nama:</td>
-                        <td><?php echo $key->username?></td>
+                        <td><?php echo $user['username']?></td>
                       </tr>
+                                
                       <tr>
-                        <td>Nama:</td>
-                        <td><?php echo $key->username?></td>
+                        <td>Alamat:</td>
+                        <td><?php echo $user['alamat']?></td>
                       </tr>
-                      <tr>
-                        <td>Password:</td>
-                        <td><?php echo $key->username?></td>
-                      </tr>
+                      
                       <tr>
                         <td>Sebagai</td>
-                        <td><?php echo $key->level?></td>
+                        <td><?php echo $user['level']?></td>
                       </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Female</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address</td>
-                        <td>Kathmandu,Nepal</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                      </tr>
-                     <?php } ?>
                     </tbody>
                   </table>
                   
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+                  <a href="#" class="btn btn-primary">Edit</a>
+                  <a href="#" class="btn btn-primary">Back</a>
                 </div>
               </div>
             </div>
-                 <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                        </span>
-                    </div>
+                 
             
           </div>
         </div>

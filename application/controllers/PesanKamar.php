@@ -14,6 +14,7 @@ class PesanKamar extends CI_Controller {
 		
 	}
 
+	//untuk user 
 	public function addKamar()
 	{
 		$this->load->model('Kamar_model');

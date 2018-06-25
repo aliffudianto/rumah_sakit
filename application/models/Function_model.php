@@ -8,12 +8,15 @@ class Function_model extends CI_Model {
 		parent::__construct();
 		//Do your magic here
 	}
+
 	public function tampilUser($username)
 	{
-		$this->db->where('username', $username);
-		$query= $this->db->get('user');
-		$this->db->join('*', 'user.username = pegawai.username', 'inner');
-		return $query->result();
+		 $this->db->select('*');
+		 $this->db->from('user');
+		 $this->db->join('pegawai','user.username=pegawai.username');
+		 $this->db->where('user.username', $username);
+		 $query = $this->db->get();
+		 return $query->row_array();
 	}
 
 
@@ -23,6 +26,36 @@ class Function_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function detailsPasien()
+	{
+		 $this->db->select('*');
+		 $this->db->from('user');
+		 $this->db->join('pasien','user.username=pasien.username');
+		 $this->db->where('id_pasien', $this->uri->segment(3));
+		 $query = $this->db->get();
+		 return $query->row_array();
+	}
+
+	public function detailsPasien1()
+	{
+		 $this->db->select('*');
+		 $this->db->from('transaksi');
+		 $this->db->join('pasien','transaksi.fk_pasien=pasien.username');
+		 $this->db->where('username', $this->uri->segment(3));
+		 $query = $this->db->get();
+		 return $query->row_array();
+	}
+
+	public function detailsKamarPasien()
+	{
+		 $this->db->select('*');
+		 $this->db->from('kamar');
+		 $this->db->join('pasien','kamar.id_pasien=pasien.username');
+		 $this->db->where('username', $this->uri->segment(3));
+		 $query = $this->db->get();
+		 return $query->row_array();
+	}
+	
 	public function insertDataPasien()
 	{
 		$data = array(

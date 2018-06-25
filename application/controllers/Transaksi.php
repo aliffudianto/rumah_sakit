@@ -60,7 +60,8 @@ class Transaksi extends CI_Controller {
 		} else {
 			$id_pasien=$this->input->post('id_pasien');
 			$data['jml']=$this->input->post('jumlah');
-			$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			//$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			$data['total']=$this->Transaksi_model->nota($id_pasien);
 			$this->load->view('pegawai/nota_pembayaran',$data);
 		}
 	}

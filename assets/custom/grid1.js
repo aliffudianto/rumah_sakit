@@ -1,5 +1,4 @@
 $(function() {
-  var base_url=window.location.origin;
   $.ajax({
     type: "GET",
     url: "jsKamar/"
@@ -17,7 +16,7 @@ $(function() {
       autoload: true,
       pageSize: 10,
       pageButtonCount: 5,
-      deleteConfirm: "Hapus Kamar?",
+      deleteConfirm: "Do you really want to delete client?",
       controller: {
         loadData: function(filter) {
           return $.ajax({
@@ -29,21 +28,21 @@ $(function() {
         insertItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "tambahKamar/",
+            url: "addPegawai/",
             data: item
           });
         },
         updateItem: function(item) {
           return $.ajax({
             type: "PUT",
-            url: "editKamar/",
+            url: "/clients/",
             data: item
           });
         },
         deleteItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "hapusKamar/",
+            url: "deletePegawai/",
             data: item
           });
         }

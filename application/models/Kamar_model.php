@@ -7,7 +7,7 @@ class Kamar_model extends CI_Model {
 	{
 		$this->db->where('ketersediaan', 'tersedia');
 		$query= $this->db->get('kamar');
-		return $query->result();
+		return $query;
 	}
 
 

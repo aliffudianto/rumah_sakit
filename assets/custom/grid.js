@@ -1,9 +1,10 @@
 $(function() {
+  var base_url=window.location.origin;
   $.ajax({
     type: "GET",
     url: "dataTransaksi/"
-  }).done(function() {
-    //countries.unshift({ id: "0", name: "" });
+  }).done(function(countries) {
+    countries.unshift({ id: "0", name: "" });
 
     $("#jsGrid").jsGrid({
       height: "300px",
@@ -16,12 +17,12 @@ $(function() {
       autoload: true,
       pageSize: 10,
       pageButtonCount: 5,
-      deleteConfirm: "Do you really want to delete client?",
+      deleteConfirm: "Hapus Data Transaksi?",
       controller: {
         loadData: function(filter) {
           return $.ajax({
             type: "GET",
-            url: "getDetailsObat/",
+            url: "dataTransaksi/",
             data: filter
           });
         },
@@ -49,26 +50,26 @@ $(function() {
       },
       fields: [
         {
-          name: "id_obat",
-          title: "Id Obat",
+          name: "id_transaksi",
+          title: "Id Transaksi",
           type: "text",
           width: 150
         },
         {
-          name: "nama_obat",
-          title: "Nama Obat",
+          name: "jumlah",
+          title: "Jumlah Transaksi",
           type: "text",
           width: 150
         },
         {
-          name: "harga",
-          title: "Harga Obat",
+          name: "tanggal",
+          title: "Tanggal Transaksi",
           type: "number",
           width: 150
         },
         {
-          name: "jumlah_stok",
-          title: "Jumlah Stok",
+          name: "fk_pasien",
+          title: "Id Pasien",
           type: "number",
           width: 50
         },

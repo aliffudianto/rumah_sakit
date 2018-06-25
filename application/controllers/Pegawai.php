@@ -32,13 +32,17 @@ public function __construct()
 		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
 		$this->load->model('Transaksi_model');
-		//$data['user']=$this->Function_model->tampilUser($username);
+		$this->load->model('Kamar_model');
+		$username=$session_data['username'];
+		$data['user']=$this->Function_model->tampilUser($username);
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$data['nKamar']=$this->Function_model->jumlahKamar();
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
-
+		$data['kamar']=$this->Kamar_model->kamarKosong()->result();
+		$data['tersedia']=$this->Kamar_model->kamarKosong()->num_rows();
 		$this->load->view('pegawai/home_pegawai',$data);
 	}
+
 
 	public function profile($username)
 	{
@@ -47,7 +51,7 @@ public function __construct()
 		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
 		$this->load->model('Transaksi_model');
-		//$data['user']=$this->Function_model->tampilUser($username);
+		$data['user']=$this->Function_model->tampilUser($username);
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$data['nKamar']=$this->Function_model->jumlahKamar();
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
@@ -69,6 +73,25 @@ public function __construct()
 
 		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
 		$this->load->view('pegawai/home_pasien',$data);
+	}
+
+	public function detailsPasien($username)
+	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		//$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
+		$data['details_pasien']=$this->Function_model->detailsPasien();
+		$data['transaksi_pasien']=$this->Function_model->detailsPasien1();
+		$data['kamar_pasien']=$this->Function_model->detailsKamarPasien();
+
+		$this->load->view('pegawai/data_pasien',$data);
 	}
 
 	public function dataKamar()
@@ -132,6 +155,16 @@ public function __construct()
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
+		
 		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
@@ -140,7 +173,7 @@ public function __construct()
 		$this->load->model('Function_model');
 
 			if ($this->form_validation->run() ==FALSE) {
-				$this->load->view('pegawai/daftar_pasien');
+				$this->load->view('pegawai/daftar_pasien',$data);
 			}else{
 				$config['upload_path'] = './assets/uploads/';
 				$config['allowed_types'] = 'gif|jpg|png';
@@ -152,12 +185,12 @@ public function __construct()
 				
 				if(! $this->upload->do_upload('foto')){
 					$error = array('error' =>$this->upload->display_errors());
-					$this->load->view('daftar_pasien', $error);
+					$this->load->view('pegawai/daftar_pasien', $error);
 				}else{
 					$this->Function_model->createUser();
 					$this->Function_model->insertDataPasien();
-					
-
+					echo "<script>alert('Pendaftaran Pasie Telah Terhasil')</script>";
+					redirect('pegawai/createPasien','refresh');
 				}
 			}	
 	}

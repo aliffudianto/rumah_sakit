@@ -3477,7 +3477,7 @@ iframe {
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png" alt="IMG">
+					<img src="<?php echo base_url(); ?>assets/gambar/logo.png" alt="IMG">
 				</div>
 					<?php echo form_open_multipart('loginUser/cekLogin/'); ?>
 					<span class="login100-form-title">

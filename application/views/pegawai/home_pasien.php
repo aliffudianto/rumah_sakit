@@ -7,142 +7,11 @@
     <title>Halaman Data Pasien</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
+
       <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 
-<style>
-  
-body{
-  background: #f4f4f4;
-}
-
-.navbar{
-  min-height: 33px !important;
-  margin-bottom: 0;
-  border-radius: 0;
-
-}
-.navbar-nav> li>a, .navbar-brand{
-  padding-top: 6px !important;
-  padding-bottom: 0;
-  height: 33px;
-
-}
-
-.main-color-bg{
-  background-color: #095f59;
-  color: #ffffff !important;
-}
-
-
-/*Header */
-
-#header{
-  background: #333333;
-  color: #ffffff;
-  padding-bottom: 10px;
-  margin-bottom: : 15px;
-}
-
-#header .create{
-  padding-top: 20px;
-}
-
-.dash-box{
-  text-align: center;
-}
-
-#footer{
-  background: #333333;
-  color: #ffffff;
-  text-align: center;
-  padding: 30px;
-  margin-top: 30px;
-
-}
-
-
-
-.navbar-default {
-  background-color: #095f59;
-  border-color: #689a9b;
-}
-.navbar-default .navbar-brand {
-  color: #efee24;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #010800;
-}
-.navbar-default .navbar-text {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #010800;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle {
-  border-color: #689a9b;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #efee24;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #efee24;
-}
-.navbar-default .navbar-link {
-  color: #efee24;
-}
-.navbar-default .navbar-link:hover {
-  color: #010800;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #efee24;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #010800;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #010800;
-    background-color: #689a9b;
-  }
-}
-
-/*Breadcrumb*/
-
-.breadcrumb{
-  background: #cccccc;
-  color: #333333;
-}
-.breadcrumb a{
-  color: #333333;
-}
-</style>
 
 </head>
 
@@ -235,6 +104,7 @@ body{
 					<tr>
 						<th>Id</th>
 						<th>Nama</th>
+            <th>Username</th>
 						<th>Alamat</th>
 						<th>Contact</th>
             <th>Foto</th>
@@ -251,12 +121,14 @@ body{
 						<tr>
 							<td><?php echo $key['id_pasien'] ?></td>
 							<td><?php echo $key['nama_pasien'] ?></td>
+              <td><?php echo $key['username'] ?></td>
 							<td><?php echo $key['alamat'] ?></td>
 							<td><?php echo $key['no_hp'] ?></td>
               <td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key['foto']?>" alt="" width=175 height="125"></td>
 
 							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td>
-							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
+							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
+              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Lihat Data Pasien</button></td>
 
 						</tr>
 				<?php } ?>

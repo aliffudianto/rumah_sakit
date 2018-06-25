@@ -4,147 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile Admin</title>
+    <title>Halaman Data Pasien</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" />
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
 
-     
-      
-<style>
-  s
-body{
-  background: #f4f4f4;
-}
+      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
 
-.navbar{
-  min-height: 33px !important;
-  margin-bottom: 0;
-  border-radius: 0;
-
-}
-.navbar-nav> li>a, .navbar-brand{
-  padding-top: 6px !important;
-  padding-bottom: 0;
-  height: 33px;
-
-}
-
-.main-color-bg{
-  background-color: #095f59;
-  color: #ffffff !important;
-}
-
-
-/*Header */
-
-#header{
-  background: #333333;
-  color: #ffffff;
-  padding-bottom: 10px;
-  margin-bottom: : 15px;
-}
-
-#header .create{
-  padding-top: 20px;
-}
-
-.dash-box{
-  text-align: center;
-}
-
-#footer{
-  background: #333333;
-  color: #ffffff;
-  text-align: center;
-  padding: 30px;
-  margin-top: 30px;
-
-}
-
-
-
-.navbar-default {
-  background-color: #095f59;
-  border-color: #689a9b;
-}
-.navbar-default .navbar-brand {
-  color: #efee24;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #010800;
-}
-.navbar-default .navbar-text {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #efee24;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #010800;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #010800;
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle {
-  border-color: #689a9b;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #689a9b;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #efee24;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #efee24;
-}
-.navbar-default .navbar-link {
-  color: #efee24;
-}
-.navbar-default .navbar-link:hover {
-  color: #010800;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #efee24;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #010800;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #010800;
-    background-color: #689a9b;
-  }
-}
-
-/*Breadcrumb*/
-
-.breadcrumb{
-  background: #cccccc;
-  color: #333333;
-}
-.breadcrumb a{
-  color: #333333;
-}
-</style>
 
 </head>
 
@@ -217,7 +84,7 @@ body{
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-      <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+     <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Dashboard <span class="badge"><?php echo $level ?></span>
       </a>
       
@@ -228,23 +95,94 @@ body{
       
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge"><?php echo $nKamar ?></span></a>
     </div>
-</div>
-</div>
-</div>
-<div id="jsGrid"></div>
+    </div>
+
+<!--Latest User-->
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"> <?php echo $details_pasien['level']?></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row col-md-9 col-lg-9">
+                <div class="col-md-3 col-lg-3 " align="left">
+                  <img alt="User Pic" src="<?php echo base_url()?>/assets/uploads/<?php echo $details_pasien['foto']?>" class="img-circle img-responsive">
+                </div>
+                <div class="col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Id Pasien</td>
+                        <td>: <?php echo $details_pasien['id_pasien']?></td>
+                      </tr>
+                      <tr>
+                        <td>Username </td>
+                        <td>: <?php echo $details_pasien['username']?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Nama</td>
+                        <td>: <?php echo $details_pasien['nama_pasien']?></td>
+                      </tr>
+                                
+                      <tr>
+                        <td>Alamat</td>
+                        <td>: <?php echo $details_pasien['alamat']?></td>
+                      </tr>
+                      
+                      <tr>
+                        <td>Nomor Hp</td>
+                        <td>: <?php echo $details_pasien['no_hp']?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Nama Kamar Dirawat</td>
+                        <td>: <?php echo $kamar_pasien['nama_kamar']?></td>
+                      </tr>
+
+                      <tr>
+                        <td>Jumlah Transaksi</td>
+                        <td>: <?php echo $transaksi_pasien['jumlah']?></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  
+                  <a href="#" class="btn btn-primary">Edit</a>
+                  <a href="javascript:history.go(-1)" class="btn btn-primary">Back</a>
+                </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                
+              </div>
+            </div>
+                 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   <footer id="footer">
     <p>CodeIgniter 2018</p>
   </footer>
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 </section>
-   <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
-      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
-      <script type="text/javascript" src="<?php echo base_url()?>assets/custom/grid.js"></script>
-  </body>
   
+  </body>
 </html>

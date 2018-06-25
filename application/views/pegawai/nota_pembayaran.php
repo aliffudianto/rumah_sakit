@@ -34,6 +34,13 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="id_pasien" class="col-sm-3 control-label">Nama Pasien</label>
+                                <div class="col-sm-9">
+                                    <input type="disabled" class="form-control" id="nama" name="nama" readonly value="<?php echo $key->nama_pasien?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="jumlah" class="col-sm-3 control-label">Jumlah Pembayaran</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="jumlah" name="jumlah" readonly value="<?php echo $jml?>">
