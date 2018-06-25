@@ -46,7 +46,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome, Madhav</a></li>
+            <li class="active"><a href="">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -114,7 +114,7 @@
 					<tr>
 						<th>Id Kamar</th>
 						<th>Nama Kamar</th>
-						<th>Id Pasien</th>
+						<th>Nama Pasien</th>
 					<!-- 	
 						<th colspan="3" class="text-center">Aksi</th> -->
 
@@ -128,7 +128,7 @@
 						<tr>
 							<td><?php echo $key->id_kamar ?></td>
 							<td><?php echo $key->nama_kamar ?></td>
-							<td><?php echo $key->id_pasien ?></td>	
+							<td><?php echo $key->nama_pasien ?></td>	
 						</tr>
 				<?php } ?>
 		

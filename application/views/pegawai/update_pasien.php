@@ -46,7 +46,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome, Madhav</a></li>
+            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -114,11 +114,16 @@
         <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $pasien[0]->alamat ?>">
       </div>
       
-
       <div class="form-group">
         <label for="">No Hp</label>
         <input type="text" class="form-control" id="no" name="no" value="<?php echo $pasien[0]->alamat ?>">
       </div>
+
+       <div class="form-group">
+        <label for="">Foto</label>
+        <input type="file" class="form-control" name="foto" size="20" value="<?php echo $pasien[0]->foto ?>">
+      </div>
+
       <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
       <?php echo form_close(); ?>
   </div>

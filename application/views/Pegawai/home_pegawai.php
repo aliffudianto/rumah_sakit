@@ -175,6 +175,8 @@
   </div>
 
 
+
+
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -185,21 +187,37 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Pemesanan Kamar</h4>
         </div>
+
         <div class="modal-body">
           <?php echo form_open_multipart('pesanKamar/addKamar'); ?>
          <?php echo validation_errors(); ?>
+
         <div class="form-group">
-          <label for="">Id Kamar : </label>
+          <label for="">Nama Kamar : </label>
           <select class="form-control" name="kamar_kosong">
             <?php foreach ($kamar as $key) { ?>
-              <option value="<?php echo $key->id_kamar?>"> <?php echo $key->id_kamar?></option>
+              <option value="<?php echo $key->nama_kamar?>"> <?php echo $key->id_kamar ?> <?php echo $key->nama_kamar?></option>
+            <?php } ?>
+          </select>
+        </div>
+
+      <div class="form-group">
+        <label for="">Id Pasien</label>
+          <select class="form-control" name="nama_pasien">
+            <?php foreach ($pasien as $key) { ?>
+              <option value="<?php echo $key->nama_pasien?>"> <?php echo $key->nama_pasien?></option>
             <?php } ?>
           </select>
       </div>
+
       <div class="form-group">
-        <label for="">Id Pasien</label>
-        <input type="text" class="form-control" id="id_pasien" name="id_pasien" placeholder="Masukkan Id Pasien">
+        <label for="">Tanggal Rawat</label>
+        <input type="date" class="form-control" id="tgl" name="tgl" >
       </div>
+
+
+      
+
       
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
@@ -210,6 +228,10 @@
       
     </div>
   </div>
+
+
+
+
 
     </div>
   </div>

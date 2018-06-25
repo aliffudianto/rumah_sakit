@@ -31,10 +31,12 @@ class PesanKamar extends CI_Controller {
 			echo "<script>alert('Seluruh Kamar Telah Terpakai')</script>";
 			redirect('pegawai/halamanPegawai','refresh');
 		}else {
-			if ($this->form_validation->run() == false) {
-				$this->load->view('pegawai/daftar_kamar',$data);
+			if ($this->form_validation->run() == true) {
+				echo "<script>alert('pendaftaran kamar gagal')</script>";
+				redirect('pegawai/halamanPegawai','refresh');
 			}else{
 				$this->Kamar_model->addKamarPasien();
+				$this->Kamar_model->ubahStatusPasien();
 				echo "<script>alert('pendaftaran kamar telah berhasil')</script>";
 				redirect('pegawai/halamanPegawai','refresh');
 			}

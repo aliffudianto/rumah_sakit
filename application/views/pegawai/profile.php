@@ -36,7 +36,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome, Madhav</a></li>
+            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -164,7 +164,7 @@
                   </table>
                   
                   <a href="#" class="btn btn-primary">Edit</a>
-                  <a href="#" class="btn btn-primary">Back</a>
+                  <a href="javascript:history.go(-1)" class="btn btn-primary">Back</a>
                 </div>
               </div>
             </div>

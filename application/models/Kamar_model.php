@@ -10,15 +10,32 @@ class Kamar_model extends CI_Model {
 		return $query;
 	}
 
+	public function daftarPasien()
+	{
+		$this->db->where('fk_kamar', NULL);
+		$query= $this->db->get('pasien');
+		return $query;
+	}
 
 	public function addKamarPasien(){
-		$id_kamar=$this->input->post('kamar_kosong');
+		$kamar=$this->input->post('kamar_kosong');
 		$data = array(
-			'id_pasien' => $this->input->post('id_pasien'),
-			'ketersediaan' => 'tidak tersedia'
+			'nama_pasien' => $this->input->post('nama_pasien'),
+			'ketersediaan' => 'tidak tersedia',
+			'tanggal' => $this->input->post('tgl'),
+
 			);
-		$this->db->where('id_kamar',$id_kamar);
+		$this->db->where('nama_kamar',$kamar);
 		$this->db->update('kamar', $data);
+	}
+
+	public function ubahStatusPasien(){
+		$nama_pasien=$this->input->post('nama_pasien');
+		$data = array(
+			'fk_kamar' => $this->input->post('kamar_kosong'),
+			);
+		$this->db->where('nama_pasien',$nama_pasien);
+		$this->db->update('pasien', $data);
 	}
 }
 

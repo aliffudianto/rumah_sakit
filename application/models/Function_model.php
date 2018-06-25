@@ -63,6 +63,7 @@ class Function_model extends CI_Model {
 			'nama_pasien' => $this->input->post('nama'),
 			'no_hp' => $this->input->post('no'),
 			'alamat' => $this->input->post('alamat'),
+			//'fk_kamar'=> $this->input->post('fk_kamar'),
 			'foto' => $this->upload->data('file_name'),
 			);
 		$this->db->insert('pasien', $data);
@@ -85,6 +86,7 @@ class Function_model extends CI_Model {
 			'nama_pasien' => $this->input->post('nama'),
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('tgl'),
+			'foto' => $this->upload->data('file_name'),
 			);
 		$this->db->where('username',$id);
 		$this->db->update('pasien', $data);
