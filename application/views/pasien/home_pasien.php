@@ -21,22 +21,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--//meta tags ends here-->
 	<!--booststrap-->
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="../assets/css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
 
 	<!--//booststrap end-->
 
 	<!-- font-awesome icons -->
-	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="../assets/css/font-awesome.css" rel="stylesheet">
 	<!-- //font-awesome icons -->
-	<link rel="stylesheet" href="assets/css/chocolat.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../assets/css/chocolat.css" type="text/css" media="screen" />
 	<!-- gallery-->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../assets/css/owl.carousel.css" type="text/css" media="all">
 	<!-- clients-->
 
-	<link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../assets/css/flexslider.css" type="text/css" media="screen" />
 	<!-- banner text slider-->
 	<!--stylesheets-->
-	<link href="assets/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<link href="../assets/css/style.css" rel='stylesheet' type='text/css' media="all">
 	<!-- banner text slider-->
 
 	<link href="//fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600" rel="stylesheet">
@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-					<h1><a class="navbar-brand " href="index.html">Medically</a></h1>
+					<h1><a class="navbar-brand " href="home_pasien.php">Medically</a></h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -166,7 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="modal-body">
 					<div class="out-info">
-						<img src="images/g1.jpg" alt="" />
+						<img src="../assets/images/g1.jpg" alt="" />
 						<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
 							eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellu</p>
 					</div>
@@ -205,7 +205,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="imgg-info-w3">
 				<div class="col-md-6 left-about-img">
 
-					<img src="images/a1.jpg" class="img-responsive s1" alt="s1">
+					<img src="../assets/images/a1.jpg" class="img-responsive s1" alt="s1">
 				</div>
 				<div class="col-md-6 welcome-left wel">
 					<div class="welcome-left-top">
@@ -272,23 +272,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="gallery-info">
 			<div class="col-md-6 col-sm-6 gallery-grids glry-grid1 ">
 				<div class="gallery-grids-top w3_agile_gallery_grid ">
-					<a class="b-link-stripe" href="images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
-							<img src="images/g4.jpg" class="img-responsive" alt="">
+					<a class="b-link-stripe" href="../assets/images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
+							<img src="../assets/images/g4.jpg" class="img-responsive" alt="">
 							<div class="b-wrapper">			
 							</div>
 						</a>
 				</div>
 				<div class="gallery-grids-top">
 					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="images/g1.jpg" class="img-responsive" alt="">
+						<a class="b-link-stripe" href="../assets/images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
+								<img src="../assets/images/g1.jpg" class="img-responsive" alt="">
 								<div class="b-wrapper">			
 								</div>
 							</a>
 					</div>
 					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="images/g2.jpg" class="img-responsive" alt="">
+						<a class="b-link-stripe" href="../assets/images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
+								<img src="../assets/images/g2.jpg" class="img-responsive" alt="">
 								<div class="b-wrapper">				
 								</div>
 							</a>
@@ -298,19 +298,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid2">
 				<a class="b-link-stripe " href="images/g3.jpg" data-lightbox="example-set">
-						<img src="images/g3.jpg" class="img-responsive" alt="">
+						<img src="../assets/images/g3.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">			
 						</div>
 					</a>
 			</div>
 			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid3">
 				<a class="b-link-stripe" href="images/g6.jpg" data-lightbox="example-set">
-						<img src="images/g6.jpg" class="img-responsive" alt="">
+						<img src="../assets/images/g6.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">				
 						</div>
 					</a>
 				<a class="b-link-stripe" href="images/g5.jpg" data-lightbox="example-set">
-						<img src="images/g5.jpg" class="img-responsive" alt="">
+						<img src="../assets/images/g5.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">			
 						</div>
 					</a>
@@ -329,7 +329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="team-row">
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="images/t1.jpg" alt="img"></a>
+							<a href="#"><img src="../assets/images/t1.jpg" alt="img"></a>
 
 							<div class="view-caption">
 								<div class="t-info">
@@ -348,7 +348,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="images/t2.jpg" alt="img"></a>
+							<a href="#"><img src="../assets/images/t2.jpg" alt="img"></a>
 							<div class="view-caption">
 								<div class="t-info">
 									<h5>HOD</h5>
@@ -367,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="images/t3.jpg" alt="img"></a>
+							<a href="#"><img src="../assets/images/t3.jpg" alt="img"></a>
 							<div class="view-caption">
 								<div class="t-info">
 									<h5>Psyhologist</h5>
@@ -399,7 +399,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="assets/images/c1.jpg" alt="img">
+									<img class="agile-img" src="../assets/images/c1.jpg" alt="img">
 									<h4>Ketty way</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -408,7 +408,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="images/c2.jpg" alt="img">
+									<img class="agile-img" src="../assets/images/c2.jpg" alt="img">
 									<h4>Cleark Hill</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -417,7 +417,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="images/c3.jpg" alt="img">
+									<img class="agile-img" src="../assets/images/c3.jpg" alt="img">
 									<h4>Willson Doe</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -564,15 +564,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<footer>
-		<p>&copy;2018 Medically. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='assets/js/jquery-2.2.3.min.js'></script>
+	<script type='text/javascript' src='../assets/js/jquery-2.2.3.min.js'></script>
 	<script src="assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
 
-	<script defer src="assets/js/jquery.flexslider.js"></script>
+	<script defer src="../assets/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(window).load(function () {
 			$('.flexslider').flexslider({
@@ -585,13 +585,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
-	<script src="asstes/js/jquery.countup.js"></script>
+	<script src="../assets/js/jquery.waypoints.min.js"></script>
+	<script src="../asstes/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 	<!-- //OnScroll-Number-Increase-JavaScript -->
-	<script src="assets/js/jquery.chocolat.js"></script>
+	<script src="../assets/js/jquery.chocolat.js"></script>
 
 	<!--light-box-files -->
 	<script type="text/javascript">
@@ -601,7 +601,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //gallery -->
 	<!--client carousel -->
-	<script src="js/owl.carousel.js"></script>
+	<script src="../assets/js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function () {
 			$("#owl-demo").owlCarousel({
@@ -620,8 +620,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="assets/js/move-top.js"></script>
-	<script type="text/javascript" src="assets/js/easing.js"></script>
+	<script type="text/javascript" src="../assets/js/move-top.js"></script>
+	<script type="text/javascript" src="../assets/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
