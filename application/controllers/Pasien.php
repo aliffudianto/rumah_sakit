@@ -5,7 +5,7 @@ class Pasien extends CI_Controller {
 
 	public function index()
 	{
-		echo "halaman Pasien";	
+		$this->load->view('pasien/home_pasien');
 	}
 
 }
