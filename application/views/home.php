@@ -43,7 +43,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<span><a href="<?php echo site_url('') ?>/LoginUser/register">
 							Create Your Account
 							</a></span>
-				
+				<?php echo form_close(); ?>
 			</div>
 		</div>
 		<!--footer-->
