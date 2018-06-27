@@ -37,7 +37,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
+            <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -126,9 +126,9 @@
 							<td><?php echo $key['no_hp'] ?></td>
               <td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key['foto']?>" alt="" width=175 height="125"></td>
 
-							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td>
-							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
-              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Lihat Data Pasien</button></td>
+							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td>
+							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
+              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pasien</button></td>
 
 						</tr>
 				<?php } ?>

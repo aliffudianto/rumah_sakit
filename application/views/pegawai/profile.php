@@ -36,7 +36,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
+            <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -124,7 +124,7 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo base_url()?>/assets/gambar/profile.jpg" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="<?php echo base_url()?>/assets/uploads/<?php echo $user['foto']?>" class="img-circle img-responsive"> </div>
                 
                 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                   <dl>

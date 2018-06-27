@@ -101,7 +101,7 @@
 
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"> <?php echo $details_pasien['level']?></h3>
+              <h3 class="panel-title"> <?php echo $details_pasien['nama_pasien']?></h3>
             </div>
             <div class="panel-body">
               <div class="row col-md-9 col-lg-9">
@@ -137,7 +137,7 @@
 
                       <tr>
                         <td>Nama Kamar Dirawat</td>
-                        <td>: <?php echo $kamar_pasien['nama_kamar']?></td>
+                        <td>: <?php echo $details_pasien['fk_kamar']?></td>
                       </tr>
 
                       <tr>

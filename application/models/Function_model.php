@@ -46,15 +46,6 @@ class Function_model extends CI_Model {
 		 return $query->row_array();
 	}
 
-	public function detailsKamarPasien()
-	{
-		 $this->db->select('*');
-		 $this->db->from('kamar');
-		 $this->db->join('pasien','kamar.id_pasien=pasien.username');
-		 $this->db->where('username', $this->uri->segment(3));
-		 $query = $this->db->get();
-		 return $query->row_array();
-	}
 	
 	public function insertDataPasien()
 	{
@@ -72,10 +63,12 @@ class Function_model extends CI_Model {
 
 	public function createUser()
 	{
+		$password=$this->input->post('password');
+		$encrypt=md5($password);
 		$data = array(
 			'username' => $this->input->post('username'),
 			'level' => $this->input->post('akses'),
-			'password' => $this->input->post('password'),
+			'password' => $encrypt,
 			);
 		$this->db->insert('user', $data);
 		
@@ -111,7 +104,7 @@ class Function_model extends CI_Model {
         }
 	}
 
-	public function dataKamarAktif(){
+	public function dataKamar(){
 
 		$query=$this->db->query('select * from kamar');
 		return $query->result();

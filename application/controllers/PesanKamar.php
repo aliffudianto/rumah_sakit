@@ -37,6 +37,7 @@ class PesanKamar extends CI_Controller {
 			}else{
 				$this->Kamar_model->addKamarPasien();
 				$this->Kamar_model->ubahStatusPasien();
+				$this->Kamar_model->buatTransaksi();
 				echo "<script>alert('pendaftaran kamar telah berhasil')</script>";
 				redirect('pegawai/halamanPegawai','refresh');
 			}

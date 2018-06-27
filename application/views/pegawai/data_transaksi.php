@@ -170,7 +170,7 @@ body{
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
+            <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>

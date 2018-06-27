@@ -44,8 +44,27 @@ class Transaksi_model extends CI_Model {
 			);
 		$this->db->where('fk_pasien',$id);
 		$this->db->update('transaksi', $data);
-
 	}
+
+	public function refreshTransaksi($id_pasien)
+	{
+		
+		$sekarang= date_create();
+		$tgl= $this->input->post('tgl');
+		$tgl_rawat=date_create($tgl);
+		$jmlh =date_diff($tgl_rawat, $sekarang);
+		$total = (50000*($jmlh->days));
+		$data = array(
+			'jumlah' => $total,
+			'tanggal' => $this->input->post('tgl'),
+			'fk_pasien' => $this->input->post('nama_pasien'),
+			);
+		$this->db->insert('transaksi', $data);
+		
+	}
+
+
+
 	// public function paymentPasien($id)
 	// {
 	// 	$tagihan=$this->input->post('jumlah');

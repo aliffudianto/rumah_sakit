@@ -15,7 +15,7 @@ class Transaksi extends CI_Controller {
 				redirect('pasien','refresh');
 			}
 		}else{
-			redirect('loginUser','refresh');
+			redirect('','refresh');
 		}
 	}
 
@@ -38,8 +38,9 @@ class Transaksi extends CI_Controller {
 				echo "<script>alert('pasien tidak valid')</script>";
 				redirect('pegawai/halamanPegawai','refresh');
 			}else{
-		$this->load->view('pegawai/pembayaran',$data);
-	}
+				//$this->Transaksi_model->refreshTransaksi($id_pasien);
+				$this->load->view('pegawai/pembayaran',$data);
+		}
 	}
 
 	public function bayarKamar()

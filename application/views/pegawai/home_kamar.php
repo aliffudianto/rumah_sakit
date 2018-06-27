@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile Admin</title>
+    <title>Data Kamar</title>
 
+    
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
       <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
       <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" />
 
-      <script type="text/javascript" rel="stylesheet" src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
       <script type="text/javascript" src="<?php echo base_url()?>assets/custom/grid1.js"></script>
@@ -39,7 +40,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
+            <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
             <li><a href="login.html">Logout</a></li>
           
           </ul>
@@ -73,8 +74,8 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-      	<div class="text-center">
-        	<li class="active"><h1>Data Kamar : </h1></li>
+        <div class="text-center">
+          <li class="active"><h1>Data Kamar : </h1></li>
         </div>
       </ol>
     </div>
@@ -98,8 +99,48 @@
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge"><?php echo $nKamar ?></span></a>
     </div>
 </div>
+<!--Latest User-->
 
-<div id="kamar"></div>
+  <div class="table-responsive"  id="data_pasien">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id Kamar</th>
+            <th>Nama Kamar</th>
+            <th>Ketersediaan</th>
+            <th>Harga</th>
+            <th>Nama Pasien</th>
+            <th>Tanggal Dirawat</th>
+            <th>Foto</th>
+            <th colspan="3" class="text-center">Aksi</th>
+
+  
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($data_kamar as $key) {
+        ?>    
+            <tr>
+              <td><?php echo $key->id_kamar ?></td>
+              <td><?php echo $key->nama_kamar ?></td>
+              <td><?php echo $key->ketersediaan ?></td>
+              <td><?php echo $key->nama_pasien ?></td>
+              <td><?php echo $key->harga ?></td>
+              <td><?php echo $key->tanggal ?></td>
+              <td><img src="<?php echo base_url()?>/assets/uploads/kamar/<?php echo $key->foto?>" alt="" width=175 height="125"></td>
+              <td><a href="<?php echo site_url() ?>/pegawai/updateKamar/<?php echo $key->id_kamar?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></a></td>
+              <td><a href="<?php echo site_url() ?>/pegawai/deleteKamar/<?php echo $key->id_kamar ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></a>
+              </td>
+
+            </tr>
+        <?php } ?>
+    
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
+
 
   <footer id="footer">
     <p>CodeIgniter 2018</p>

@@ -43,7 +43,7 @@ class LoginUser extends CI_Controller {
 	{
 		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
-		redirect('loginUser','refresh');
+		redirect('','refresh');
 	}
 
 	public function insertUser()
