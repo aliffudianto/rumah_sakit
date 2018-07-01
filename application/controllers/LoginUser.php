@@ -57,11 +57,25 @@ class LoginUser extends CI_Controller {
 		
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('register');
-		} else {
-			$this->Model_user->registerUser();
-			$this->load->view('register_sukses');	
-			
-		}
+		}else{
+				$config['upload_path'] = './assets/uploads/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size'] = '10000';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+				
+				if(! $this->upload->do_upload('foto')){
+					$error = array('error' =>$this->upload->display_errors());
+					$this->load->view('pegawai/daftar_pasien', $error);
+				}else {
+					$this->Model_user->registerUser();
+					$this->Model_user->daftarPasien();
+					$this->load->view('register_sukses');	
+				}
+			}
+
 	}
 
 	public function register()

@@ -34,9 +34,9 @@
                         <?php foreach ($total as $key){ ?>
                             
                             <div class="form-group">
-                                <label for="id_pasien" class="col-sm-3 control-label">Id Pasien </label>
+                                <label for="id_pasien" class="col-sm-3 control-label">Nama Pasien </label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" value="<?php echo $key->fk_pasien?>">
+                                    <input type="text" class="form-control" id="nama_pasien" name="nama_pasien" value="<?php echo $key->fk_pasien?>">
                                 </div>
                             </div>
                             <div class="form-group">

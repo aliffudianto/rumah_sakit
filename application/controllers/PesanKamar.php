@@ -35,9 +35,14 @@ class PesanKamar extends CI_Controller {
 				echo "<script>alert('pendaftaran kamar gagal')</script>";
 				redirect('pegawai/halamanPegawai','refresh');
 			}else{
+				$nama_kamar=$this->input->post('kamar_kosong');
 				$this->Kamar_model->addKamarPasien();
 				$this->Kamar_model->ubahStatusPasien();
-				$this->Kamar_model->buatTransaksi();
+				$harga=$this->Kamar_model->hargaKamar($nama_kamar);
+				$this->Kamar_model->buatTransaksi($harga);
+				// echo $this->input->post('harga');
+				die();
+
 				echo "<script>alert('pendaftaran kamar telah berhasil')</script>";
 				redirect('pegawai/halamanPegawai','refresh');
 			}

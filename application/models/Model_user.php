@@ -27,9 +27,20 @@ public function registerUser(){
 			'username' => $this->input->post('username'),
 			'password' => $encrypt,
 			'level' => $this->input->post('level'),
-
 			);
 		$this->db->insert('user', $data);
+	}
+
+public function daftarPasien(){
+
+		$data = array(
+			'username' => $this->input->post('username'),
+			'nama_pasien' => $this->input->post('nama'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
+			'foto' => $this->upload->data('file_name'),
+			);
+		$this->db->insert('pasien', $data);
 	}	
 
 

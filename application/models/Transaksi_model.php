@@ -63,6 +63,13 @@ class Transaksi_model extends CI_Model {
 		
 	}
 
+	public function hapusTransaksi($id_pasien)
+	{
+		$this->db->where('fk_pasien', $id_pasien);
+		$this->db->join('pasien', 'transaksi.fk_pasien = pasien.username', 'inner');
+		$this->db->delete('transaksi');
+	}
+
 
 
 	// public function paymentPasien($id)

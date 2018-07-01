@@ -37,8 +37,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->

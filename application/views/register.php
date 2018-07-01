@@ -169,8 +169,56 @@ span.input-group-addon i {
 								</div>
 							</div>
 						</div>
+						
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Nama</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="nama" id="nama"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
 
 						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Alamat</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="alamat" id="alamat"  placeholder="Enter your Address"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Nomor Hp</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="no_hp" id="no_hp"  placeholder="Enter your Phone Number"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Foto</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<input type="file" class="form-control" name="foto" size="20">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<input type="hidden" class="form-control" name="level" id="level"  value="user" />
+								</div>
+							</div>
+						</div>
+
+
+						<!-- <div class="form-group">
 							<label for="confirm" class="cols-sm-2 control-label">Role</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -182,7 +230,7 @@ span.input-group-addon i {
 								</div>
 							</div>
 						</div>
-
+ -->
 						<div class="form-group ">
 							<input class="btn btn-primary btn-lg btn-block login-button" type="submit" value="Sign Up">
 						</div>

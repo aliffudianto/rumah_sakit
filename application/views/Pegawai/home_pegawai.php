@@ -214,6 +214,9 @@
         <label for="">Tanggal Rawat</label>
         <input type="date" class="form-control" id="tgl" name="tgl" >
       </div>
+      
+        <!-- <input type="hidden" class="form-control" id="harga" name="harga" value="<?php echo $harga?>">
+ -->
 
 
       

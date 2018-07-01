@@ -53,6 +53,36 @@ class Kamar_model extends CI_Model {
 		$this->db->update('kamar', $data);
 	}
 
+	public function hargaKamar($nama_kamar)
+	{
+		$query= $this->db->query("select harga from kamar where nama_kamar='mawar'");
+		return $query->result();
+		// $this->db->select('harga');
+		// $this->db->where('nama_kamar', $nama_kamar);
+		// $result= $this->db->get('kamar');
+		// //$result->result();
+		// return $total_ratings = mysqli_fetch_array($result);
+	}
+
+
+	public function buatTransaksi($harga)
+	{
+
+		$sekarang= date_create();
+		$tgl= $this->input->post('tgl');
+		// $harga= $this->input->post('harga');
+		$tgl_rawat=date_create($tgl);
+		$jmlh =date_diff($tgl_rawat, $sekarang);
+		$total = ($harga*($jmlh->days));
+		$data = array(
+			'jumlah' => $total,
+			'tanggal' => $this->input->post('tgl'),
+			'fk_pasien' => $this->input->post('nama_pasien'),
+			);
+		$this->db->insert('transaksi', $data);
+		
+	}
+
 	public function ubahStatusPasien(){
 		$nama_pasien=$this->input->post('nama_pasien');
 		$data = array(
@@ -61,23 +91,15 @@ class Kamar_model extends CI_Model {
 		$this->db->where('nama_pasien',$nama_pasien);
 		$this->db->update('pasien', $data);
 	}
-
-
-	public function buatTransaksi()
-	{
-
-		$sekarang= date_create();
-		$tgl= $this->input->post('tgl');
-		$tgl_rawat=date_create($tgl);
-		$jmlh =date_diff($tgl_rawat, $sekarang);
-		$total = (50000*($jmlh->days));
+	
+	public function ubahStatusKamar(){
+		$nama_pasien=$this->input->post('nama_pasien');
 		$data = array(
-			'jumlah' => $total,
-			'tanggal' => $this->input->post('tgl'),
-			'fk_pasien' => $this->input->post('nama_pasien'),
+			'ketersediaan' => 'tersedia',
+			'nama_pasien' => NULL,
 			);
-		$this->db->insert('transaksi', $data);
-		
+		$this->db->where('nama_pasien',$nama_pasien);
+		$this->db->update('kamar', $data);
 	}
 
 }

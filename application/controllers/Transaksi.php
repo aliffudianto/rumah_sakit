@@ -51,7 +51,7 @@ class Transaksi extends CI_Controller {
 		$this->form_validation->set_rules('jumlah', 'Masukkan Jumlah Nominal', 'trim|required');
 	
 		$this->load->model('Transaksi_model');
-
+		$this->load->model('Kamar_model');
 		//$uang=$this->input->post('jumlah');
 		$id=$this->input->post('id_pasien');
 		$this->Transaksi_model->transaksiNonTunai($id);
@@ -59,11 +59,22 @@ class Transaksi extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			echo "Pembayaran gagal";
 		} else {
-			$id_pasien=$this->input->post('id_pasien');
+			$nama_pasien=$this->input->post('nama_pasien');
 			$data['jml']=$this->input->post('jumlah');
 			//$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
-			$data['total']=$this->Transaksi_model->nota($id_pasien);
-			$this->load->view('pegawai/nota_pembayaran',$data);
+			$data['total']=$this->Transaksi_model->nota($nama_pasien);
+
+			$total=$this->input->post('total');
+			$jumlah=$this->input->post('jumlah');
+
+			if($jumlah>=$total){
+				$this->Transaksi_model->hapusTransaksi($nama_pasien);
+				$this->Kamar_model->ubahStatusPasien(); 
+				$this->Kamar_model->ubahStatusKamar();
+				$this->load->view('pegawai/nota_pembayaran',$data);
+			}else{
+				$this->load->view('pegawai/nota_pembayaran',$data);
+			}
 		}
 	}
 

@@ -41,7 +41,7 @@ class Function_model extends CI_Model {
 		 $this->db->select('*');
 		 $this->db->from('transaksi');
 		 $this->db->join('pasien','transaksi.fk_pasien=pasien.username');
-		 $this->db->where('username', $this->uri->segment(3));
+		 $this->db->where('id_pasien', $this->uri->segment(3));
 		 $query = $this->db->get();
 		 return $query->row_array();
 	}

@@ -93,6 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a class="page-scroll scroll" href="#gallery">Laboratory</a></li>
 						<li><a class="page-scroll scroll" href="#clients">Clients</a></li>
 						<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
+						<li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
