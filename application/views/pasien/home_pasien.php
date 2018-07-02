@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						 <li class="active"><a href="<?php echo site_url()?>/pasien/profilepasien/<?php echo $user['username']?>"?>Welcome, <?php echo $user['nama_pasien'] ?></a></li>
+						
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -86,9 +86,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hidden"><a class="page-scroll" href="#page-top"></a> </li>
 						<li><a class="page-scroll" href="#home">Home</a></li>
 						<li><a class="page-scroll scroll" href="#about">About</a></li>
-						<li><a class="page-scroll scroll" href="#service">Facilities</a></li>
-						<li><a class="page-scroll scroll" href="#gallery">Laboratory</a></li>
-						<li><a class="page-scroll scroll" href="#clients">Clients</a></li>
+						<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
+						<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
 						<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
 						<li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
 					</ul>
@@ -479,27 +478,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 
 			<div class="clearfix"> </div>
-			<div class="contact-form">
-				<form action="#" method="post">
-					<div class="col-md-6 col-sm-6 col-xs-6 form-right form-left">
-						<input type="text" name="name" placeholder="Name" required="">
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6 form-right ">
-						<input type="text" name="Last name" placeholder="Last name" required="">
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6 form-right form-left">
-						<input type="email" name="Email" placeholder="Email" required="">
-					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6 form-right ">
-						<input type="text" name="phone" placeholder="Phone" required="">
-						<div class="clearfix"> </div>
-					</div>
-					
-					<textarea name="Message" placeholder="Message" required=""></textarea>
-					<input type="submit" value="SUBMIT">
-				</form>
-		
-			</div>
+
 
 		</div>
 	</div>
@@ -512,8 +491,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<ul class="nav-buttom">
 				<li><a class="page-scroll scroll" href="#home">Home</a></li>
 				<li><a class="page-scroll scroll" href="#about">About</a></li>
-				<li><a class="page-scroll scroll" href="#service">Facilities</a></li>
-				<li><a class="page-scroll scroll" href="#gallery">Laboratory</a></li>
+				<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
+				<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
 				<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
 			</ul>
 		</nav>
@@ -521,7 +500,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="colr-row col-md-6  ">
 			<div class="col-md-6 col-sm-6 col-xs-6  bottom-head bottm-grid">
 				<h2><a href="index.html">Medically</a></h2>
-				<span class="cap">Lorem Ipsum</span>
+				<span class="cap"></span>
 				<div class="clearfix"> </div>
 			</div>
 			
@@ -543,13 +522,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="colr-row  col-md-6">
 			<div class="col-md-6 col-sm-6 col-xs-6 one bottm-grid">
 				<h3>About us</h3>
-				<p> enim. Aliquam lorem ante, dapibus in,Aliquam lorem ante </p>
+				<p> Visi : Menjadi Rumah Sakit Pilihan Pertama Yang Berkualitas Prima 
+				    Motto : Layanan Prima adalah Komitmen Kami </p>
 				<div class="clearfix"></div>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6 three bottm-grid">
 				<h3>Contact</h3>
 				<div class="addres up-out">
-					<p><span class="fa fa-map-marker icons-left" aria-hidden="true"></span>333 Broome St New York</p>
+					<p><span class="fa fa-map-marker icons-left" aria-hidden="true"></span>Malang</p>
 
 					<p><span class="fa fa-phone icons-left" aria-hidden="true"></span>Call us:+9900887766</p>
 
