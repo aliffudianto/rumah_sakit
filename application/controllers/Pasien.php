@@ -43,7 +43,7 @@ class Pasien extends CI_Controller {
 		$data['user']=$this->Function_model->tampilPasien($username);
 		$this->load->view('pasien/about',$data);
 	}
-	public function layanan()
+	public function layanan1()
 	{
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
@@ -54,7 +54,7 @@ class Pasien extends CI_Controller {
 		$data['user']=$this->Function_model->tampilPasien($username);
 		$this->load->view('pasien/layanan',$data);
 	}
-	public function kamar()
+	public function kamar1()
 	{
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
