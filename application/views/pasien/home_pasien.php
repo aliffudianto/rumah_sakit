@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						
+						<li class="active">Welcome, <?php echo $user['nama_pasien'] ?></a></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -60,7 +60,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="w3-header-top-right-text">
 
 						<p><span class="fa fa-phone" aria-hidden="true"></span> (031)798 456</p>
+
 					</div>
+					
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -84,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav navbar-nav navbar-right">
 						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 						<li class="hidden"><a class="page-scroll" href="#page-top"></a> </li>
-						<li><a class="page-scroll" href="#home">Home</a></li>
+						<li><a class="page-scroll" href="home">Home</a></li>
 						<li><a class="page-scroll scroll" href="#about">About</a></li>
 						<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
 						<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>

@@ -19,6 +19,16 @@ class Function_model extends CI_Model {
 		 return $query->row_array();
 	}
 
+	public function tampilPasien($username)
+	{
+		 $this->db->select('*');
+		 $this->db->from('user');
+		 $this->db->join('pasien','user.username=pasien.username');
+		 $this->db->where('user.username', $username);
+		 $query = $this->db->get();
+		 return $query->row_array();
+	}
+
 
 	public function tampilDataDetailsPasien()
 	{

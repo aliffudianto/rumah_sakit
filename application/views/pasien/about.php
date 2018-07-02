@@ -197,34 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div class="about" id="about">
-		<div class="container">
-			<div class="imgg-info-w3">
-				<div class="col-md-6 left-about-img">
 
-					<img src="../assets/images/a1.jpg" class="img-responsive s1" alt="s1">
-				</div>
-				<div class="col-md-6 welcome-left wel">
-					<div class="welcome-left-top">
-						<h4>Who are we </h4>
-						<p>Assalamualaikum Wr. Wb.
-<br><br>
-Puji syukur kami panjatkan kehadirat Allah SWT, atas Karunia dan Rahmat-Nya sehingga website Medically telah mendapat akreditsi tipe C untuk  pelayanan kesehatan kepada masyarakat.
-
-Website ini memuat seluruh informasi dan potensi yang dimiliki oleh Medically berupa sarana dan prasarana sebagai Rumah Sakit tipe C, kerjasama layanan kesehatan dan gambaran secara umum dari awal berdirinya Rumah Sakit Medically.
-<br>
-<br>
-Wassalamualaikum Wr. Wb.
-
- </p>
-						<div class="agileits_w3layouts_more">
-							<a href="<?php echo site_url()?>/pasien/about" data-toggle="modal" data-target="#myModal">Read More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!--//about -->
 	<!--services -->
 	<div class="services " id="service">
