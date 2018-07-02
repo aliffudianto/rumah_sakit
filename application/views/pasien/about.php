@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						
+						<li class="active"><font color="white" >Welcome, <?php echo $user['nama_pasien'] ?></font></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -166,30 +166,27 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 	<!-- //modal -->
 
 	<!--about -->
-	<div class="agileits-banner-grids text-center">
-		<div class="banner-bottom-girds">
-			<div class="col-md-4  col-sm-4 clr1 agileits-banner-grid">
-				<span class="fa fa-heart banner-icon" aria-hidden="true"></span>
-				<h4>Transplant</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
+	<div class="about" id="about">
+		<div class="container">
+			<div class="imgg-info-w3">
+				<div class="col-md-6 left-about-img">
 
-			</div>
-			<div class="col-md-4 col-sm-4 clr2 agileits-banner-grid">
-				<span class="fa fa-ambulance banner-icon" aria-hidden="true"></span>
-				<h4>Emergency</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
+					<img src="<?php echo base_url()?>assets/images/a1.jpg" class="img-responsive s1" alt="s1">
+				</div>
+	<div class="col-md-6 welcome-left wel">
+					<div class="welcome-left-top">
+						<h4>Sejarah</h4>
+						<p>Medically didirikan pada tanggal 02 Juli 2017 dan mulai beroperasional tahun 2018 yang diresmikan oleh Direktur Utama PT Medically Ikhsan Efendy.
+Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karyawan PT Medically beserta keluarganya, namun seiring dengan perkembangan juga bertujuan untuk memberikan sarana pelayanan kesehatan yang representative kepada masyarakat di Malang dan sekitarnya.
 
-			</div>
-			<div class=" col-md-4 col-sm-4 clr3 agileits-banner-grid">
-				<span class="fa fa-heartbeat banner-icon" aria-hidden="true"></span>
-				<h4>Client Care</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
 
+ </p>
+					
+					</div>
+				</div>
 			</div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
-
 	<!--//about -->
 	<!--services -->
 	

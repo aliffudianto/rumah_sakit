@@ -32,7 +32,14 @@ class Pasien extends CI_Controller {
 	}
 	public function about()
 	{
-		$this->load->view('pasien/about');
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$this->load->model('Function_model');
+		$data['user']=$this->Function_model->tampilPasien($username);
+		$this->load->view('pasien/about',$data);
 	}
 
 
