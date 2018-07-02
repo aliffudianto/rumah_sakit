@@ -146,7 +146,7 @@ span.input-group-addon i {
 				<?php echo form_open_multipart('LoginUser/insertUser'); ?>			    	
 				<div class="main-login main-center">
 					<?php echo validation_errors(); ?>
-				<h5>Sign up once and watch any of our free demos.</h5>
+				<h5>Sign up once and watch any of our service.</h5>
 					<form class="" method="post" action="#">
 						
 						
@@ -154,7 +154,7 @@ span.input-group-addon i {
 							<label for="username" class="cols-sm-2 control-label">Username</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
 								</div>
 							</div>
@@ -164,17 +164,17 @@ span.input-group-addon i {
 							<label for="password" class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
 						
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Nama</label>
+							<label for="username" class="cols-sm-2 control-label">Nama Lengkap</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-child" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="nama" id="nama"  placeholder="Enter your Name"/>
 								</div>
 							</div>
@@ -184,7 +184,7 @@ span.input-group-addon i {
 							<label for="username" class="cols-sm-2 control-label">Alamat</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="alamat" id="alamat"  placeholder="Enter your Address"/>
 								</div>
 							</div>
@@ -194,7 +194,7 @@ span.input-group-addon i {
 							<label for="username" class="cols-sm-2 control-label">Nomor Hp</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="no_hp" id="no_hp"  placeholder="Enter your Phone Number"/>
 								</div>
 							</div>
@@ -204,7 +204,7 @@ span.input-group-addon i {
 							<label for="username" class="cols-sm-2 control-label">Foto</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="fa fa-file-image-o" aria-hidden="true"></i></span>
 									<input type="file" class="form-control" name="foto" size="20">
 								</div>
 							</div>

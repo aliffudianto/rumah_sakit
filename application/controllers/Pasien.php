@@ -24,6 +24,21 @@ class Pasien extends CI_Controller {
 		$this->load->view('pasien/home_pasien');
 	}
 
+	public function profilepasien($username)
+	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+		$data['admin']=$this->Function_model->tampilUser($username);
+		$this->load->view('pasien/profilepasien',$data);
+	}
+
 }
 
 /* End of file Pegawai.php */
