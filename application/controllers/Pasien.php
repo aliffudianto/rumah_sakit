@@ -43,6 +43,28 @@ class Pasien extends CI_Controller {
 		$data['user']=$this->Function_model->tampilPasien($username);
 		$this->load->view('pasien/about',$data);
 	}
+	public function layanan()
+	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$this->load->model('Function_model');
+		$data['user']=$this->Function_model->tampilPasien($username);
+		$this->load->view('pasien/layanan',$data);
+	}
+	public function kamar()
+	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$this->load->model('Function_model');
+		$data['user']=$this->Function_model->tampilPasien($username);
+		$this->load->view('pasien/kamar',$data);
+	}
 
 	public function profilePasien($username)
 	{

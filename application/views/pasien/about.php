@@ -86,8 +86,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hidden"><a class="page-scroll" href="#page-top"></a> </li>
 						<li><a class="page-scroll" href="<?php echo site_url()?>/pasien/index">Home</a></li>
 						<li><a class="page-scroll scroll" href="#home">About</a></li>
-						<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
-						<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
+						<li><a class="page-scroll scroll" href="<?php echo site_url()?>/pasien/layanan">Layanan</a></li>
+						<li><a class="page-scroll scroll" href="<?php echo site_url()?>/pasien/kamar">Daftar Kamar</a></li>
 						<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
 						<li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
 					</ul>
@@ -250,8 +250,8 @@ Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karya
 			<ul class="nav-buttom">
 				<li><a class="page-scroll" href="<?php echo site_url()?>/pasien/index">Home</a></li>
 				<li><a class="page-scroll scroll" href="#home">About</a></li>
-				<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
-				<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
+				<li><a class="page-scroll scroll" href="<?php echo site_url()?>/pasien/layanan">Layanan</a></li>
+				<li><a class="page-scroll scroll" href="<?php echo site_url()?>/pasien/kamar">Daftar Kamar</a></li>
 				<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
 			</ul>
 		</nav>
