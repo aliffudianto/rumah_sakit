@@ -49,20 +49,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-						<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-rss"></span></a></li>
-						<li><a href="#"><span class="fa fa-vk"></span></a></li>
+						 <li class="active"><a href="<?php echo site_url()?>/pasien/profilepasien/<?php echo $user['username']?>"?>Welcome, <?php echo $user['nama_pasien'] ?></a></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
 					<div class="email-right">
-						<p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:mail@example.com" class="info"> info@example.com</a></p>
+						<p><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:mail@example.com" class="info"> info@medically.co.id</a></p>
 
 					</div>
 					<div class="w3-header-top-right-text">
 
-						<p><span class="fa fa-phone" aria-hidden="true"></span> (111)+245 245 66</p>
+						<p><span class="fa fa-phone" aria-hidden="true"></span> (031)798 456</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
