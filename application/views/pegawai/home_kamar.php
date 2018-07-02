@@ -41,7 +41,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->
@@ -53,7 +53,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
+            <h1><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Home Kamar <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
          </div>
         </div>
@@ -61,15 +61,16 @@
     </header>
 <br>
 
-  <section id="breadcrumb">
+ <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <div class="text-center">
+        <div class="text-left">
           <li class="active"><h1>Data Kamar : </h1></li>
         </div>
       </ol>
     </div>
   </section>
+
 
 
 <section id="main">
@@ -90,6 +91,11 @@
     </div>
 </div>
 <!--Latest User-->
+<div class="col-md-6 col-8 align-self-center ">
+<a href="<?php echo site_url() ?>/pegawai/tambahKamar/" class="pull-left"><button type="button" class="btn btn-primary" ><i class="glyphicon glyphicon-plus"></i> Tambah Kamar</button></a>
+</div>
+
+<div class="col-md-9">
 
   <div class="table-responsive"  id="data_pasien">
       <table class="table table-hover">
@@ -118,6 +124,7 @@
               <td><?php echo $key->harga ?></td>
               <td><?php echo $key->tanggal ?></td>
               <td><img src="<?php echo base_url()?>/assets/uploads/kamar/<?php echo $key->foto?>" alt="" width=175 height="125"></td>
+              
               <td><a href="<?php echo site_url() ?>/pegawai/updateKamar/<?php echo $key->id_kamar?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></a></td>
               <td><a href="<?php echo site_url() ?>/pegawai/deleteKamar/<?php echo $key->id_kamar ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></a>
               </td>
@@ -130,7 +137,7 @@
     </div>
 </div>
 </div>
-
+</div>
 
   <footer id="footer">
     <p>CodeIgniter 2018</p>

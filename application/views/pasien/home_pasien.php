@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						<li class="active"><font color="white" >Welcome, <?php echo $user['nama_pasien'] ?></font></li>
+						<li class="active"><font color="white" ><a href="<?php echo site_url()?>/pasien/profilePasien/<?php echo $user['username']?>"?>Welcome, <?php echo $user['nama_pasien'] ?></font></a></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -273,169 +273,97 @@ Wassalamualaikum Wr. Wb.
 	<!--gallery-->
 	<div class="gallery titl-bottom" id="gallery">
 
-		<h3 class="title">Laboratory</h3>
-		<div class="gallery-info">
-			<div class="col-md-6 col-sm-6 gallery-grids glry-grid1 ">
-				<div class="gallery-grids-top w3_agile_gallery_grid ">
-					<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
-							<img src="<?php echo base_url()?>assets/images/g4.jpg" class="img-responsive" alt="">
-							<div class="b-wrapper">			
-							</div>
-						</a>
-				</div>
-				<div class="gallery-grids-top">
-					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="<?php echo base_url()?>assets/images/g1.jpg" class="img-responsive" alt="">
-								<div class="b-wrapper">			
-								</div>
-							</a>
-					</div>
-					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="<?php echo base_url()?>assets/images/g2.jpg" class="img-responsive" alt="">
-								<div class="b-wrapper">				
-								</div>
-							</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid2">
-				<a class="b-link-stripe " href="<?php echo base_url()?>assets/images/g3.jpg" data-lightbox="example-set">
-						<img src="<?php echo base_url()?>assets/images/g3.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">			
-						</div>
-					</a>
-			</div>
-			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid3">
-				<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g6.jpg" data-lightbox="example-set">
-						<img src="<?php echo base_url()?>assets/images/g6.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">				
-						</div>
-					</a>
-				<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g5.jpg" data-lightbox="example-set">
-						<img src="<?php echo base_url()?>assets/images/g5.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">			
-						</div>
-					</a>
-			</div>
-			<div class="clearfix"></div>
+<?php if($tersedia>0){?>
+   <div class="col-md-3" data-toggle="modal" data-target="#daftar">
+    <?php }else{ ?>
+   <div class="col-md-3" data-toggle="modal" data-target="#myModal1">
+     <?php }?>
 
-		</div>
+     <a href="#">
+     <div class="well dash-box">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
+       <h4>Daftar Kamar</h4>
+      </a>
+     </div>
+   </div>
 
-	</div>
+   
+      <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Pemesanan Kamar</h4>
+        </div>
+        <div class="modal-body">
+          Seluruh Kamar Telah Terpakai
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="daftar" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Pemesanan Kamar</h4>
+        </div>
+
+        <div class="modal-body">
+          <?php echo form_open_multipart('pesanKamar/addKamar'); ?>
+         <?php echo validation_errors(); ?>
+
+        <div class="form-group">
+          <label for="">Nama Kamar : </label>
+          <select class="form-control" name="kamar_kosong">
+            <?php foreach ($kamar as $key) { ?>
+              <option value="<?php echo $key->nama_kamar?>"> <?php echo $key->id_kamar ?> <?php echo $key->nama_kamar?></option>
+            <?php } ?>
+          </select>
+        </div>
+
+      <div class="form-group">
+        <label for="">Id Pasien</label>
+          <select class="form-control" name="nama_pasien">
+            <?php foreach ($pasien as $key) { ?>
+              <option value="<?php echo $key->nama_pasien?>"> <?php echo $key->nama_pasien?></option>
+            <?php } ?>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Tanggal Rawat</label>
+        <input type="date" class="form-control" id="tgl" name="tgl" >
+      </div>
+	  <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      <?php echo form_close(); ?>
+
+      
+    </div>
+  </div>
+</div>
+</div>
+</a>
+
 	<!--//gallery-->
 	<!-- team-->
-	<div class="team agileits" id="team">
-		<div class="team-info">
-			<div class="container">
-				<h3 class="title ">Our specialists</h3>
-				<div class="team-row">
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="<?php echo base_url()?>assets/images/t1.jpg" alt="img"></a>
-
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>Director</h5>
-									<p>John willky</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-
-						</div>
-
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="<?php echo base_url()?>assets/images/t2.jpg" alt="img"></a>
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>HOD</h5>
-									<p>Lara kent</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-
-
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="<?php echo base_url()?>assets/images/t3.jpg" alt="img"></a>
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>Psyhologist</h5>
-									<p>Jack will</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //team -->
-	<!--testimonials-->
-	<div class="testimonials" id="clients">
-		<h3 class="title tit-clr">OUR CLIENTS</h3>
-		<div class="container">
-			<div class="clients-inn">
-				<div class="clients_agile_slider">
-					<div id="owl-demo" class="owl-carousel owl-theme">
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="<?php echo base_url()?>assets/images/c1.jpg" alt="img">
-									<h4>Ketty way</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="<?php echo base_url()?>assets/images/c2.jpg" alt="img">
-									<h4>Cleark Hill</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="<?php echo base_url()?>assets/images/c3.jpg" alt="img">
-									<h4>Willson Doe</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
 	<!-- //testimonials-->
 	<!--subscribe-->
 

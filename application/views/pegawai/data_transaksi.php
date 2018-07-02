@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile Admin</title>
+    <title>Data Transaksi</title>
 
       
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
@@ -181,7 +181,7 @@ body{
 
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->
@@ -193,7 +193,7 @@ body{
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Halaman Admin <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
           
         </div>
@@ -201,15 +201,16 @@ body{
     </header>
 <br>
 
-  <section id="breadcrumb">
+ <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-      	<div class="text-left">
-        	<li class="active"><h1>Data Pasien : </h1></li>
+        <div class="text-left">
+          <li class="active"><h1>Data Transaksi Pasien : </h1></li>
         </div>
       </ol>
     </div>
   </section>
+
 
 
 <section id="main">
@@ -256,8 +257,8 @@ body{
               <td><?php echo $key->jumlah ?></td>
               <td><?php echo $key->tanggal ?></td>
 
-              <td><a href="<?php echo site_url() ?>/transaksi/updateTransaksi/<?php echo $key['id_transaksi'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
-              <td><a href="<?php echo site_url() ?>/transaksi/hapusTransaksi/<?php echo $key['id_transaksi'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
+              <td><a href="<?php echo site_url() ?>/transaksi/updateTransaksi/<?php echo $key->id_transaksi ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
+              <td><a href="<?php echo site_url() ?>/transaksi/hapusTransaksi/<?php echo $key->id_transaksi ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
             </tr>
         <?php } ?>
     

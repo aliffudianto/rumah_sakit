@@ -37,7 +37,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->
@@ -49,7 +49,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Halaman Admin <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
         </div>
       </div>
@@ -59,10 +59,14 @@
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">
-        <li class="active">Dashboard</li>
+        <div class="text-left">
+          <li class="active"><h1>Profile Admin : </h1></li>
+        </div>
       </ol>
     </div>
   </section>
+
+
 
 
 <section id="main">
@@ -101,9 +105,6 @@
 <!--Latest User-->
 <div class="container">
       <div class="row">
-      <div class="col-md-5  toppad  pull-left col-md-offset-0 ">
-           <A href="" >Edit Profile</A>
-      </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-9 col-xs-offset-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-0 toppad" >
    
    

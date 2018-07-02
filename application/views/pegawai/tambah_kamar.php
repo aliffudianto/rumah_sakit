@@ -4,23 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kamar Aktif</title>
+    <title>Halaman Data Pasien</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
 
-     
-      <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" /> 
-
       <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('#kamar_active').DataTable();
-} );
-</script>
 
 </head>
 
@@ -59,30 +50,30 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
-          </div>         
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Halaman Admin <small><font color="#33FF33">Rumah Sakit</font></small></h1>
+          </div>
         </div>
       </div>
     </header>
 <br>
 
- <section id="breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb">
-        <div class="text-left">
-          <li class="active"><h1>Data Kamar Aktif : </h1></li>
-        </div>
-      </ol>
-    </div>
-  </section>
 
+<legend><h1 class="text-center">Form Tambah Kamar</h1></legend>
+<section id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="list-group">
+</div>
+</div>
+</div></div>
 
 <section id="main">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-       <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+     <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Dashboard <span class="badge"><?php echo $level ?></span>
       </a>
       
@@ -95,38 +86,40 @@
     </div>
 </div>
 
-<!--Latest User-->
-	<div class="table-responsive">
-			<table class="table table-hover" id="kamar_active">
-				<thead>
-					<tr>
-						<th>Id Kamar</th>
-						<th>Nama Kamar</th>
-						<th>Nama Pasien</th>
-					<!-- 	
-						<th colspan="3" class="text-center">Aksi</th> -->
+<?php echo form_open_multipart('pegawai/tambahKamar'); ?>
+<?php echo validation_errors(); ?>
+<div class="table-responsive">
+    <table class="table table-hover" id="">
+      <tbody>
+      <div class="form-group ">
+        <label for="">Id Kamar : </label>
+        <input type="text" class="form-control" id="id" name="id" placeholder="Masukkan Id Kamar">
+      </div>
+      
+      <div class="form-group ">
+        <label for="">Nama Kamar</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Kamar">
+      </div>
 
-	
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($dataKamar as $key) {
-				?>
-						
-						<tr>
-							<td><?php echo $key->id_kamar ?></td>
-							<td><?php echo $key->nama_kamar ?></td>
-							<td><?php echo $key->nama_pasien ?></td>	
-						</tr>
-				<?php } ?>
-		
-				</tbody>
-			</table>
-		</div>
+      <div class="form-group">
+        <label for="">Harga</label>
+        <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukkan Harga Kamar">
+      </div>
+      
+      <div class="form-group ">
+        <label for="">Foto Kamar</label>
+        <input type="file" class="form-control" name="foto" size="20">
+      </div>
+
+      
+      
+      <button type="submit" class="btn btn-primary" ><i class="glyphicon glyphicon-plus"></i>  Submit</button>
+      <?php echo form_close(); ?>
+      </tbody>
+</table>
 </div>
 </div>
-
-
+</div>
   <footer id="footer">
     <p>CodeIgniter 2018</p>
   </footer>

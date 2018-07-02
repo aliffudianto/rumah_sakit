@@ -38,7 +38,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo site_url()?>/pegawai/profile/<?php echo $user['username']?>">Welcome,  <?php echo $user['nama_pegawai'] ?></a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="<?php echo site_url()?>/loginUser/logout">Logout</a></li>
           
           </ul>
         </div><!--/.nav-collapse -->
@@ -50,18 +50,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
-          </div>
-          <div class="col-md-2">
-                   <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create Content
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Add Pages</a></li>
-    <li><a href="#">Add Posts</a></li>
-    <li><a href="#">Add Users</a></li>
-  </ul>
-</div> 
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Halaman Admin <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
         </div>
       </div>
@@ -72,7 +61,7 @@
     <div class="container">
       <ol class="breadcrumb">
       	<div class="text-left">
-        	<li class="active"><h1>Data Pasien : </h1></li>
+        	<li class="active"><h1>Data Details Pasien : </h1></li>
         </div>
       </ol>
     </div>
@@ -84,6 +73,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
+        
      <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Dashboard <span class="badge"><?php echo $level ?></span>
       </a>
@@ -126,7 +116,7 @@
 							<td><?php echo $key['no_hp'] ?></td>
               <td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key['foto']?>" alt="" width=175 height="125"></td>
               
-							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
+							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
 							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
               <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pasien</button></td></a>
 						</tr>
@@ -137,7 +127,6 @@
 </div>
 </div>
 </div>
-
   <footer id="footer">
     <p>CodeIgniter 2018</p>
   </footer>

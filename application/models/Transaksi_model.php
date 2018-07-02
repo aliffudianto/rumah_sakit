@@ -17,6 +17,30 @@ class Transaksi_model extends CI_Model {
 		return $total;		
 	}
 
+	public function tampilTransaksi($id_transaksi)
+	{
+
+		$this->db->where('id_transaksi', $id_transaksi);
+		$query=$this->db->get('transaksi');
+		return $query->result();		
+	}
+
+	public function updateTransaksi($id_transaksi){
+
+		$data = array(
+			'jumlah' => $this->input->post('jumlah'),
+			'tanggal' => $this->input->post('tgl'),
+			);
+		$this->db->where('id_transaksi',$id_transaksi);
+		$this->db->update('transaksi', $data);
+	}
+
+	public function deleteTransaksi($id_transaksi){
+		$this->db->where('id_transaksi',$id_transaksi);
+		$this->db->delete('transaksi');	
+	}
+
+
 	public function tampilBiayaKamar($id_pasien)
 	{
 		$this->db->where('fk_pasien', $id_pasien);

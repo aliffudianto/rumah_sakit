@@ -88,27 +88,41 @@ class Transaksi extends CI_Controller {
 			$this->load->view('pegawai/nota_pembayaran',$data);
 	}
 
-	public function updatePasien($id_pasien){
+	public function updateTransaksi($id_transaksi){
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
-		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
+		$this->form_validation->set_rules('id', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('nama', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('jumlah', 'Nomor Hp', 'trim|required');
 
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
 		$this->load->model('Transaksi_model');
+		$this->load->model('Kamar_model');
+		$username=$session_data['username'];
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		
-		$data['pasien']=$this->Function_model->seleksiPasien($id_pasien);
+		$data['user']=$this->Function_model->tampilUser($username);
+
+		$data['transaksi']=$this->Transaksi_model->tampilTransaksi($id_transaksi);
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('pegawai/update_pasien', $data);
+			$this->load->view('pegawai/update_transaksi', $data);
 		}else{
-			$this->Function_model->updatePasien($id_pasien);
-			echo "edit sukses";
+
+			$this->Transaksi_model->updateTransaksi($id_transaksi);
+			echo "<script>alert('Edit Transaksi Telah Berhasil')</script>";
+			redirect('pegawai/viewTransaksi','refresh');
 		}
 	}
 
-	public function deletePasien($id_pasien)
+	public function hapusTransaksi($id_transaksi)
 	{
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
@@ -116,15 +130,13 @@ class Transaksi extends CI_Controller {
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
 		$data['level']=$session_data['level'];
-		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
 		$username=$session_data['username'];
 		
 
-		$this->Function_model->hapusPasien($id_pasien);
-		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
-		$data['user']=$this->Function_model->tampilUser($username);
-
-		$this->load->view('pegawai/home_pasien',$data);
+		$this->Transaksi_model->deleteTransaksi($id_transaksi);
+		echo "<script>alert('Data Transaksi Berhasil Dihapus')</script>";
+		redirect('pegawai/viewTransaksi','refresh');
 
 	}
 

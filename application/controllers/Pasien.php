@@ -25,6 +25,8 @@ class Pasien extends CI_Controller {
 		$data['username']=$session_data['username'];
 		$data['level']=$session_data['level'];
 		$username=$session_data['username'];
+		$this->load->model('Kamar_model');
+		$data['tersedia']=$this->Kamar_model->kamarKosong()->num_rows();
 		
 		$this->load->model('Function_model');
 		$data['user']=$this->Function_model->tampilPasien($username);
@@ -42,7 +44,15 @@ class Pasien extends CI_Controller {
 		$this->load->view('pasien/about',$data);
 	}
 
-
+	public function profilePasien($username)
+	{
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$data['user']=$this->Function_model->tampilPasien($username);
+		$this->load->view('pasien/profile',$data);
+	}
 
 }
 

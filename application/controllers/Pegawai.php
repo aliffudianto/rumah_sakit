@@ -225,14 +225,23 @@ public function __construct()
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
 
-		$this->load->model('Function_model');
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$this->load->model('Kamar_model');
 		$username=$session_data['username'];
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+		
 		
 		$data['user']=$this->Function_model->tampilUser($username);
 		$data['pasien']=$this->Function_model->seleksiPasien($id_pasien);
-
+		// print_r($data['pasien']);
+		// die();
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('pegawai/update_pasien', $data);
 		}else{
@@ -263,8 +272,13 @@ public function __construct()
 		$data['username']=$session_data['username'];
 		$data['level']=$session_data['level'];
 		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$this->load->model('Kamar_model');
 		$username=$session_data['username'];
-		
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 
 		$this->Function_model->hapusPasien($id_pasien);
 		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
@@ -275,7 +289,7 @@ public function __construct()
 	}
 
 
-	public function updateKamar($id_pasien){
+	public function updateKamar($id_kamar){
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 		$this->load->model('Function_model');
@@ -285,7 +299,15 @@ public function __construct()
 
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$this->load->model('Kamar_model');
 		$username=$session_data['username'];
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		
 		$data['user']=$this->Function_model->tampilUser($username);
 		$data['kamar']=$this->Kamar_model->dataKamar();
@@ -293,7 +315,7 @@ public function __construct()
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('pegawai/update_kamar', $data);
 		}else{
-				$config['upload_path'] = './assets/uploads/';
+				$config['upload_path'] = './assets/uploads/kamar/';
 				$config['allowed_types'] = 'gif|jpg|png';
 				$config['max_size'] = '10000';
 				$config['max_width'] = '1024';
@@ -305,11 +327,57 @@ public function __construct()
 					$error = array('error' =>$this->upload->display_errors());
 					$this->load->view('pegawai/update_pasien', $error);
 				}else{
-					$this->Kamar_model->updateKamar($id_pasien);
+					$this->Kamar_model->updateKamar($id_kamar);
 					echo "<script>alert('pendaftaran kamar telah berhasil')</script>";
 					redirect('pegawai/dataKamar','refresh');
 				}
 		}
+	}
+
+
+	public function tambahKamar()
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
+		$this->form_validation->set_rules('id', 'Id Kamar', 'trim|required');
+		//$this->form_validation->set_rules('foto', 'Foto', 'trim|required');
+		$this->form_validation->set_rules('nama', 'Nama Kamar', 'trim|required');
+		$this->form_validation->set_rules('harga', 'Harga Kamar', 'trim|required');
+
+		$this->load->model('Kamar_model');
+
+			if ($this->form_validation->run() ==FALSE) {
+				$this->load->view('pegawai/tambah_kamar',$data);
+			}else{
+				$config['upload_path'] = './assets/uploads/kamar/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size'] = '10000';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+				
+				if(! $this->upload->do_upload('foto')){
+					echo $error = array('error' =>$this->upload->display_errors());
+					$this->load->view('pegawai/tambah_kamar', $error);
+				}else{
+					$this->Kamar_model->tambahKamar();
+					echo "<script>alert('Tambah Kamar Telah Terhasil')</script>";
+					redirect('pegawai/dataKamar','refresh');
+				}
+			}	
 	}
 
 	public function deleteKamar($id_kamar)
@@ -320,12 +388,6 @@ public function __construct()
 		$this->Kamar_model->hapusKamar($id_kamar);
 		redirect('pegawai/dataKamar','refresh');
 	}
-
-
-	public function tambahKamar(){
-        $this->load->model('Function_model');
-        $this->Pasien_model->addKamar();
-    }
 
     public function hapusKamar()
     {

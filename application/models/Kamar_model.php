@@ -102,6 +102,19 @@ class Kamar_model extends CI_Model {
 		$this->db->update('kamar', $data);
 	}
 
+
+	public function tambahKamar()
+	{
+		$data = array(
+			'id_kamar' => $this->input->post('id'),
+			'nama_kamar' => $this->input->post('nama'),
+			'ketersediaan' => 'tersedia',
+			'harga' => $this->input->post('harga'),
+			'foto' => $this->upload->data('file_name'),
+			);
+		$this->db->insert('kamar', $data);
+		
+	}
 }
 
 /* End of file Kamar_model.php */
