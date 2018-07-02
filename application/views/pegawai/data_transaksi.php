@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile Admin</title>
 
+      
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" />
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" />     
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" /> 
+
+      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#transaksi').DataTable();
+} );
+</script>
 
      
-      
 <style>
-  s
+  
 body{
   background: #f4f4f4;
 }
@@ -185,17 +195,7 @@ body{
           <div class="col-md-10">
             <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
-          <div class="col-md-2">
-                   <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create Content
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Add Pages</a></li>
-    <li><a href="#">Add Posts</a></li>
-    <li><a href="#">Add Users</a></li>
-  </ul>
-</div> 
-          </div>
+          
         </div>
       </div>
     </header>
@@ -229,9 +229,44 @@ body{
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge"><?php echo $nKamar ?></span></a>
     </div>
 </div>
+
+<div class="table-responsive">
+      <table class="table table-hover" id="transaksi">
+        <thead>
+          <tr>
+            <th>Id Transaksi</th>
+            <th>Nama Pasien</th>
+            <th>Jumlah</th>
+            <th>Tanggal</th>
+
+            
+            <th></th>
+            <th></th>
+
+  
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($data_transaksi as $key) {
+        ?>
+            
+            <tr>
+              <td><?php echo $key->id_transaksi ?></td>
+              <td><?php echo $key->fk_pasien ?></td>
+              <td><?php echo $key->jumlah ?></td>
+              <td><?php echo $key->tanggal ?></td>
+
+              <td><a href="<?php echo site_url() ?>/transaksi/updateTransaksi/<?php echo $key['id_transaksi'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
+              <td><a href="<?php echo site_url() ?>/transaksi/hapusTransaksi/<?php echo $key['id_transaksi'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
+            </tr>
+        <?php } ?>
+    
+        </tbody>
+      </table>
+    </div>
 </div>
 </div>
-<div id="jsGrid"></div>
+
   <footer id="footer">
     <p>CodeIgniter 2018</p>
   </footer>
@@ -241,10 +276,6 @@ body{
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 </section>
-   <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
-      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
-      <script type="text/javascript" src="<?php echo base_url()?>assets/custom/grid.js"></script>
   </body>
   
 </html>

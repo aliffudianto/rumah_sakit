@@ -18,7 +18,7 @@
         <![endif]-->
     </head>
     <body>
-        <h1 class="text-center">Hello World</h1>
+        <h1 class="text-center">Halaman Pembayaran</h1>
 
         <div class="container">
             <div class="row">

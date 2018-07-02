@@ -125,18 +125,18 @@
 							<td><?php echo $key['alamat'] ?></td>
 							<td><?php echo $key['no_hp'] ?></td>
               <td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key['foto']?>" alt="" width=175 height="125"></td>
-
-							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td>
-							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td>
-              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pasien</button></td>
-
+              
+							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
+							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
+              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pasien</button></td></a>
 						</tr>
 				<?php } ?>
 		
 				</tbody>
 			</table>
-		</div>
-
+</div>
+</div>
+</div>
 
   <footer id="footer">
     <p>CodeIgniter 2018</p>

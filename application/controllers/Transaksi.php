@@ -87,6 +87,49 @@ class Transaksi extends CI_Controller {
 			$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
 			$this->load->view('pegawai/nota_pembayaran',$data);
 	}
+
+	public function updatePasien($id_pasien){
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('no', 'Nomor Hp', 'trim|required');
+
+		$this->load->model('Transaksi_model');
+		
+		$data['pasien']=$this->Function_model->seleksiPasien($id_pasien);
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('pegawai/update_pasien', $data);
+		}else{
+			$this->Function_model->updatePasien($id_pasien);
+			echo "edit sukses";
+		}
+	}
+
+	public function deletePasien($id_pasien)
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$username=$session_data['username'];
+		
+
+		$this->Function_model->hapusPasien($id_pasien);
+		$data['biodata_pasien']=$this->Function_model->tampilDataDetailsPasien();
+		$data['user']=$this->Function_model->tampilUser($username);
+
+		$this->load->view('pegawai/home_pasien',$data);
+
+	}
+
+
+
 	
 	// public function payment($id)
 	// {

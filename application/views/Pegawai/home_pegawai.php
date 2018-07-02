@@ -57,22 +57,10 @@
           <div class="col-md-10">
             <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
-          <div class="col-md-2">
-                   <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create Content
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Add Pages</a></li>
-    <li><a href="#">Add Posts</a></li>
-    <li><a href="#">Add Users</a></li>
-  </ul>
-</div> 
-          </div>
         </div>
       </div>
     </header>
 <br>
-
   <section id="breadcrumb">
     <div class="container">
       <ol class="breadcrumb">

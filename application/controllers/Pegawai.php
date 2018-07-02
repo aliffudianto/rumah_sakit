@@ -158,6 +158,7 @@ public function __construct()
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$data['nKamar']=$this->Function_model->jumlahKamar();
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+		$data['data_transaksi']=$this->Function_model->tampilDataTransaksi();
 		$this->load->view('pegawai/data_transaksi',$data);
 	}
 
