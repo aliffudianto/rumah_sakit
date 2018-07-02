@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav navbar-nav navbar-right">
 						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 						<li class="hidden"><a class="page-scroll" href="#page-top"></a> </li>
-						<li><a class="page-scroll" href="home">Home</a></li>
+						<li><a class="page-scroll" href="#home">Home</a></li>
 						<li><a class="page-scroll scroll" href="#about">About</a></li>
 						<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
 						<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
@@ -180,20 +180,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="banner-bottom-girds">
 			<div class="col-md-4  col-sm-4 clr1 agileits-banner-grid">
 				<span class="fa fa-heart banner-icon" aria-hidden="true"></span>
-				<h4>Transplant</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
+				<h4>TENAGA YANG PROFESIONAL</h4>
+				<p>Kami berkomitmen untuk meningkatkan pengetahuan karyawan, sehingga mampu melaksanakan pelayanan yang profesional</p>
 
 			</div>
 			<div class="col-md-4 col-sm-4 clr2 agileits-banner-grid">
 				<span class="fa fa-ambulance banner-icon" aria-hidden="true"></span>
-				<h4>Emergency</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
+				<h4>PELAYANAN PRIMA</h4>
+				<p>Kami berkomitmen untuk menjadi rumah sakit dengan pelayanan prima, dan menjadi pilihan utama masyarakat indonesia.</p>
 
 			</div>
 			<div class=" col-md-4 col-sm-4 clr3 agileits-banner-grid">
 				<span class="fa fa-heartbeat banner-icon" aria-hidden="true"></span>
-				<h4>Client Care</h4>
-				<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut.</p>
+				<h4>PERALATAN YANG MODERN</h4>
+				<p>Kami berkomitmen untuk meningkatkan kualitas alat kedokteran yang memberikan nilai lebih bagi pelayanan kesehatan.</p>
 
 			</div>
 			<div class="clearfix"></div>
@@ -208,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-6 welcome-left wel">
 					<div class="welcome-left-top">
-						<h4>Who are we </h4>
+						<h4>Tentang Kami </h4>
 						<p>Assalamualaikum Wr. Wb.
 <br><br>
 Puji syukur kami panjatkan kehadirat Allah SWT, atas Karunia dan Rahmat-Nya sehingga website Medically telah mendapat akreditsi tipe C untuk  pelayanan kesehatan kepada masyarakat.
@@ -233,7 +233,7 @@ Wassalamualaikum Wr. Wb.
 		<div class="container">
 			<h3 class="title tit-clr">OUR FACILITIES</h3>
 			<div class="stats-info agileits w3layouts">
-				<div class="col-md-3 col-sm-6 col-xs-6 agileits w3layouts stats-grid stats-grid-1">
+				<div class="col-md-3 col-sm-3 col-xs-3 agileits w3layouts stats-grid stats-grid-1">
 					<div class="ser-icone"> <span class="fa fa-users font" aria-hidden="true"></span>
 					</div>
 					<div class=" agileits-w3layouts counter">3500</div>
