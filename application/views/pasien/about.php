@@ -21,22 +21,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--//meta tags ends here-->
 	<!--booststrap-->
-	<link href="../assets/css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?php echo base_url()?>assets/css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
 
 	<!--//booststrap end-->
 
 	<!-- font-awesome icons -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet">
 	<!-- //font-awesome icons -->
-	<link rel="stylesheet" href="../assets/css/chocolat.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/chocolat.css" type="text/css" media="screen" />
 	<!-- gallery-->
-	<link rel="stylesheet" href="../assets/css/owl.carousel.css" type="text/css" media="all">
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.css" type="text/css" media="all">
 	<!-- clients-->
 
-	<link rel="stylesheet" href="../assets/css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/flexslider.css" type="text/css" media="screen" />
 	<!-- banner text slider-->
 	<!--stylesheets-->
-	<link href="../assets/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' media="all">
 	<!-- banner text slider-->
 
 	<link href="//fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600" rel="stylesheet">
@@ -537,12 +537,12 @@ Wassalamualaikum Wr. Wb.
 		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='../assets/js/jquery-2.2.3.min.js'></script>
-	<script src="assets/js/bootstrap.js"></script>
+	<script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery-2.2.3.min.js'></script>
+	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
 
-	<script defer src="../assets/js/jquery.flexslider.js"></script>
+	<script defer src="<?php echo base_url()?>assets/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(window).load(function () {
 			$('.flexslider').flexslider({
@@ -555,13 +555,13 @@ Wassalamualaikum Wr. Wb.
 	</script>
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
-	<script src="../assets/js/jquery.waypoints.min.js"></script>
-	<script src="../asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
+	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 	<!-- //OnScroll-Number-Increase-JavaScript -->
-	<script src="../assets/js/jquery.chocolat.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.chocolat.js"></script>
 
 	<!--light-box-files -->
 	<script type="text/javascript">
@@ -571,7 +571,7 @@ Wassalamualaikum Wr. Wb.
 	</script>
 	<!-- //gallery -->
 	<!--client carousel -->
-	<script src="../assets/js/owl.carousel.js"></script>
+	<script src="<?php echo base_url()?>assets/js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function () {
 			$("#owl-demo").owlCarousel({
@@ -590,8 +590,8 @@ Wassalamualaikum Wr. Wb.
 		});
 	</script>
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="../assets/js/move-top.js"></script>
-	<script type="text/javascript" src="../assets/js/easing.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets/js/move-top.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {

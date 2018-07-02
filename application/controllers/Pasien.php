@@ -23,6 +23,10 @@ class Pasien extends CI_Controller {
 	{
 		$this->load->view('pasien/home_pasien');
 	}
+	public function about()
+	{
+		$this->load->view('pasien/about');
+	}
 
 
 
