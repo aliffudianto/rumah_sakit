@@ -21,22 +21,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--//meta tags ends here-->
 	<!--booststrap-->
-	<link href="../assets/css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
+<link href="<?php echo base_url()?>assets/css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
 
 	<!--//booststrap end-->
 
 	<!-- font-awesome icons -->
-	<link href="../assets/css/font-awesome.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet">
 	<!-- //font-awesome icons -->
-	<link rel="stylesheet" href="../assets/css/chocolat.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/chocolat.css" type="text/css" media="screen" />
 	<!-- gallery-->
-	<link rel="stylesheet" href="../assets/css/owl.carousel.css" type="text/css" media="all">
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.css" type="text/css" media="all">
 	<!-- clients-->
 
-	<link rel="stylesheet" href="../assets/css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/flexslider.css" type="text/css" media="screen" />
 	<!-- banner text slider-->
 	<!--stylesheets-->
-	<link href="../assets/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' media="all">
 	<!-- banner text slider-->
 
 	<link href="//fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600" rel="stylesheet">
@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						<li class="active">Welcome, <?php echo $user['nama_pasien'] ?></a></li>
+						<li class="active"><font color="white" >Welcome, <?php echo $user['nama_pasien'] ?></font></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p><span class="fa fa-phone" aria-hidden="true"></span> (031)798 456</p>
 
 					</div>
-					
+
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-					<h1><a class="navbar-brand " href="home_pasien.php">Medically</a></h1>
+					<h1><a class="navbar-brand" href="home_pasien.php">Medically</a></h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="imgg-info-w3">
 				<div class="col-md-6 left-about-img">
 
-					<img src="../assets/images/a1.jpg" class="img-responsive s1" alt="s1">
+					<img src="<?php echo base_url()?>assets/images/a1.jpg" class="img-responsive s1" alt="s1">
 				</div>
 				<div class="col-md-6 welcome-left wel">
 					<div class="welcome-left-top">
@@ -220,7 +220,7 @@ Wassalamualaikum Wr. Wb.
 
  </p>
 						<div class="agileits_w3layouts_more">
-							<a href="<?php echo site_url()?>/pasien/about" data-toggle="modal" data-target="#myModal">Read More</a>
+							<a href="<?php echo site_url()?>/pasien/about" data-toggle="" data-target="">Read More</a>
 						</div>
 					</div>
 				</div>
@@ -277,23 +277,23 @@ Wassalamualaikum Wr. Wb.
 		<div class="gallery-info">
 			<div class="col-md-6 col-sm-6 gallery-grids glry-grid1 ">
 				<div class="gallery-grids-top w3_agile_gallery_grid ">
-					<a class="b-link-stripe" href="../assets/images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
-							<img src="../assets/images/g4.jpg" class="img-responsive" alt="">
+					<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
+							<img src="<?php echo base_url()?>assets/images/g4.jpg" class="img-responsive" alt="">
 							<div class="b-wrapper">			
 							</div>
 						</a>
 				</div>
 				<div class="gallery-grids-top">
 					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="../assets/images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="../assets/images/g1.jpg" class="img-responsive" alt="">
+						<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
+								<img src="<?php echo base_url()?>assets/images/g1.jpg" class="img-responsive" alt="">
 								<div class="b-wrapper">			
 								</div>
 							</a>
 					</div>
 					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="../assets/images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="../assets/images/g2.jpg" class="img-responsive" alt="">
+						<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
+								<img src="<?php echo base_url()?>assets/images/g2.jpg" class="img-responsive" alt="">
 								<div class="b-wrapper">				
 								</div>
 							</a>
@@ -302,20 +302,20 @@ Wassalamualaikum Wr. Wb.
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid2">
-				<a class="b-link-stripe " href="images/g3.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g3.jpg" class="img-responsive" alt="">
+				<a class="b-link-stripe " href="<?php echo base_url()?>assets/images/g3.jpg" data-lightbox="example-set">
+						<img src="<?php echo base_url()?>assets/images/g3.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">			
 						</div>
 					</a>
 			</div>
 			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid3">
-				<a class="b-link-stripe" href="images/g6.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g6.jpg" class="img-responsive" alt="">
+				<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g6.jpg" data-lightbox="example-set">
+						<img src="<?php echo base_url()?>assets/images/g6.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">				
 						</div>
 					</a>
-				<a class="b-link-stripe" href="images/g5.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g5.jpg" class="img-responsive" alt="">
+				<a class="b-link-stripe" href="<?php echo base_url()?>assets/images/g5.jpg" data-lightbox="example-set">
+						<img src="<?php echo base_url()?>assets/images/g5.jpg" class="img-responsive" alt="">
 						<div class="b-wrapper">			
 						</div>
 					</a>
@@ -334,7 +334,7 @@ Wassalamualaikum Wr. Wb.
 				<div class="team-row">
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t1.jpg" alt="img"></a>
+							<a href="#"><img src="<?php echo base_url()?>assets/images/t1.jpg" alt="img"></a>
 
 							<div class="view-caption">
 								<div class="t-info">
@@ -353,7 +353,7 @@ Wassalamualaikum Wr. Wb.
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t2.jpg" alt="img"></a>
+							<a href="#"><img src="<?php echo base_url()?>assets/images/t2.jpg" alt="img"></a>
 							<div class="view-caption">
 								<div class="t-info">
 									<h5>HOD</h5>
@@ -372,7 +372,7 @@ Wassalamualaikum Wr. Wb.
 
 					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
 						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t3.jpg" alt="img"></a>
+							<a href="#"><img src="<?php echo base_url()?>assets/images/t3.jpg" alt="img"></a>
 							<div class="view-caption">
 								<div class="t-info">
 									<h5>Psyhologist</h5>
@@ -404,7 +404,7 @@ Wassalamualaikum Wr. Wb.
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c1.jpg" alt="img">
+									<img class="agile-img" src="<?php echo base_url()?>assets/images/c1.jpg" alt="img">
 									<h4>Ketty way</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -413,7 +413,7 @@ Wassalamualaikum Wr. Wb.
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c2.jpg" alt="img">
+									<img class="agile-img" src="<?php echo base_url()?>assets/images/c2.jpg" alt="img">
 									<h4>Cleark Hill</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -422,7 +422,7 @@ Wassalamualaikum Wr. Wb.
 						<div class="item">
 							<div class="agile_tesimonials_content">
 								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c3.jpg" alt="img">
+									<img class="agile-img" src="<?php echo base_url()?>assets/images/c3.jpg" alt="img">
 									<h4>Willson Doe</h4>
 									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
 								</div>
@@ -539,12 +539,12 @@ Wassalamualaikum Wr. Wb.
 		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='../assets/js/jquery-2.2.3.min.js'></script>
-	<script src="assets/js/bootstrap.js"></script>
+	<script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery-2.2.3.min.js'></script>
+	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
 
-	<script defer src="../assets/js/jquery.flexslider.js"></script>
+	<script defer src="<?php echo base_url()?>assets/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(window).load(function () {
 			$('.flexslider').flexslider({
@@ -557,13 +557,13 @@ Wassalamualaikum Wr. Wb.
 	</script>
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
-	<script src="../assets/js/jquery.waypoints.min.js"></script>
-	<script src="../asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
+	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
 	<!-- //OnScroll-Number-Increase-JavaScript -->
-	<script src="../assets/js/jquery.chocolat.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.chocolat.js"></script>
 
 	<!--light-box-files -->
 	<script type="text/javascript">
@@ -573,7 +573,7 @@ Wassalamualaikum Wr. Wb.
 	</script>
 	<!-- //gallery -->
 	<!--client carousel -->
-	<script src="../assets/js/owl.carousel.js"></script>
+	<script src="<?php echo base_url()?>assets/js/owl.carousel.js"></script>
 	<script>
 		$(document).ready(function () {
 			$("#owl-demo").owlCarousel({
@@ -592,8 +592,8 @@ Wassalamualaikum Wr. Wb.
 		});
 	</script>
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="../assets/js/move-top.js"></script>
-	<script type="text/javascript" src="../assets/js/easing.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets/js/move-top.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>assets/js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {

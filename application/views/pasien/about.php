@@ -84,8 +84,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="nav navbar-nav navbar-right">
 						<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 						<li class="hidden"><a class="page-scroll" href="#page-top"></a> </li>
-						<li><a class="page-scroll" href="#home">Home</a></li>
-						<li><a class="page-scroll scroll" href="#about">About</a></li>
+						<li><a class="page-scroll" href="<?php echo site_url()?>/pasien/index">Home</a></li>
+						<li><a class="page-scroll scroll" href="#home">About</a></li>
 						<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
 						<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
 						<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
@@ -109,12 +109,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li>
 									<div class=" w3l-info">
 										<div class="col-md-8  info-lleft-side">
-											<h4>Welcome To Hospital</h4>
-											<p>Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-												egestas.Sed lorem enim, rutrum quis diam nec.</p>
-										</div>
-										<div class=" col-md-4 w3layouts_more-buttn">
-											<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
+											<h4>Visi</h4>
+											<p>Menjadi Rumah Sakit Pilihan Pertama Yang Berkualitas Prima</p>
 										</div>
 									</div>
 
@@ -122,25 +118,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li>
 									<div class=" w3l-info">
 										<div class="col-md-8 info-lleft-side">
-											<h4>Better Health Care</h4>
-											<p>Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-												egestas.Sed lorem enim, rutrum quis diam nec.</p>
+											<h4>Misi</h4>
+											<p>Memberikan Pelayanan Kesehatan Kepada Masyarakat.
+Memberikan Pelayanan Kesehatan Yang Bermutu Berorientasi Pada Kecepatan, Ketepatan, Keselamatan, Keramahan dan Kenyamanan Berlandaskan Etika Dan Peofesionalisme.
+Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malang dan Sekitarnya.</p>
 										</div>
-										<div class=" col-md-4 w3layouts_more-buttn">
-											<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
-										</div>
+									
 									</div>
 								</li>
 								<li>
 									<div class=" w3l-info">
 										<div class="col-md-8 info-lleft-side">
-											<h4>Get YourSelf Fixed</h4>
-											<p>Vivamus sed porttitor felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-												egestas.Sed lorem enim, rutrum quis diam nec.</p>
+											<h4>Motto</h4>
+											<p>“Kesembuhan & Kepuasan Pasien Adalah Kebahagiaan Kami”</p>
 										</div>
-										<div class=" col-md-4 w3layouts_more-buttn">
-											<a href="#" data-toggle="modal" data-target="#myModal">Read More</a>
-										</div>
+										
 									</div>
 								</li>
 							</ul>
@@ -200,213 +192,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--//about -->
 	<!--services -->
-	<div class="services " id="service">
-		<div class="container">
-			<h3 class="title tit-clr">OUR FACILITIES</h3>
-			<div class="stats-info agileits w3layouts">
-				<div class="col-md-3 col-sm-6 col-xs-6 agileits w3layouts stats-grid stats-grid-1">
-					<div class="ser-icone"> <span class="fa fa-users font" aria-hidden="true"></span>
-					</div>
-					<div class=" agileits-w3layouts counter">3500</div>
-					<div class="stat-info-w3ls">
-						<h4 class="agileits w3layouts">Staff</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 agileits w3layouts stats-grid stats-grid-2">
-					<div class="ser-icone"> <span class="fa fa-medkit font" aria-hidden="true"></span>
-					</div>
-					<div class=" agileits-w3layouts counter">650</div>
-					<div class="stat-info-w3ls">
-						<h4 class="agileits w3layouts ">Branches</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 stats-grid agileits w3layouts stats-grid-3">
-					<div class="ser-icone"> <span class="fa fa-user-md font" aria-hidden="true"></span>
-					</div>
-					<div class=" agileits-w3layouts counter">1021</div>
-					<div class="stat-info-w3ls">
-						<h4 class="agileits w3layouts ">Doctors</h4>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-6 stats-grid agileits w3layouts stats-grid-4">
-					<div class="ser-icone"> <span class="fa fa-heart font" aria-hidden="true"></span>
-					</div>
-					<div class=" agileits-w3layouts counter">1010</div>
-					<div class="stat-info-w3ls">
-						<h4 class="agileits w3layouts">operations</h4>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
+	
 	<!--//services -->
 	<!--gallery-->
-	<div class="gallery titl-bottom" id="gallery">
-
-		<h3 class="title">Laboratory</h3>
-		<div class="gallery-info">
-			<div class="col-md-6 col-sm-6 gallery-grids glry-grid1 ">
-				<div class="gallery-grids-top w3_agile_gallery_grid ">
-					<a class="b-link-stripe" href="../assets/images/g4.jpg" data-lightbox="example-set" data-title="Making your life easier. ">
-							<img src="../assets/images/g4.jpg" class="img-responsive" alt="">
-							<div class="b-wrapper">			
-							</div>
-						</a>
-				</div>
-				<div class="gallery-grids-top">
-					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="../assets/images/g1.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="../assets/images/g1.jpg" class="img-responsive" alt="">
-								<div class="b-wrapper">			
-								</div>
-							</a>
-					</div>
-					<div class="col-md-6 col-sm-6 bottom-grids w3_agile_gallery_grid">
-						<a class="b-link-stripe" href="../assets/images/g2.jpg" data-lightbox="example-set" data-title="Making your life easier.">
-								<img src="../assets/images/g2.jpg" class="img-responsive" alt="">
-								<div class="b-wrapper">				
-								</div>
-							</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid2">
-				<a class="b-link-stripe " href="images/g3.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g3.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">			
-						</div>
-					</a>
-			</div>
-			<div class="col-md-3 col-sm-3 gallery-grids w3_agile_gallery_grid glry-grid3">
-				<a class="b-link-stripe" href="images/g6.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g6.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">				
-						</div>
-					</a>
-				<a class="b-link-stripe" href="images/g5.jpg" data-lightbox="example-set">
-						<img src="../assets/images/g5.jpg" class="img-responsive" alt="">
-						<div class="b-wrapper">			
-						</div>
-					</a>
-			</div>
-			<div class="clearfix"></div>
-
-		</div>
-
-	</div>
+	
+				
+					
 	<!--//gallery-->
 	<!-- team-->
-	<div class="team agileits" id="team">
-		<div class="team-info">
-			<div class="container">
-				<h3 class="title ">Our specialists</h3>
-				<div class="team-row">
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t1.jpg" alt="img"></a>
+	
+					
 
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>Director</h5>
-									<p>John willky</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-
-						</div>
-
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t2.jpg" alt="img"></a>
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>HOD</h5>
-									<p>Lara kent</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-
-
-					<div class="col-md-4 col-sm-4 col-xs-4 team-grids">
-						<div class="team-agile-img">
-							<a href="#"><img src="../assets/images/t3.jpg" alt="img"></a>
-							<div class="view-caption">
-								<div class="t-info">
-									<h5>Psyhologist</h5>
-									<p>Jack will</p>
-								</div>
-								<ul>
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-								</ul>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //team -->
-	<!--testimonials-->
-	<div class="testimonials" id="clients">
-		<h3 class="title tit-clr">OUR CLIENTS</h3>
-		<div class="container">
-			<div class="clients-inn">
-				<div class="clients_agile_slider">
-					<div id="owl-demo" class="owl-carousel owl-theme">
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c1.jpg" alt="img">
-									<h4>Ketty way</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c2.jpg" alt="img">
-									<h4>Cleark Hill</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="agile_tesimonials_content">
-								<div class="about-midd-main">
-									<img class="agile-img" src="../assets/images/c3.jpg" alt="img">
-									<h4>Willson Doe</h4>
-									<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod </p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
+				
 	<!-- //testimonials-->
 	<!--subscribe-->
 
@@ -454,8 +251,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<nav>
 			<ul class="nav-buttom">
-				<li><a class="page-scroll scroll" href="#home">Home</a></li>
-				<li><a class="page-scroll scroll" href="#about">About</a></li>
+				<li><a class="page-scroll" href="<?php echo site_url()?>/pasien/index">Home</a></li>
+				<li><a class="page-scroll scroll" href="#home">About</a></li>
 				<li><a class="page-scroll scroll" href="#service">Layanan</a></li>
 				<li><a class="page-scroll scroll" href="#gallery">Daftar Kamar</a></li>
 				<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
