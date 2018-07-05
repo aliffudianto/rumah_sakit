@@ -29,6 +29,15 @@ class Function_model extends CI_Model {
 		 return $query->row_array();
 	}
 
+	public function kamar(){
+
+		//$query=$this->db->query('select * from pegawai');
+		$this->db->select('*');
+		$this->db->from('kamar');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 
 	public function tampilDataDetailsPasien()
 	{
@@ -54,6 +63,18 @@ class Function_model extends CI_Model {
 		 $this->db->where('id_pasien', $this->uri->segment(3));
 		 $query = $this->db->get();
 		 return $query->row_array();
+	}
+
+	public function insertDataPegawai()
+	{
+		$data = array(
+			'username' => $this->input->post('username'),
+			'nama_pegawai' => $this->input->post('nama'),
+			'alamat' => $this->input->post('alamat'),
+			'foto' => $this->upload->data('file_name'),
+			);
+		$this->db->insert('pegawai', $data);
+		
 	}
 
 	
@@ -138,16 +159,10 @@ class Function_model extends CI_Model {
 		return $total;
 	}
 
-	public function addKamar()
+	public function tambahKamar()
     {
         $data= $this->input->post();
         $this->db->insert('kamar', $data);
-    }
-
-    public function deleteKamar($id)
-    {
-        $this->db->where('id_kamar', $id);
-        $this->db->delete('kamar');
     }
 
     public function updateKamar($id)
@@ -155,6 +170,12 @@ class Function_model extends CI_Model {
         $this->db->where('id_kamar', $id);
         $data= $this->input->post();
         $this->db->update('kamar',$data);
+    }
+
+    public function deleteKamar($id)
+    {
+        $this->db->where('id_kamar', $id);
+        $this->db->delete('kamar');
     }
 
 

@@ -35,6 +35,9 @@ class LoginUser extends CI_Controller {
 			return true;
 		}else{
 			$this->form_validation->set_message('cekDb',"Login Gagal! Username dan password salah!");
+			echo "<script>alert('Login Gagal , Username dan Password Salah')</script>";
+			redirect('','refresh');
+
 			return false;
 		}
 	}

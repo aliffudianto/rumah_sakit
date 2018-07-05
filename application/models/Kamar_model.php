@@ -29,6 +29,12 @@ class Kamar_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function kamar(){
+
+		$query=$this->db->query('select * from kamar');
+		return $query->result();
+	}
+
 	public function hapusKamar($id_kamar){
 		$this->db->where('id_kamar',$id_kamar);
 		$this->db->delete('kamar');	
@@ -55,13 +61,10 @@ class Kamar_model extends CI_Model {
 
 	public function hargaKamar($nama_kamar)
 	{
-		$query= $this->db->query("select harga from kamar where nama_kamar='mawar'");
-		return $query->result();
-		// $this->db->select('harga');
-		// $this->db->where('nama_kamar', $nama_kamar);
-		// $result= $this->db->get('kamar');
-		// //$result->result();
-		// return $total_ratings = mysqli_fetch_array($result);
+		$this->db->select('harga');
+		$this->db->where('nama_kamar', $nama_kamar);
+		$query= $this->db->get('kamar');;
+		return $query->row_array();
 	}
 
 

@@ -4,25 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Halaman Data Pasien</title>
+    <title>Pendaftaran Pasien</title>
 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" />     
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables/dataTables.min.css" /> 
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
+      <link rel="stylesheet" href="<?php echo base_url(); ?> assets/datatables/dataTables.min.css" /> 
 
       <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
       <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
 
-
 </head>
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('#pasien').DataTable();
-} );
-</script>
-  <body>
 
+  <body>
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
@@ -56,31 +50,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10">
-            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Halaman Admin <small><font color="#33FF33">Rumah Sakit</font></small></h1>
+            <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard <small><font color="#33FF33">Rumah Sakit</font></small></h1>
           </div>
         </div>
       </div>
     </header>
 <br>
 
-  <section id="breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb">
-      	<div class="text-left">
-        	<li class="active"><h1>Data Details Pasien : </h1></li>
-        </div>
-      </ol>
-    </div>
-  </section>
-
-
+<legend><h1 class="text-center">Pendaftaran Pegawai</h1></legend>
 <section id="main">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-        
-     <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      <a href="<?php echo site_url()?>/pegawai/halamanPegawai" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         Dashboard <span class="badge"><?php echo $level ?></span>
       </a>
       
@@ -92,44 +75,45 @@
       <a href="<?php echo site_url()?>/pegawai/dataKamar/" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Data Kamar<span class="badge"><?php echo $nKamar ?></span></a>
     </div>
 </div>
+    
+  <?php echo form_open_multipart('pegawai/tambahPegawai'); ?>
+  <?php echo validation_errors(); ?>
+<div class="table-responsive">
+    <table class="table table-hover" id="kamar_active">
+      <tbody>
+      <div class="form-group ">
+        <label for="">Username : </label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Username">
+      </div>
+      
+      <div class="form-group ">
+        <label for="">Password</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+      </div>
 
-<!--Latest User--> 
-	<div class="table-responsive">
-			<table class="table table-hover" id="pasien">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Nama</th>
-            <th>Username</th>
-						<th>Alamat</th>
-						<th>Contact</th>
-            <th>Foto</th>
-              
-            <th></th>
-						<th>Aksi</th>
-            <th></th>
-            
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($biodata_pasien as $key) {
-				?>		
-						<tr>
-							<td><?php echo $key['id_pasien'] ?></td>
-							<td><?php echo $key['nama_pasien'] ?></td>
-              <td><?php echo $key['username'] ?></td>
-							<td><?php echo $key['alamat'] ?></td>
-							<td><?php echo $key['no_hp'] ?></td>
-              <td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key['foto']?>" alt="" width=175 height="125"></td>
-              
-							<td><a href="<?php echo site_url() ?>/pegawai/updatePasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-info" ><i class="glyphicon glyphicon-upload"></i> Update</button></td></a>
-							<td><a href="<?php echo site_url() ?>/pegawai/deletePasien/<?php echo $key['username'] ?>" class="pull-right"><button type="button" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i>  Delete</button></td></a>
-              <td><a href="<?php echo site_url() ?>/pegawai/detailsPasien/<?php echo $key['id_pasien'] ?>" class="pull-right"><button type="button" class="btn btn-success"><i class="glyphicon glyphicon-search"></i>  Lihat Data Pasien</button></td></a>
-						</tr>
-				<?php } ?>
-		
-				</tbody>
-			</table>
+      <div class="form-group">
+        <label for="">Nama Pegawai</label>
+        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Pasien">
+      </div>
+      
+      <div class="form-group">
+        <label for="">Alamat</label>
+        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat">
+      </div>
+
+      <div class="form-group ">
+        <label for="">Foto</label>
+        <input type="file" class="form-control" name="foto" size="20">
+      </div>
+      <div class="form-group ">
+        <input type="hidden" class="form-control" name="akses" size="20" value="admin">
+      </div>
+      
+      
+      <button type="submit" class="btn btn-primary" ><i class="glyphicon glyphicon-plus"></i>  Submit</button>
+      <?php echo form_close(); ?>
+      </tbody>
+</table>
 </div>
 </div>
 </div>

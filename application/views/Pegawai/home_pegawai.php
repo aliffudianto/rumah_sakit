@@ -113,7 +113,8 @@
      <div class="well dash-box">
       <a href="<?php echo site_url()?>/pegawai/kamarAktif">
        <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
-       <h4>Data Kamar Pasien</h4>
+       <h4>Kelola Kamar</h4>
+       <br>
       </a>
      </div>
    </div>
@@ -126,6 +127,17 @@
       </a>
      </div>
    </div>
+
+   <div class="col-md-3">
+     <div class="well dash-box">
+      <a href="<?php echo site_url()?>/pegawai/tambahPegawai">
+       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
+       <h4>Tambah Pegawai</h4>
+      </a>
+     </div>
+   </div>
+
+
    <?php if($tersedia>0){?>
    <div class="col-md-3" data-toggle="modal" data-target="#myModal">
     <?php }else{ ?>

@@ -9,15 +9,19 @@
     
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
-      <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" />
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables/dataTables.min.css" /> 
 
+     
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
-      <script type="text/javascript" src="<?php echo base_url()?>assets/custom/grid1.js"></script>
-</head>
 
+</head>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#kamar').DataTable();
+} );
+</script>
   <body>
 
     <nav class="navbar navbar-default">
@@ -94,21 +98,23 @@
 <div class="col-md-6 col-8 align-self-center ">
 <a href="<?php echo site_url() ?>/pegawai/tambahKamar/" class="pull-left"><button type="button" class="btn btn-primary" ><i class="glyphicon glyphicon-plus"></i> Tambah Kamar</button></a>
 </div>
+<br></br>
 
 <div class="col-md-9">
 
-  <div class="table-responsive"  id="data_pasien">
-      <table class="table table-hover">
+  <div class="table-responsive">
+      <table class="table table-hover" id="kamar">
         <thead>
           <tr>
             <th>Id Kamar</th>
             <th>Nama Kamar</th>
             <th>Ketersediaan</th>
-            <th>Harga</th>
             <th>Nama Pasien</th>
+            <th>Harga</th>
             <th>Tanggal Dirawat</th>
             <th>Foto</th>
-            <th colspan="3" class="text-center">Aksi</th>
+            <th>Aksi</th>
+            <th></th>
 
   
           </tr>

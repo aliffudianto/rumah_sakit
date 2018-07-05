@@ -44,7 +44,6 @@ public function __construct()
 		$this->load->view('pegawai/home_pegawai',$data);
 	}
 
-
 	public function profile($username)
 	{
 		$session_data= $this->session->userdata('logged_in');
@@ -59,6 +58,8 @@ public function __construct()
 		$data['admin']=$this->Function_model->tampilUser($username);
 		$this->load->view('pegawai/profile',$data);
 	}
+
+
 
 	public function halamanPasien($username)
 	{
@@ -400,11 +401,103 @@ public function __construct()
        $this->load->model('Function_model');
        $id=$this->input->post('id_kamar');
        $this->Pasien_model->updateKamar($id);
+    }
+
+    	public function tambahPegawai()
+	{
+		$this->load->helper('url','form');
+		$this->load->library('form_validation');
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+
+		
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		//$this->form_validation->set_rules('foto', 'Foto', 'trim|required');
+
+		$this->load->model('Function_model');
+
+			if ($this->form_validation->run() ==FALSE) {
+				$this->load->view('pegawai/daftar_pegawai',$data);
+			}else{
+				$config['upload_path'] = './assets/uploads/';
+				$config['allowed_types'] = 'gif|jpg|png';
+				$config['max_size'] = '10000';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->load->library('upload', $config);
+				
+				if(! $this->upload->do_upload('foto')){
+					$error = array('error' =>$this->upload->display_errors());
+					$this->load->view('pegawai/daftar_pegawai', $error);
+				}else{
+					$this->Function_model->createUser();
+					$this->Function_model->insertDataPegawai();
+					echo "<script>alert('Pendaftaran Pegawai Telah Terhasil')</script>";
+					redirect('pegawai/tambahPegawai','refresh');
+				}
+			}	
+	}
 
 
-	
+
+    public function gridDinamis()
+    {
+    	$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$this->load->model('Kamar_model');
+		$username=$session_data['username'];
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
+		$data['dataKamar']=$this->Function_model->dataKamar();
+
+        $this->load->view('pegawai/kamar_aktif',$data);
+    }
+
+    public function kamarJs()
+    {
+        $this->load->model('Function_model');
+        $result = $this->Function_model->kamar(); 
+        header("Content-Type: application/json");
+        echo json_encode($result);
     }
 	
+
+    public function addKamar(){
+        $this->load->model('Function_model');
+        $this->Function_model->tambahKamar();
+    }
+
+	public function updateKamarJs()
+    {
+       $this->load->model('Function_model');
+       $id=$this->input->post('id_kamar');
+       $this->Function_model->updateKamar($id);
+    }
+
+	 public function deleteKamarJs()
+    {
+        $this->load->model('Function_model');
+        $id = $this->input->post('id_kamar'); 
+        $this->Function_model->deleteKamar($id);
+    }
+
 }
 
 /* End of file Pegawai.php */

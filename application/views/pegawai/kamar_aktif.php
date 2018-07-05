@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kamar Aktif</title>
+    
 
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
-      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
-
-     
-      <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" /> 
-
-      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
-      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid.min.css" /> 
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/jsgrid/jsgrid-theme.min.css" /> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" /> 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
+    <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+    <script type="text/javascript" src="<?php echo base_url()?>assets/jsgrid/jsgrid.min.js"></script> 
+    <script type="text/javascript" src="<?php echo base_url()?>assets/custom/grid.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -96,35 +95,12 @@
 </div>
 
 <!--Latest User-->
-	<div class="table-responsive">
-			<table class="table table-hover" id="kamar_active">
-				<thead>
-					<tr>
-						<th>Id Kamar</th>
-						<th>Nama Kamar</th>
-						<th>Nama Pasien</th>
-					<!-- 	
-						<th colspan="3" class="text-center">Aksi</th> -->
+	<div class="container">
+ <div class=" col-md-9 col-lg-9"> 
+      <div id="jsGrid"></div>
+  </div>
+</div>
 
-	
-					</tr>
-				</thead>
-				<tbody>
-				<?php foreach ($dataKamar as $key) {
-				?>
-						
-						<tr>
-							<td><?php echo $key->id_kamar ?></td>
-							<td><?php echo $key->nama_kamar ?></td>
-							<td><?php echo $key->nama_pasien ?></td>	
-						</tr>
-				<?php } ?>
-		
-				</tbody>
-			</table>
-		</div>
-</div>
-</div>
 
 
   <footer id="footer">

@@ -62,7 +62,11 @@ class Pasien extends CI_Controller {
 		$username=$session_data['username'];
 		
 		$this->load->model('Function_model');
+		$this->load->model('Kamar_model');
 		$data['user']=$this->Function_model->tampilPasien($username);
+		$data['kamar']=$this->Kamar_model->kamarKosong()->result();
+		$data['pasien']=$this->Kamar_model->daftarPasien()->result();
+
 		$this->load->view('pasien/kamar',$data);
 	}
 

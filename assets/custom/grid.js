@@ -1,8 +1,7 @@
 $(function() {
-  var base_url=window.location.origin;
   $.ajax({
     type: "GET",
-    url: "dataTransaksi/"
+    url: "kamarJs/"
   }).done(function(countries) {
     countries.unshift({ id: "0", name: "" });
 
@@ -17,61 +16,55 @@ $(function() {
       autoload: true,
       pageSize: 10,
       pageButtonCount: 5,
-      deleteConfirm: "Hapus Data Transaksi?",
+      deleteConfirm: "Hapus Data Kamar?",
       controller: {
         loadData: function(filter) {
           return $.ajax({
             type: "GET",
-            url: "dataTransaksi/",
+            url: "kamarJs/",
             data: filter
           });
         },
         insertItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "simpanDataObat/",
+            url: "addKamar/",
             data: item
           });
         },
         updateItem: function(item) {
           return $.ajax({
-            type: "PUT",
-            url: "/clients/",
+            type: "POST",
+            url: "updateKamarJs/",
             data: item
           });
         },
         deleteItem: function(item) {
           return $.ajax({
             type: "POST",
-            url: "editDataObat/",
+            url: "deleteKamarJs/",
             data: item
           });
         }
       },
       fields: [
         {
-          name: "id_transaksi",
-          title: "Id Transaksi",
+          name: "id_kamar",
+          title: "Id Kamar",
           type: "text",
           width: 150
         },
         {
-          name: "jumlah",
-          title: "Jumlah Transaksi",
+          name: "nama_kamar",
+          title: "Nama Kamar",
           type: "text",
           width: 150
         },
         {
-          name: "tanggal",
-          title: "Tanggal Transaksi",
+          name: "harga",
+          title: "Harga",
           type: "number",
           width: 150
-        },
-        {
-          name: "fk_pasien",
-          title: "Id Pasien",
-          type: "number",
-          width: 50
         },
         { type: "control" }
       ]

@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						<li class="active"><font color="white" >Welcome, <?php echo $user['nama_pasien'] ?></font></li>
+						<li class="active"><font color="white" ><a href="<?php echo site_url()?>/pasien/profilePasien/<?php echo $user['username']?>"?>Welcome, <?php echo $user['nama_pasien'] ?></font></a></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">

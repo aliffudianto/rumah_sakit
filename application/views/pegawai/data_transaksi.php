@@ -9,7 +9,7 @@
       
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" /> 
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/tampilan/tampilan.css" />     
-      <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" /> 
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables/dataTables.min.css" /> 
 
       <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
       <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>

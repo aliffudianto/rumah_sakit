@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" head-wl">
 				<div class="agileinfo-social-grids">
 					<ul>
-						<li class="active"><font color="white" >Welcome, <?php echo $user['nama_pasien'] ?></font></li>
+						<li class="active"><font color="white" ><a href="<?php echo site_url()?>/pasien/profilePasien/<?php echo $user['username']?>"?>Welcome, <?php echo $user['nama_pasien'] ?></font></a></li>
 					</ul>
 				</div>
 				<div class="w3-header-top-right">
@@ -164,29 +164,49 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 		</div>
 	</div>
 	<!-- //modal -->
-
+	
 	<!--about -->
-	<div class="about" id="about">
-		<div class="container">
-			<div class="imgg-info-w3">
-				<div class="col-md-6 left-about-img">
+	<legend><h1 class="text-center">Form Pendaftaran Kamar Pasien</h1></legend>
+	 <?php echo form_open_multipart('pesanKamar/addKamar'); ?>
+         <?php echo validation_errors(); ?>
 
-					<img src="<?php echo base_url()?>assets/images/a1.jpg" class="img-responsive s1" alt="s1">
-				</div>
-	<div class="col-md-6 welcome-left wel">
-					<div class="welcome-left-top">
-						<h4>Sejarah</h4>
-						<p>Medically didirikan pada tanggal 02 Juli 2017 dan mulai beroperasional tahun 2018 yang diresmikan oleh Direktur Utama PT Medically Ikhsan Efendy.
-Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karyawan PT Medically beserta keluarganya, namun seiring dengan perkembangan juga bertujuan untuk memberikan sarana pelayanan kesehatan yang representative kepada masyarakat di Malang dan sekitarnya.
+        <div class="form-group">
+          <label for="">Nama Kamar : </label>
+          <select class="form-control" name="kamar_kosong">
+            <?php foreach ($kamar as $key) { ?>
+              <option value="<?php echo $key->nama_kamar?>"> <?php echo $key->id_kamar ?> <?php echo $key->nama_kamar?></option>
+            <?php } ?>
+          </select>
+        </div>
+
+      <div class="form-group">
+        <label for="">Id Pasien</label>
+          <select class="form-control" name="nama_pasien">
+            <?php foreach ($pasien as $key) { ?>
+              <option value="<?php echo $key->nama_pasien?>"> <?php echo $key->nama_pasien?></option>
+            <?php } ?>
+          </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">Tanggal Rawat</label>
+        <input type="date" class="form-control" id="tgl" name="tgl" >
+      </div>
+      
+        <!-- <input type="hidden" class="form-control" id="harga" name="harga" value="<?php echo $harga?>">
+ -->
 
 
- </p>
-					
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+      
+
+      
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      <?php echo form_close(); ?>
+
+      
 	<!--//about -->
 	<!--services -->
 	
