@@ -94,7 +94,19 @@ class Transaksi_model extends CI_Model {
 		$this->db->delete('transaksi');
 	}
 
+	public function tagihan()
+	{
 
+		$this->db->select('*');
+		$query=$this->db->get('transaksi');
+		return $query->result();		
+	}
+
+
+	public function updatePerHari()
+	{	
+			
+	}
 
 	// public function paymentPasien($id)
 	// {

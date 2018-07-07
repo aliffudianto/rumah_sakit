@@ -155,7 +155,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 				</div>
 				<div class="modal-body">
 					<div class="out-info">
-						<img src="../assets/images/g1.jpg" alt="" />
+						<img src="<?php echo base_url()?>assets/images/g1.jpg?>" alt="" />
 						<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
 							eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellu</p>
 					</div>
@@ -166,6 +166,10 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 	<!-- //modal -->
 	
 	<!--about -->
+<div class="col-sm-6">
+    
+   <div class="panel panel-default">
+     <div class="panel-body form-horizontal payment-form">
 	<legend><h1 class="text-center">Form Pendaftaran Kamar Pasien</h1></legend>
 	 <?php echo form_open_multipart('pesanKamar/addKamar'); ?>
          <?php echo validation_errors(); ?>
@@ -183,7 +187,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
         <label for="">Id Pasien</label>
           <select class="form-control" name="nama_pasien">
             <?php foreach ($pasien as $key) { ?>
-              <option value="<?php echo $key->nama_pasien?>"> <?php echo $key->nama_pasien?></option>
+              <option value="<?php echo $key->id_pasien?>"> <?php echo $key->id_pasien?></option>
             <?php } ?>
           </select>
       </div>
@@ -205,6 +209,8 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
       <?php echo form_close(); ?>
+      </div>
+      </div>
 
       
 	<!--//about -->
@@ -343,7 +349,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
-	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>

@@ -147,7 +147,7 @@ public function __construct()
 	}
 
 	public function viewTransaksi()
-	{	
+	{			
 		$session_data= $this->session->userdata('logged_in');
 		$data['username']=$session_data['username'];
 		$data['level']=$session_data['level'];
@@ -159,7 +159,7 @@ public function __construct()
 		$data['jumlah']=$this->Function_model->totalPasien();
 		$data['nKamar']=$this->Function_model->jumlahKamar();
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
-		$data['data_transaksi']=$this->Function_model->tampilDataTransaksi();
+		$data['data_transaksi']=$this->Function_model->tampilDataTransaksi();		
 		$this->load->view('pegawai/data_transaksi',$data);
 	}
 
@@ -256,10 +256,12 @@ public function __construct()
 				
 				if(! $this->upload->do_upload('foto')){
 					$error = array('error' =>$this->upload->display_errors());
-					$this->load->view('pegawai/update_pasien', $error);
+					echo "<script>alert('Foto harus diisi')</script>";
+					$this->load->view('pegawai/update_pasien', $data);
 				}else{
 					$this->Function_model->updatePasien($id_pasien);
-				echo "edit sukses";
+					echo "<script>alert('Edit Pasien Berhasil')</script>";
+					$this->load->view('pegawai/update_pasien', $data);
 				}
 		}
 	}
@@ -311,7 +313,7 @@ public function __construct()
 		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		
 		$data['user']=$this->Function_model->tampilUser($username);
-		$data['kamar']=$this->Kamar_model->dataKamar();
+		$data['kamar']=$this->Kamar_model->dataKamarById($id_kamar);
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('pegawai/update_kamar', $data);
@@ -326,7 +328,8 @@ public function __construct()
 				
 				if(! $this->upload->do_upload('foto')){
 					$error = array('error' =>$this->upload->display_errors());
-					$this->load->view('pegawai/update_pasien', $error);
+					echo "<script>alert('foto harus diisi')</script>";
+					$this->load->view('pegawai/update_kamar', $data);
 				}else{
 					$this->Kamar_model->updateKamar($id_kamar);
 					echo "<script>alert('pendaftaran kamar telah berhasil')</script>";

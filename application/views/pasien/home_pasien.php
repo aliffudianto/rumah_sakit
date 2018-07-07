@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="modal-body">
 					<div class="out-info">
-						<img src="../assets/images/g1.jpg" alt="" />
+						<img src="<?php echo base_url()?>assets/images/g1.jpg?>" alt="" />
 						<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
 							eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellu</p>
 					</div>
@@ -271,21 +271,6 @@ Wassalamualaikum Wr. Wb.
 	</div>
 	<!--//services -->
 	<!--gallery-->
-	<div class="gallery titl-bottom" id="gallery">
-
-<?php if($tersedia>0){?>
-   <div class="col-md-3" data-toggle="modal" data-target="#daftar">
-    <?php }else{ ?>
-   <div class="col-md-3" data-toggle="modal" data-target="#myModal1">
-     <?php }?>
-
-     <a href="#">
-     <div class="well dash-box">
-       <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> </h2>
-       <h4>Daftar Kamar</h4>
-      </a>
-     </div>
-   </div>
 
    
       <!-- Modal -->
@@ -467,12 +452,13 @@ Wassalamualaikum Wr. Wb.
 		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery-2.2.3.min.js'></script>
+	<script type='text/javascript' src='<?php echo base_url(); ?>assets/js/jquery-2.2.3.min.js'></script>
+	 
 	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
 
-	<script defer src="<?php echo base_url()?>assets/js/jquery.flexslider.js"></script>
+	<script defer src="<?php echo base_url();?>assets/js/jquery.flexslider.js"></script>
 	<script type="text/javascript">
 		$(window).load(function () {
 			$('.flexslider').flexslider({
@@ -486,7 +472,7 @@ Wassalamualaikum Wr. Wb.
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
-	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>

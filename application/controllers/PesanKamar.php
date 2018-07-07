@@ -40,6 +40,7 @@ class PesanKamar extends CI_Controller {
 				$this->Kamar_model->ubahStatusPasien();
 				$rows=$this->Kamar_model->hargaKamar($nama_kamar);
 				$harga =  $rows['harga'];
+				
 				$this->Kamar_model->buatTransaksi($harga);
 
 				echo "<script>alert('pendaftaran kamar telah berhasil')</script>";

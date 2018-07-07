@@ -52,6 +52,9 @@ class Pasien extends CI_Controller {
 		
 		$this->load->model('Function_model');
 		$data['user']=$this->Function_model->tampilPasien($username);
+		$data['biodata_pasien']=$this->Function_model->tampilPasienRawatInap();
+		$data['data_kamar']=$this->Function_model->kamarRawat();
+		$data['kamar_kosong']=$this->Function_model->kamarTersedia();
 		$this->load->view('pasien/layanan',$data);
 	}
 	public function kamar()
@@ -65,7 +68,7 @@ class Pasien extends CI_Controller {
 		$this->load->model('Kamar_model');
 		$data['user']=$this->Function_model->tampilPasien($username);
 		$data['kamar']=$this->Kamar_model->kamarKosong()->result();
-		$data['pasien']=$this->Kamar_model->daftarPasien()->result();
+		$data['pasien']=$this->Kamar_model->getDataPasien($username)->result();
 
 		$this->load->view('pasien/kamar',$data);
 	}

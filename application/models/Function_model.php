@@ -109,10 +109,10 @@ class Function_model extends CI_Model {
 		$data = array(
 			'nama_pasien' => $this->input->post('nama'),
 			'alamat' => $this->input->post('alamat'),
-			'no_hp' => $this->input->post('tgl'),
+			'no_hp' => $this->input->post('no'),
 			'foto' => $this->upload->data('file_name'),
 			);
-		$this->db->where('username',$id);
+		$this->db->where('id_pasien',$id);
 		$this->db->update('pasien', $data);
 	}
 
@@ -136,10 +136,10 @@ class Function_model extends CI_Model {
 	}
 
 	public function dataKamar(){
-
 		$query=$this->db->query('select * from kamar');
 		return $query->result();
 	}
+
 	public function jumlahKamar(){
 		$kamar=$this->db->get('kamar');
 		$jumlah=$kamar->num_rows();
@@ -177,6 +177,33 @@ class Function_model extends CI_Model {
         $this->db->where('id_kamar', $id);
         $this->db->delete('kamar');
     }
+
+    public function tampilPasienRawatInap()
+	{
+		$this->db->select('*');
+		$this->db->from('pasien');
+		$this->db->join('kamar','pasien.nama_pasien=kamar.nama_pasien');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function kamarRawat(){
+		$this->db->select('*');
+		$this->db->from('pasien');
+		$this->db->join('kamar','pasien.nama_pasien=kamar.nama_pasien');
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
+	public function kamarTersedia(){
+		$this->db->select('*');
+		$this->db->from('kamar');
+		$this->db->where('nama_pasien', ' ');
+		$query = $this->db->get();
+		return $query->result();
+	
+	}
 
 
 }

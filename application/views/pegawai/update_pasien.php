@@ -93,7 +93,7 @@
     <tbody>
   <div class="form-group">
         <label for="">Username : </label> 
-        <input type="text" class="form-control" id="username" name="username" value="<?php echo $pasien[0]->username ?>">
+        <input type="text" class="form-control" id="username" name="username" readonly value="<?php echo $pasien[0]->username ?>">
       </div>
 
   <div class="form-group">
@@ -108,7 +108,7 @@
       
       <div class="form-group">
         <label for="">No Hp</label>
-        <input type="text" class="form-control" id="no" name="no" value="<?php echo $pasien[0]->alamat ?>">
+        <input type="text" class="form-control" id="no" name="no" value="<?php echo $pasien[0]->no_hp ?>">
       </div>
 
        <div class="form-group">

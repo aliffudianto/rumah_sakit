@@ -40,8 +40,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- banner text slider-->
 
 	<link href="//fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600" rel="stylesheet">
+
+
+
 	<!--//style sheet end here-->
 </head>
+
 
 <body>
 	<div class="banner-w3" id="home">
@@ -155,7 +159,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 				</div>
 				<div class="modal-body">
 					<div class="out-info">
-						<img src="../assets/images/g1.jpg" alt="" />
+						<img src="<?php echo base_url()?>assets/images/g1.jpg?>" alt="" />
 						<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
 							eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellu</p>
 					</div>
@@ -164,7 +168,144 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 		</div>
 	</div>
 	<!-- //modal -->
+<!-- 	<div class=" col-sm-2 col-md-2 col-lg-2">
+		
+	</div> -->
+      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables/dataTables.min.css" /> 
 
+      <script src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script> 
+      <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+      <script src="<?php echo base_url()?>assets/datatables/dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#pasien').DataTable();
+	} );
+
+	$(document).ready(function() {
+    $('#kamar').DataTable();
+	} );
+
+	$(document).ready(function() {
+    $('#kamar_kosong').DataTable();
+	} );
+</script>
+
+<div class="col-md-9 col-sm-12" >
+    <h1>Data Pasien Rawat Inap : </h1>
+   <div class="panel panel-default">
+     <div class="panel-body form-horizontal payment-form">
+		<div class="table-responsive" >
+			<table class="table table-hover" id="pasien">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nama</th>
+           				<th>Username</th>
+						<th>Alamat</th>
+            			<th>Foto</th>
+				
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach ($biodata_pasien as $key) {
+				?>		
+						<tr>
+							<td><?php echo $key->id_pasien ?></td>
+							<td><?php echo $key->nama_pasien ?></td>
+              				<td><?php echo $key->username ?></td>
+							<td><?php echo $key->alamat ?></td>
+             				<td><img src="<?php echo base_url()?>/assets/uploads/<?php echo $key->foto?>" alt="" width=175 height="125"></td>
+						</tr>
+				<?php } ?>
+		
+				</tbody>
+			</table>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-9 col-sm-12">
+    <h1>Data Kamar Pasien Rawat Inap :</h1>
+   <div class="panel panel-default">
+     <div class="panel-body form-horizontal payment-form">
+		<div class="table-responsive">
+
+  <div class="table-responsive">
+      <table class="table table-hover" id="kamar">
+        <thead>
+          <tr>
+            <th>Id Kamar</th>
+            <th>Nama Kamar</th>
+            <th>Nama Pasien</th>
+            <th>Tanggal Dirawat</th>
+            <th>Foto</th>
+          
+
+  
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($data_kamar as $key) {
+        ?>    
+            <tr>
+              <td><?php echo $key->id_kamar ?></td>
+              <td><?php echo $key->nama_kamar ?></td>
+              <td><?php echo $key->nama_pasien ?></td>
+              <td><?php echo $key->tanggal ?></td>
+              <td><img src="<?php echo base_url()?>/assets/uploads/kamar/<?php echo $key->foto ?>" alt="" width=175 height="125"></td>
+
+            </tr>
+        <?php } ?>
+    
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-9 col-sm-12">
+    <h1>Data Kamar Kosong :</h1>
+   <div class="panel panel-default">
+     <div class="panel-body form-horizontal payment-form">
+		<div class="table-responsive">
+
+  <div class="table-responsive">
+      <table class="table table-hover" id="kamar_kosong">
+        <thead>
+          <tr>
+            <th>Id Kamar</th>
+            <th>Nama Kamar</th>
+            <th>Harga</th>
+            <th>Foto</th>
+          
+
+  
+          </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($kamar_kosong as $key) {
+        ?>    
+            <tr>
+              <td><?php echo $key->id_kamar ?></td>
+              <td><?php echo $key->nama_kamar ?></td>
+              <td><?php echo $key->harga ?></td>
+              <td><img src="<?php echo base_url()?>/assets/uploads/kamar/<?php echo $key->foto?>" alt="" width=175 height="125"></td>
+
+            </tr>
+        <?php } ?>
+    
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
 	<!--about -->
 	<div class="about" id="about">
 		<div class="container">
@@ -304,7 +445,7 @@ Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karya
 		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery-2.2.3.min.js'></script>
+	
 	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
@@ -323,7 +464,7 @@ Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karya
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
-	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>

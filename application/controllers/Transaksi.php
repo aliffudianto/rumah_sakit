@@ -115,7 +115,6 @@ class Transaksi extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('pegawai/update_transaksi', $data);
 		}else{
-
 			$this->Transaksi_model->updateTransaksi($id_transaksi);
 			echo "<script>alert('Edit Transaksi Telah Berhasil')</script>";
 			redirect('pegawai/viewTransaksi','refresh');

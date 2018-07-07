@@ -300,7 +300,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <!--End-slider-script-->
   <!-- OnScroll-Number-Increase-JavaScript -->
   <script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
-  <script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
+  <script src="<?php echo base_url()?>assets/js/jquery.countup.js"></script>
   <script>
     $('.counter').countUp();
   </script>

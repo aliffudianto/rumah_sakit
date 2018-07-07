@@ -118,6 +118,20 @@ class Kamar_model extends CI_Model {
 		$this->db->insert('kamar', $data);
 		
 	}
+
+	public function getDataPasien($username)
+	{
+		$this->db->where('username', $username);
+		$this->db->where('fk_kamar', NULL);
+		$query= $this->db->get('pasien');
+		return $query;
+	}
+
+	public function dataKamarById($id_kamar){
+		$this->db->where('id_kamar', $id_kamar);
+		$query=$this->db->get('kamar');
+		return $query->result();
+	}
 }
 
 /* End of file Kamar_model.php */

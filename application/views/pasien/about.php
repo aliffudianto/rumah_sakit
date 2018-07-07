@@ -155,7 +155,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 				</div>
 				<div class="modal-body">
 					<div class="out-info">
-						<img src="../assets/images/g1.jpg" alt="" />
+						<img src="<?php echo base_url()?>assets/images/g1.jpg?>" alt="" />
 						<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
 							eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellu</p>
 					</div>
@@ -323,7 +323,7 @@ Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karya
 	<!--End-slider-script-->
 	<!-- OnScroll-Number-Increase-JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/jquery.waypoints.min.js"></script>
-	<script src="<?php echo base_url()?>asstes/js/jquery.countup.js"></script>
+	<script src="<?php echo base_url()?>assets/js/jquery.countup.js"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
