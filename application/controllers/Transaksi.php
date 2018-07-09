@@ -31,6 +31,17 @@ class Transaksi extends CI_Controller {
 		$this->load->helper('url','form');
 		$this->load->library('form_validation');
 		//$id=$this->input->post('id_pasien');
+		$this->load->model('Function_model');
+		$this->load->model('Transaksi_model');
+		$session_data= $this->session->userdata('logged_in');
+		$data['username']=$session_data['username'];
+		$data['level']=$session_data['level'];
+		$username=$session_data['username'];
+		
+		$data['user']=$this->Function_model->tampilUser($username);
+		$data['jumlah']=$this->Function_model->totalPasien();
+		$data['nKamar']=$this->Function_model->jumlahKamar();
+		$data['nTransaksi']=$this->Transaksi_model->jumlahTransaksi();
 		$id_pasien=$this->input->post('id_pasien');
 
 		$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
@@ -58,11 +69,13 @@ class Transaksi extends CI_Controller {
 	
 		if ($this->form_validation->run() == FALSE) {
 			echo "Pembayaran gagal";
+			redirect('transaksi/biayaKamar','refresh');
 		} else {
 			$nama_pasien=$this->input->post('nama_pasien');
+			$id_pasien=$this->input->post('id_pasien');
 			$data['jml']=$this->input->post('jumlah');
-			//$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
-			$data['total']=$this->Transaksi_model->nota($nama_pasien);
+			//$data['total']=$this->Transaksi_model->tampilBiayaKamar2($id_pasien);
+			$data['total']=$this->Transaksi_model->tampilBiayaKamar2($id_pasien);;
 
 			$total=$this->input->post('total');
 			$jumlah=$this->input->post('jumlah');
@@ -84,7 +97,7 @@ class Transaksi extends CI_Controller {
 		$this->load->model('Transaksi_model');
 			$id_pasien=$this->input->post('id_pasien');
 			$data['jml']=$this->input->post('jumlah');
-			$data['total']=$this->Transaksi_model->tampilBiayaKamar($id_pasien);
+			$data['total']=$this->Transaksi_model->tampilBiayaKamar2($id_pasien);
 			$this->load->view('pegawai/nota_pembayaran',$data);
 	}
 
@@ -139,9 +152,16 @@ class Transaksi extends CI_Controller {
 
 	}
 
+	public function createPdf(){
 
+		$this->load->library('pdf');
+		$this->load->model('Transaksi_model');
+			$id_pasien=$this->input->post('id_pasien');
+			$data['jml']=$this->input->post('jumlah');
+			$data['total']=$this->Transaksi_model->tampilBiayaKamar2($id_pasien);
+			$this->pdf->load_view('pegawai/nota_pembayaran',$data);
+	}
 
-	
 	// public function payment($id)
 	// {
 	// 	$this->load->helper('url','form');

@@ -94,6 +94,8 @@ class Kamar_model extends CI_Model {
 		$this->db->where('nama_pasien',$nama_pasien);
 		$this->db->update('pasien', $data);
 	}
+
+	
 	
 	public function ubahStatusKamar(){
 		$nama_pasien=$this->input->post('nama_pasien');

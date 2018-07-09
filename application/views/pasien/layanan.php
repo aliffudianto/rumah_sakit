@@ -191,7 +191,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 	} );
 </script>
 
-<div class="col-md-9 col-sm-12" >
+<div class="col-md-12 col-sm-12" >
     <h1>Data Pasien Rawat Inap : </h1>
    <div class="panel panel-default">
      <div class="panel-body form-horizontal payment-form">
@@ -226,7 +226,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 </div>
 </div>
 
-<div class="col-md-9 col-sm-12">
+<div class="col-md-12 col-sm-12">
     <h1>Data Kamar Pasien Rawat Inap :</h1>
    <div class="panel panel-default">
      <div class="panel-body form-horizontal payment-form">
@@ -268,7 +268,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 </div>
 
 
-<div class="col-md-9 col-sm-12">
+<div class="col-md-12 col-sm-12">
     <h1>Data Kamar Kosong :</h1>
    <div class="panel panel-default">
      <div class="panel-body form-horizontal payment-form">
@@ -307,26 +307,9 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 </div>
 </div>
 	<!--about -->
-	<div class="about" id="about">
+
 		<div class="container">
-			<div class="imgg-info-w3">
-				<div class="col-md-6 left-about-img">
 
-					<img src="<?php echo base_url()?>assets/images/a1.jpg" class="img-responsive s1" alt="s1">
-				</div>
-	<div class="col-md-6 welcome-left wel">
-					<div class="welcome-left-top">
-						<h4>Sejarah</h4>
-						<p>Medically didirikan pada tanggal 02 Juli 2017 dan mulai beroperasional tahun 2018 yang diresmikan oleh Direktur Utama PT Medically Ikhsan Efendy.
-Medically awalnya didirikan semula untuk melayani perawatan dan pengobatan karyawan PT Medically beserta keluarganya, namun seiring dengan perkembangan juga bertujuan untuk memberikan sarana pelayanan kesehatan yang representative kepada masyarakat di Malang dan sekitarnya.
-
-
- </p>
-					
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 	<!--//about -->
 	<!--services -->

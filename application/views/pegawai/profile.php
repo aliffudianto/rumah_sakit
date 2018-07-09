@@ -153,7 +153,6 @@
                     </tbody>
                   </table>
                   
-                  <a href="#" class="btn btn-primary">Edit</a>
                   <a href="javascript:history.go(-1)" class="btn btn-primary">Back</a>
                 </div>
               </div>

@@ -19,24 +19,24 @@
     </head>
     <body>
         <div class="col-sm-6">
-                    <h4>Nota Pembayaran:</h4>
+                    <h4>Nota Pembayaran Pasien:</h4>
                     <div class="panel panel-default">
                         <div class="panel-body form-horizontal payment-form">
-                    <?php echo form_open_multipart('transaksi/cetakNota');?>
+                    <?php echo form_open_multipart('transaksi/createPdf');?>
                     
                         <?php foreach ($total as $key){ ?>
                         
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Id Pasien</label>
                                 <div class="col-sm-9">
-                                    <input type="disabled" class="form-control" id="id_pasien" name="id_pasien" readonly value="<?php echo $key->fk_pasien?>">
+                                    <input type="text" class="form-control" id="id_pasien" name="id_pasien" readonly value="<?php echo $key->fk_pasien?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="id_pasien" class="col-sm-3 control-label">Nama Pasien</label>
                                 <div class="col-sm-9">
-                                    <input type="disabled" class="form-control" id="nama" name="nama" readonly value="<?php echo $key->nama_pasien?>">
+                                    <input type="text" class="form-control" id="nama" name="nama" readonly value="<?php echo $key->nama_pasien?>">
                                 </div>
                             </div>
 
@@ -67,6 +67,11 @@
                         <div class="col-xs-12">
                             <hr style="border:1px dashed #dddddd;">
                             <button type="submit" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-print"> </i> Cetak Nota Pembayaran</button>
+                            <br>
+                            
+                            <center>
+                            <a href="<?php echo site_url()?>/pegawai/halamanPegawai">Kembali</a>
+                            </center>
                             <?php echo form_close(); ?>
     </body>
 </html>

@@ -49,6 +49,16 @@ class Transaksi_model extends CI_Model {
 		return $query->result();	
 	}
 
+	public function tampilBiayaKamar2($id_pasien)
+	{
+		 $this->db->select('*');
+		 $this->db->from('transaksi');
+		 $this->db->join('pasien','pasien.username=transaksi.fk_pasien');
+		$this->db->where('fk_pasien', $id_pasien);
+		$query= $this->db->get('');
+		return $query->result();
+	}
+
 	public function nota($id_pasien)
 	{
 		 $this->db->select('*');

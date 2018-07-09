@@ -164,14 +164,18 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 		</div>
 	</div>
 	<!-- //modal -->
-	
+	<br>
+	<br>
+	<br>
+
 	<!--about -->
-<div class="col-sm-6">
+	<div class="container">
+<div class="col-sm-9">
     
    <div class="panel panel-default">
      <div class="panel-body form-horizontal payment-form">
 	<legend><h1 class="text-center">Form Pendaftaran Kamar Pasien</h1></legend>
-	 <?php echo form_open_multipart('pesanKamar/addKamar'); ?>
+	 <?php echo form_open_multipart('pesanKamar/addKamarPasien'); ?>
          <?php echo validation_errors(); ?>
 
         <div class="form-group">
@@ -187,7 +191,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
         <label for="">Id Pasien</label>
           <select class="form-control" name="nama_pasien">
             <?php foreach ($pasien as $key) { ?>
-              <option value="<?php echo $key->id_pasien?>"> <?php echo $key->id_pasien?></option>
+              <option value="<?php echo $key->nama_pasien?>"> <?php echo $key->nama_pasien?></option>
             <?php } ?>
           </select>
       </div>
@@ -206,13 +210,13 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
       
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>  Submit</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
       <?php echo form_close(); ?>
       </div>
       </div>
+      </div>
+      </div>
 
-      
 	<!--//about -->
 	<!--services -->
 	
@@ -232,6 +236,7 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 
 	<!--//subscribe-->
 	<!--contact-->
+	<br>
 	<div class="contact" id="contact">
 		<div class="container">
 			<h3 class="title">CONTACT US</h3>
@@ -270,8 +275,8 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 	<!--//contact-->
 
 	<!--footer-->
-
-	<div class="footer">
+<div></div>
+<div class="footer">
 		<nav>
 			<ul class="nav-buttom">
 				<li><a class="page-scroll" href="<?php echo site_url()?>/pasien/index">Home</a></li>
@@ -330,7 +335,24 @@ Memberikan Pelayanan Kesehatan Kepada Masyarakat Industri Serta Masyarakat Malan
 		<p>&copy;2018 Medically. All Rights Reserved</a></p>
 	</footer>
 	<!--menu script-->
-	<script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery-2.2.3.min.js'></script>
+	
+	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
+	<!--//menu script-->
+	<!--FlexSlider banner-->
+
+	<script defer src="<?php echo base_url()?>assets/js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				start: function (slider) {
+					$('body').removeClass('loading');
+				}
+			});
+		});
+	</script>
+	<!--End-slider-script-->
+	<!-- OnScroll-Number-Increase-JavaScript -->
 	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
 	<!--//menu script-->
 	<!--FlexSlider banner-->
